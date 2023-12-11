@@ -1,0 +1,43 @@
+@charset 'utf-8';
+html,head,title,body,div,span,header,section,article,aside,footer,main,strong,h1,h2,h3,h4,h5,h6,p,ul,ol,li,a,img,picture,video,audio,table,tr,td,th,form,label,input,select,textarea,button,nav,hr,br,iframe{
+  box-sizing:border-box;  
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight:inherit;
+  font-size:inherit;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+img,video,picture,svg{
+  width:100%;
+  vertical-align:top;
+}
+svg{
+  height:auto;
+}
+ul,ol,li{
+  list-style:none;
+}
+input,textarea,select{
+  width:100%;
+  border:1px solid #000;
+}
+address{
+  font-style:normal;
+}
+iframe{
+  display:block;
+  width:100%;
+}
+::placeholder{
+  color:#000;
+}
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
