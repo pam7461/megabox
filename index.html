@@ -160,6 +160,16 @@
       gap:2px;
       justify-content:end;
     }
+
+    .login-form,.nav-form{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      background:var(--gray-fff);
+      display:none;
+    }
     
 
 
@@ -198,14 +208,27 @@
     </section>
     <header class="header">
       <div class="container">
-        <h1><a href="./index.html">MEET PLAY SHARE, 메가박스</a></h1>
+        <h1 title="시작페이지로 이동합니다."><a href="./index.html">MEET PLAY SHARE, 메가박스</a></h1>
         <div class="row mnb">
           <div class="h-left">
-            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-ticket.png" alt="빠른예매"></a></div>
+            <div class="img-box" id="btn-ticketing"><a href="#"><img src="./images/m-images/ico-m-ticket.png" alt="빠른예매"></a></div>
           </div>
           <div class="h-right">
-            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-alarm.png" alt="알림"></a></div>
-            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-burger.png" alt="네비게이션 버튼"></a></div>
+            <div class="img-box" id="btn-alarm"><a href="#"><img src="./images/m-images/ico-m-alarm.png" alt="알림"></a></div>
+            <div class="img-box" id="btn-nav"><a href="#"><img src="./images/m-images/ico-m-burger.png" alt="네비게이션 버튼"></a></div>
+          </div>
+          <div id="nav-form" class="nav-form">
+            모바일 네이게이션
+            <div class="btn-nav-close" id="btn-nav-close">
+              닫기
+            </div>
+          </div>
+        </div>
+
+        <div id="login-form" class="login-form">
+          로그인
+          <div class="btn-login-close" id="btn-login-close">
+            닫기
           </div>
         </div>
       </div>
@@ -218,27 +241,50 @@
 
     let mainAd = document.getElementById('main-ad');
     let mainAdClose = document.getElementById('main-ad-close');
+    let loginForm = document.getElementById('login-form');
+    let btnTicketing = document.getElementById('btn-ticketing');
+    let btnAlarm = document.getElementById('btn-alarm');
+    let btnNav = document.getElementById('btn-nav');
+    let navForm = document.getElementById('nav-form');
+    let btnNavClose = document.getElementById('btn-nav-close');
+    let btnLoginClose = document.getElementById('btn-login-close');
+
     mainAdClose.onclick = function(){
       fnClose(mainAd);
     }
+    btnTicketing.onclick = function(event){    
+      fnLoginOpen(event)
+    }
+    btnAlarm.onclick = function(event){    
+      fnLoginOpen(event);
+    }
+    btnNav.onclick=function(event){
+      fnOpen(navForm);
+      event.preventDefault();
+    }
+    btnNavClose.onclick=function(){
+      fnClose(navForm);
+    }
+    btnLoginClose.onclick=function(){
+      fnClose(loginForm);
+    }
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+    function fnLoginOpen(el){
+      let cfValue = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
+      if(cfValue){
+        fnOpen(loginForm);
+      }else{
+        fnClose(loginForm);
+      }
+      el.preventDefault();
+    }
     function fnClose(el){
       el.style.display='none';
+    }
+    function fnOpen(el){
+      el.style.display='block';
     }
     
   </script>
