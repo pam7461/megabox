@@ -43,6 +43,10 @@
       color:var(--gray-444);
       line-height:1.2;
     }
+    .container{
+      max-width:1280px;
+      margin:0 auto;
+    }    
     #skip a{
       position:fixed;
       left:50%;
@@ -60,21 +64,59 @@
     }
     #wrap{
       overflow:hidden;
+      position:relative;
+
+      height:2000px;
+    }
+    #wrap::before{
+      content:'';
+      display:block;
+      position:absolute;
+      left:-200px;
+      right:-200px;
+      top:-200px;
+      bottom:-200px;
+      z-index:1;
+      background:url('./images/movie-list04.jpg') no-repeat center;
+      background-size:cover;
+      filter:blur(100px) grayscale(1);
     }
     .main-ad{
       display:none;
       background:var(--gray-ddd);
       position:relative;
-    }
-    .main-ad .img-box{
-      max-width:1280px;
-      margin:0 auto;
-    }
+      z-index:2;
+    }    
     .btn-close-ad{
       position:absolute;
       right:0;
       bottom:0;
+      width:20px;
+      height:20px;
+      background:var(--gray-000);
+      font-size:0;
+      cursor:pointer;
     }
+    .btn-close-ad::before,.btn-close-ad::after{
+      content:'';
+      display:block;
+      width:20px;
+      height:1px;
+      background:var(--gray-fff);
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%) rotate(45deg);
+    }
+    .btn-close-ad::after{
+      transform:translate(-50%,-50%) rotate(-45deg);
+    }
+    .header{
+      position:relative;
+      z-index:2;
+    }
+
+
 
 
 
@@ -88,19 +130,56 @@
 <body>
   <div id="skip"><a href="#main">본문 바로가기</a></div>
   <section id="wrap">
-    <section class="main-ad">
+    <section class="main-ad" id="main-ad">
       <div class="container">
         <div class="img-box"><a href="#"><img src="./images/banner-top.jpg" alt="광고"></a></div>
-        <div class="btn btn-close-ad">닫기</div>
+        <div class="btn btn-close-ad" id="main-ad-close">닫기</div>
       </div>
     </section>
-    <header class="header"></header>
+    <header class="header">
+      <div class="container">
+        <h1><a href="./index.html">MEET PLAY SHARE, 메가박스</a></h1>
+        <div class="row mnb">
+          <div class="h-left">
+            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-ticket.png" alt="빠른예매"></a></div>
+          </div>
+          <div class="h-right">
+            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-alarm.png" alt="알림"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/m-images/ico-m-burger.png" alt="네비게이션 버튼"></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
   </section>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.cookie.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    
+
+    let mainAd = document.getElementById('main-ad');
+    let mainAdClose = document.getElementById('main-ad-close');
+    mainAdClose.onclick = function(){
+      fnClose(mainAd);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    function fnClose(el){
+      el.style.display='none';
+    }
     
   </script>
 </body>
