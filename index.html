@@ -258,15 +258,17 @@
     .form-container .grid-container .img-box{
       width:40px;
     }
-    .nav-form{display:block;}
-    .mnb-top .container{
-      background:var(--sub-color01);
+    .nav-form{
+      display:block;      
+      background:var(--main-color);
     }
+    
     .mnb-top .grid-container{
       display:grid;
       grid-template-columns:auto auto;
       gap:2em;
       justify-content:space-between;
+      padding:20px;
       color:var(--gray-fff);
     }
     .mnb-top h2{
@@ -296,10 +298,60 @@
     .mnb-top .grid-container a:last-child{
       font-size:0.95em;
     }
-    .mnb-middle .container{
+    .mnb-middle{
+      padding:40px 20px 20px 20px;
+      border-top-left-radius:20px;
+      border-top-right-radius:20px;
       background:var(--gray-fff);
     }
-
+    .mnb-middle h2{
+      font-weight:700;
+      font-size:0.9em;
+      color:var(--gray-000);
+    }
+    .mnb-middle .grid-container{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      column-gap:0.5em;
+      row-gap:3em;
+      padding:1em;
+      font-weight:300;
+      color:var(--gray-111);
+    }
+    .mnb-middle .grid-container .img-box{
+      width:80%;
+      margin:0 auto 0.3em;
+      border-radius:50%;
+      border:1px solid var(--gray-aaa);
+      padding:0.5em;
+    }  
+    
+    .공지{
+      margin:2em 0 1.5em;
+      border-radius:0.3em;
+      padding:1em;
+      background:rgba(3,123,148,0.2);
+      font-size:0.9em;
+      color:var(--sub-color01);
+      text-align:center;
+    }
+    .mnb-middle .sns{
+      float:left;
+    }
+    .mnb-middle .notice{
+      float:right;
+    }
+    .mnb-middle .sns li,.mnb-middle .notice li{
+      display:inline-block;
+    }
+    .mnb-middle .sns li{
+      width:40px;
+      margin-right:0.3em;
+    }
+    .mnb-middle .notice li{
+      margin-left:1em;
+      padding-top:0.5em;
+    }
     @media (min-width:1280px){
       .main-ad{
         display:block;
@@ -319,14 +371,7 @@
       .mnb{
         display:none;
       }
-      .login-form .container{
-        grid-template-columns:1fr 1fr;
-        left:50%;
-        right:auto;
-        top:50%;
-        bottom:auto;
-        transform:translate(-50%,-50%);
-      }
+      
       .login-form h2{
         background:var(--sub-color01);
         text-align:left;
@@ -363,26 +408,85 @@
             <div class="img-box" id="btn-nav"><a href="#"><img src="./images/m-images/ico-m-burger.png" alt="네비게이션 버튼"></a></div>
           </div>
           <div id="nav-form" class="nav-form">            
-            <div class="mnb-top">
-              <div class="container">
-                <div class="grid-container">
-                  <h2><a href="./index.html">로그인 해주세요 :)</a></h2>
-                  <ul>
-                    <li class="img-box"><a href="#"><img src="./images/m-images/ico-m-set.png" alt="환경설정"></a></li>
-                    <li class="btn-nav-close close" id="btn-nav-close">                      
-                      닫기                      
-                    </li>
-                  </ul>
-                  <ul>
-                    <li id="btn-m-login"><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                  </ul>
-                  <a href="#">비회원 예매확인</a>
-                </div>               
-              </div> 
-            </div>
-            <div class="mnb-middle">
-              <div class="container"></div>
+            <div class="mnb-top">              
+              <div class="grid-container">
+                <h2><a href="./index.html">로그인 해주세요 :)</a></h2>
+                <ul>
+                  <li class="img-box"><a href="#"><img src="./images/m-images/ico-m-set.png" alt="환경설정"></a></li>
+                  <li class="btn-nav-close close" id="btn-nav-close">                      
+                    닫기                      
+                  </li>
+                </ul>
+                <ul>
+                  <li id="btn-m-login"><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                </ul>
+                <a href="#">비회원 예매확인</a>
+              </div></div>
+            <div class="mnb-middle">              
+              <h2>QUICK MENU</h2>
+              <ul class="grid-container">
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li>                  
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#">
+                    <div class="img-box"><img src="./images/m-images/rnb-ic-black-movie.png" alt="영화별예매"></div>
+                    <p>영화별예매</p>
+                  </a>
+                </li> 
+              </ul>
+              <p class="공지"><a href="#">[공지]메가박스 개인정보 처리방침 변경 안내</a></p>
+              <div class="sns-and-notice clearfix">
+                <ul class="sns">
+                  <li class="img-box"><a href="#"><img src="./images/m-images/sns-ico-m-facebook.png" alt="facebook"></a></li>
+                  <li class="img-box"><a href="#"><img src="./images/m-images/sns-ico-m-insta.png" alt="insta"></a></li>
+                  <li class="img-box"><a href="#"><img src="./images/m-images/sns-ico-m-youtube.png" alt="youtube"></a></li>
+                </ul>
+                <ul class="notice">
+                  <li><a href="#">알림</a></li>
+                  <li><a href="#">고객센터</a></li>
+                </ul>
+              </div>
             </div>
             <div class="mnb-bottom"></div>
           </div>
@@ -450,10 +554,12 @@
     }
     btnNav.onclick=function(event){
       fnOpen(navForm);
+      modalOn();
       event.preventDefault();
     }
     btnNavClose.onclick=function(){
       fnClose(navForm);
+      modalOff();
     }
     btnLoginClose.onclick=function(){
       fnClose(loginForm);
