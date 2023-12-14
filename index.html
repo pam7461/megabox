@@ -164,7 +164,6 @@
       gap:2px;
       justify-content:end;
     }
-
     .login-form,.nav-form{
       position:fixed;
       left:0;      
@@ -173,8 +172,7 @@
       bottom:0;
       background:rgba(0,0,0,0.5);
       display:none;
-    }
-    .login-form{display: block;}
+    }    
     .login-form .container,.nav-form .container{
       position:absolute;
       left:0;      
@@ -186,6 +184,7 @@
       padding-bottom:5em;
       background:var(--gray-fff);
       display:grid;
+      gap:2em;
     }
     .login-form h2,.btn-login-close{
       position:fixed;
@@ -259,6 +258,47 @@
     .form-container .grid-container .img-box{
       width:40px;
     }
+    .nav-form{display:block;}
+    .mnb-top .container{
+      background:var(--sub-color01);
+    }
+    .mnb-top .grid-container{
+      display:grid;
+      grid-template-columns:auto auto;
+      gap:2em;
+      justify-content:space-between;
+      color:var(--gray-fff);
+    }
+    .mnb-top h2{
+      font-weight:700;
+      font-size:1.4em;
+    }
+    .mnb-top ul{
+      display:grid;
+      grid-template-columns:30px 30px;
+      gap:0.5em;
+      justify-content:end;
+    }
+    .btn-nav-close{      
+      height:30px;
+      position:relative;
+      color:transparent;
+    }
+    .btn-nav-close::before,.btn-nav-close::after{
+      background:var(--gray-fff);
+    }
+    .mnb-top ul:last-of-type{      
+      grid-template-columns:auto auto;      
+      justify-content:start;
+      font-size:0.95em;
+      color:var(--sub-color02);
+    }
+    .mnb-top .grid-container a:last-child{
+      font-size:0.95em;
+    }
+    .mnb-middle .container{
+      background:var(--gray-fff);
+    }
 
     @media (min-width:1280px){
       .main-ad{
@@ -287,6 +327,18 @@
         bottom:auto;
         transform:translate(-50%,-50%);
       }
+      .login-form h2{
+        background:var(--sub-color01);
+        text-align:left;
+        color:var(--gray-fff);
+        font-size:1.4em;
+      }
+      .btn-login-close{
+        background:transparent;
+      }
+      .btn-login-close::before,.btn-login-close::after{
+        background:var(--gray-fff);
+      }
     }
   </style>
 </head>
@@ -310,11 +362,29 @@
             <div class="img-box" id="btn-alarm"><a href="#"><img src="./images/m-images/ico-m-alarm.png" alt="알림"></a></div>
             <div class="img-box" id="btn-nav"><a href="#"><img src="./images/m-images/ico-m-burger.png" alt="네비게이션 버튼"></a></div>
           </div>
-          <div id="nav-form" class="nav-form">
-            모바일 네이게이션
-            <div class="btn-nav-close" id="btn-nav-close">
-              닫기
+          <div id="nav-form" class="nav-form">            
+            <div class="mnb-top">
+              <div class="container">
+                <div class="grid-container">
+                  <h2><a href="./index.html">로그인 해주세요 :)</a></h2>
+                  <ul>
+                    <li class="img-box"><a href="#"><img src="./images/m-images/ico-m-set.png" alt="환경설정"></a></li>
+                    <li class="btn-nav-close close" id="btn-nav-close">                      
+                      닫기                      
+                    </li>
+                  </ul>
+                  <ul>
+                    <li id="btn-m-login"><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                  </ul>
+                  <a href="#">비회원 예매확인</a>
+                </div>               
+              </div> 
             </div>
+            <div class="mnb-middle">
+              <div class="container"></div>
+            </div>
+            <div class="mnb-bottom"></div>
           </div>
         </div>
 
