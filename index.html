@@ -10,6 +10,7 @@
   <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <title>MEET PLAY SHARE, 메가박스</title>
   <style>
+   
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
     :root{      
       --main-color:#252451;
@@ -163,14 +164,21 @@
 
     .login-form,.nav-form{
       position:fixed;
-      left:0;
+      left:0;      
       right:0;
       top:0;
       bottom:0;
-      background:var(--gray-fff);
+      background:rgba(0,0,0,0.5);
       display:none;
     }
-    
+    .login-form .container{
+      position:absolute;
+      left:0;      
+      right:0;
+      top:0;
+      bottom:0;
+      overflow:auto;
+    }
 
 
 
@@ -268,6 +276,7 @@
     let navForm = document.getElementById('nav-form');
     let btnNavClose = document.getElementById('btn-nav-close');
     let btnLoginClose = document.getElementById('btn-login-close');
+    let body = document.querySelector('body');
 
     mainAdClose.onclick = function(){
       fnClose(mainAd);
@@ -287,6 +296,7 @@
     }
     btnLoginClose.onclick=function(){
       fnClose(loginForm);
+      modalOff();
     }
     
 
@@ -295,8 +305,10 @@
       let cfValue = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
       if(cfValue){
         fnOpen(loginForm);
+        modalOn();
       }else{
         fnClose(loginForm);
+        modalOff();
       }
       el.preventDefault();
     }
@@ -307,6 +319,15 @@
       el.style.display='block';
     }
     
+    // 모달 on
+    function modalOn(){
+      body.style.overflow = 'hidden';
+    }
+
+    // 모달 off
+    function modalOff(){
+      body.style.overflow = 'auto';
+    }
   </script>
 </body>
 </html>
