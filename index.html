@@ -259,7 +259,7 @@
       width:40px;
     }
     .nav-form{
-      display:block;      
+      display:none;      
       background:var(--main-color);
     }
     
@@ -303,6 +303,8 @@
       border-top-left-radius:20px;
       border-top-right-radius:20px;
       background:var(--gray-fff);
+      height:calc(100vh - 119.23px - 77.375px);
+      overflow:auto;
     }
     .mnb-middle h2{
       font-weight:700;
@@ -317,9 +319,10 @@
       padding:1em;
       font-weight:300;
       color:var(--gray-111);
+      text-align:center;
     }
     .mnb-middle .grid-container .img-box{
-      width:80%;
+      width:60px;
       margin:0 auto 0.3em;
       border-radius:50%;
       border:1px solid var(--gray-aaa);
@@ -352,6 +355,21 @@
       margin-left:1em;
       padding-top:0.5em;
     }
+    .mnb .mnb-bottom{   
+      width:100%;   
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      background:#f0f0fa;
+    }
+    .mnb-bottom .img-box{
+      width:375px;
+      margin:0 auto;
+    }
+
+
+
     @media (min-width:1280px){
       .main-ad{
         display:block;
@@ -412,7 +430,7 @@
               <div class="grid-container">
                 <h2><a href="./index.html">로그인 해주세요 :)</a></h2>
                 <ul>
-                  <li class="img-box"><a href="#"><img src="./images/m-images/ico-m-set.png" alt="환경설정"></a></li>
+                  <li class="img-box" id="btn-control"><a href="#"><img src="./images/m-images/ico-m-set.png" alt="환경설정"></a></li>
                   <li class="btn-nav-close close" id="btn-nav-close">                      
                     닫기                      
                   </li>
@@ -422,7 +440,8 @@
                   <li><a href="#">회원가입</a></li>
                 </ul>
                 <a href="#">비회원 예매확인</a>
-              </div></div>
+              </div>
+            </div>
             <div class="mnb-middle">              
               <h2>QUICK MENU</h2>
               <ul class="grid-container">
@@ -488,7 +507,11 @@
                 </ul>
               </div>
             </div>
-            <div class="mnb-bottom"></div>
+            <div class="mnb-bottom">
+              <div class="img-box">
+                <a href="#"><img src="./images/banner-bottom.jpg" alt="banner bottom"></a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -542,6 +565,8 @@
     let btnNavClose = document.getElementById('btn-nav-close');
     let btnLoginClose = document.getElementById('btn-login-close');
     let body = document.querySelector('body');
+    let btnControl = document.getElementById('btn-control');
+    let btnMLlogin = document.getElementById('btn-m-login');
 
     mainAdClose.onclick = function(){
       fnClose(mainAd);
@@ -565,7 +590,12 @@
       fnClose(loginForm);
       modalOff();
     }
-    
+    btnControl.onclick = function(){
+      fnLoginOpen(loginForm); 
+    }
+    btnMLlogin.onclick = function(){
+      fnOpen(loginForm);
+    }
 
 
     function fnLoginOpen(el){
