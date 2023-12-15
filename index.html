@@ -369,7 +369,31 @@
     }
     .dnb{
       display:none;
+      font-weight:100;
+      color:var(--gray-ddd);
     }
+    .dnb-item{
+      display:grid;
+      grid-template-columns:auto auto;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .dnb-item ul{
+      display:grid;
+      grid-template-columns:repeat(3,auto);
+      gap:1.5em;
+    }
+    .h-top{
+      margin-bottom:1em;
+    }
+    .h-bottom ul{
+      grid-template-columns:repeat(2,auto);
+    }
+    nav.dnb-item ul{
+      gap:3.5em;
+      display:none;
+    }
+
 
 
 
@@ -382,7 +406,10 @@
         left:auto;
         right:auto;
         top:auto;
-        background:transparent;
+        border-bottom:1px solid var(--gray-555);
+        padding-top:1.2em;
+        padding-bottom:1.2em;
+        background:var(--gray-111);
       }
       h1 a{        
         background:url('./images/logo-white.png') no-repeat center;        
@@ -521,7 +548,7 @@
           </div>
         </div>
         <div class="row dnb">
-          <div class="h-top">
+          <div class="h-top dnb-item">
             <ul>
               <li title="VIP LOUNGE"><a href="#">VIP LOUNGE</a></li>
               <li title="멤버십"><a href="#">멤버십</a></li>
@@ -533,7 +560,7 @@
               <li title="빠른예매"><a href="#">빠른예매</a></li>
             </ul>
           </div>
-          <div class="h-bottom">
+          <div class="h-bottom dnb-item">
             <ul>
               <li title="사이트맵"><a href="#">사이트맵</a></li>
               <li title="검색"><a href="#">검색</a></li>
@@ -543,7 +570,7 @@
               <li title="나의 메가박스"><a href="#">나의 메가박스</a></li>
             </ul>
           </div>
-          <nav>
+          <nav class="dnb-item">
             <ul class="main-nav">
               <li>
                 <a href="#">영화</a>
