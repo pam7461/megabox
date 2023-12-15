@@ -139,6 +139,16 @@
       padding:0.6em 0;
       background:var(--main-color);
     }
+    .header.active::before{
+      content:'';
+      display:block; 
+      position:absolute;
+      left:0;
+      right:0;
+      top:calc(100% + 1px);
+      height:42px;
+      background:var(--gray-111);
+    }
     h1 a{
       display:block;
       position:absolute;
@@ -423,6 +433,9 @@
     nav.dnb-item>ul{
       gap:2.5em;      
     }
+    .main-nav>li{
+      position:relative;
+    }
     .main-nav>li>a{
       border-bottom:3px solid transparent;
       padding-bottom:19px;
@@ -432,7 +445,27 @@
     }
 
     .sub-nav{
+      position:absolute;
+      left:50%;
+      top:48px;
+      transform:translateX(-50%);
       display:none;
+      grid-template-columns:auto auto auto;
+      gap:1.5em;  
+      justify-content:center;    
+      width:500px;
+      padding-top:0.8em;
+      font-size:0.75em;
+    }
+    .main-nav>li:hover .sub-nav{
+      display:grid;
+    }
+    
+
+
+    .main-nav li:nth-child(3) .sub-nav,
+    .main-nav li:nth-child(6) .sub-nav{
+      grid-template-columns: auto auto;
     }
 
 
@@ -498,7 +531,7 @@
         <div class="btn btn-close-ad close" id="main-ad-close">닫기</div>
       </div>
     </section>
-    <header class="header">
+    <header class="header">      
       <div class="container">
         <h1 title="시작페이지로 이동합니다."><a href="./index.html">MEET PLAY SHARE, 메가박스</a></h1>
         <div class="row mnb">
@@ -754,6 +787,14 @@
     dnbLogin.onclick= function(){
       fnOpen(loginForm);
     }
+
+
+    $('.main-nav>li').mouseenter(function(){
+      $('.header').addClass('active');
+    })
+    $('.header').mouseleave(function(){
+      $(this).removeClass('active');
+    })
 
 
     function fnLoginOpen(el){
