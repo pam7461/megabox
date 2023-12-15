@@ -371,6 +371,7 @@
       display:none;
       font-weight:100;
       color:var(--gray-ddd);
+      position:relative;
     }
     .dnb-item{
       display:grid;
@@ -378,7 +379,7 @@
       justify-content:space-between;
       align-items:center;
     }
-    .dnb-item ul{
+    .dnb-item>ul{
       display:grid;
       grid-template-columns:repeat(3,auto);
       gap:1.5em;
@@ -409,9 +410,29 @@
     .dnb-mymega{
       background-image:url('./images/ico-mymega-white.png');
     }
-    nav.dnb-item ul{
-      gap:3.5em;
-      
+    nav.dnb-item{
+      position:absolute;
+      left:50%;
+      bottom:5px;
+      transform:translateX(-50%);
+      width:850px;
+      font-weight:400;
+      font-size:1.4em;
+      color:var(--gray-eee);
+    }
+    nav.dnb-item>ul{
+      gap:2.5em;      
+    }
+    .main-nav>li>a{
+      border-bottom:3px solid transparent;
+      padding-bottom:19px;
+    }
+    .main-nav>li>a:hover{
+      border-bottom-color:var(--gray-eee);
+    }
+
+    .sub-nav{
+      display:none;
     }
 
 
