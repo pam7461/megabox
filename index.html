@@ -154,6 +154,7 @@
       position:absolute;
       left:50%;
       top:50%;
+      z-index:1000;
       transform:translate(-50%,-50%);
       background:url('./images/m-images/m-logo-white.png') no-repeat center;
       background-size:cover;
@@ -382,6 +383,7 @@
       font-weight:100;
       color:var(--gray-ddd);
       position:relative;
+      z-index:999;
     }
     .dnb-item{
       display:grid;
@@ -440,7 +442,10 @@
       border-bottom:3px solid transparent;
       padding-bottom:19px;
     }
-    .main-nav>li>a:hover{
+    .main-nav:nth-child(2)>li:nth-child(2)>a{
+      border-bottom:3px solid transparent !important;
+    }
+    .main-nav>li>a.active{
       border-bottom-color:var(--gray-eee);
     }
 
@@ -455,10 +460,14 @@
       justify-content:center;    
       width:500px;
       padding-top:0.8em;
+      font-weight:300;
       font-size:0.75em;
     }
-    .main-nav>li:hover .sub-nav{
+    .main-nav>li.active .sub-nav{
       display:grid;
+    }
+    .sub-nav a:hover{
+      text-decoration:underline;
     }
     
 
@@ -689,7 +698,7 @@
                   <li><a href="#">당첨자발표</a></li>
                 </ul>
               </li>
-              <li>
+              <li id="store" hidden-data="true">
                 <a href="#">스토어</a>                
               </li>
               <li>
@@ -755,6 +764,13 @@
     let btnControl = document.getElementById('btn-control');
     let btnMLlogin = document.getElementById('btn-m-login');
     let dnbLogin = document.getElementById('dnb-login');
+    let mainNavLis = document.querySelectorAll('.main-nav>li');
+    let header = document.querySelector('header');
+    let mainNavLiAs = document.querySelectorAll('.main-nav>li>a');
+    let subNavs = document.querySelectorAll('.sub-nav');
+    // let hiddenData = document.getElementById('store').getAttribute('hidden-data');
+
+    // console.log(store.getAttribute('hidden-data'));
 
     mainAdClose.onclick = function(){
       fnClose(mainAd);
@@ -787,14 +803,42 @@
     dnbLogin.onclick= function(){
       fnOpen(loginForm);
     }
+   
+    for(let item of mainNavLis){
+      item.onmouseenter = function(){        
+        let hiddenData = item.getAttribute('hidden-data');
+        if(hiddenData == 'true'){
+          header.classList.remove('active');
+        }else{
+          header.classList.add('active');
+        }
+          
+        for(let item of mainNavLis){
+          item.classList.remove('active');          
+        }
+        this.classList.add('active');
+      }
+    }  
 
+    header.onmouseleave = function(){
+      this.classList.remove('active');
+      for(let item of mainNavLiAs){
+        item.classList.remove('active');
+      }
+      for(let item of mainNavLis){
+        item.classList.remove('active');
+      }
+    }
 
-    $('.main-nav>li').mouseenter(function(){
-      $('.header').addClass('active');
-    })
-    $('.header').mouseleave(function(){
-      $(this).removeClass('active');
-    })
+    for(let item of mainNavLiAs){
+      item.onmouseenter = function(){
+        for(let item of mainNavLiAs){
+          item.classList.remove('active');
+        }
+        this.classList.add('active');
+      }
+    }
+
 
 
     function fnLoginOpen(el){
