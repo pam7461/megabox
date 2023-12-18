@@ -493,13 +493,38 @@
     .ticketing-nav{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      margin-bottom:1.5em;
+      max-width:800px;
+      margin:0 auto 1.5em;
       text-align:center;      
     }
     .ticketing-nav li{
-      
+      border-right:1px solid var(--main-color);
+      padding:1em 0;
+      background:#fff;      
+      color:var(--main-color);
+      cursor:pointer;
+    }  
+    .ticketing-nav li:last-child{
+      border-right:none;
+    }  
+    .ticketing-nav li.active,.ticketing-nav li:hover{
+      background:var(--main-color);
+      color:#fff;
+    }
+    .ticketing-nav span{
+      display:none;
     }
 
+
+
+    @media (min-width:640px){
+      .ticketing-nav li{
+        font-size:1.1em;
+      }
+      .ticketing-nav span{
+        display:inline;
+      }
+    }
 
 
 
@@ -778,8 +803,8 @@
           <ul class="ticketing-nav">
             <li class="active">박스오피스</li>
             <li>상영예정작</li>
-            <li>클레식소사이어티</li>
-            <li>필름소사이어티</li>
+            <li>클<span>레식</span>소<span>사이어디</span></li>
+            <li>필<span>름</span>소<span>사이어디</span></li>
           </ul>
         </nav>
       </div>
@@ -922,6 +947,15 @@
     function modalOff(){
       body.style.overflow = 'auto';
     }
+
+
+
+
+    // jQuery
+    $('.ticketing-nav li').click(function(){
+      $('.ticketing-nav li').removeClass('active');
+      $(this).addClass('active');
+    })
   </script>
 </body>
 </html>
