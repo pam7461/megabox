@@ -7,7 +7,7 @@
 
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/reset.css">
-  <!-- <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
+  <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <title>MEET PLAY SHARE, 메가박스</title>
   <style>
    
@@ -514,8 +514,70 @@
     .ticketing-nav span{
       display:none;
     }
+    .movie-swiper .grid-container{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      row-gap:1em;
+      column-gap:0.5em;
+      position:relative;
+    }
     .movie-name{
       display:none;
+    }
+    .movie-num{
+      position:absolute;
+      left:20px;
+      top:20px;
+      z-index:1;
+      font-weight:700;
+      font-size:1.2em;
+      font-style:italic;      
+    }
+    .movie-img{
+      grid-area:1/1/2/3;
+      border-radius:1em;
+      overflow:hidden;
+    }
+    .movie-best,.movie-ticketing{
+      border:1px solid #999;
+      border-radius:5px;
+      padding:0.5em;
+      background:#000;
+      text-align:center;
+    }
+    .movie-ticketing{
+      border:none;
+      background:var(--sub-color02);
+    }
+    .movie-con{
+      grid-area:1/1/2/3;      
+      background:rgba(0,0,0,0.2);      
+    }
+    .movie-con a{
+      display:flex; 
+      width:100%;
+      height:100%;     
+      padding:20px;
+      flex-flow:column nowrap;
+      justify-content:space-between;
+    }
+    .movie-txt{
+      height:160px;
+      /* white-space:nowrap; */
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .movie-review{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .movie-review span:last-child{
+      padding-left:0.5em;
+      padding-bottom:5px;
+      font-weight:700;
+      font-size:2em;
+      color:var(--sub-color01);
     }
 
 
@@ -1129,7 +1191,7 @@
   </section>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.cookie.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
 
     let mainAd = document.getElementById('main-ad');
@@ -1258,6 +1320,28 @@
       $('.ticketing-nav li').removeClass('active');
       $(this).addClass('active');
     })
+
+    const movieSwiper = new Swiper('.movie-swiper',{
+      slidesPerView:1.5,
+      spaceBetween:20,
+      freeMode:true,
+      breakpoints:{
+        640:{
+          slidesPerView:2.2,
+        },
+        760:{
+          slidesPerView:2.8,
+          spaceBetween:30,
+        },
+        960:{
+          slidesPerView:3.5,          
+        },
+        1280:{
+          slidesPerView:4.3,
+          spaceBetween:40,
+        }
+      }
+    });
   </script>
 </body>
 </html>
