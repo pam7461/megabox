@@ -33,7 +33,7 @@
       --gray-ddd:#ddd;
       --gray-eee:#eee;
       --gray-fff:#fff;
-      --main-tit:32px;
+      --main-tit:30px;
       --sub-tit:24px;
       --small-tit:18px;
       --con-txt:15px;      
@@ -81,8 +81,6 @@
     #wrap{
       overflow:hidden;
       position:relative;
-
-      height:2000px;
     }
     #wrap::before{
       content:'';
@@ -135,7 +133,7 @@
       left:0;
       right:0;
       top:0;
-      z-index:2;
+      z-index:3;
       padding:0.6em 0;
       background:var(--main-color);
     }
@@ -181,6 +179,7 @@
       right:0;
       top:0;
       bottom:0;
+      z-index:9999;
       background:rgba(0,0,0,0.5);
       display:none;
     }    
@@ -338,8 +337,7 @@
       border-radius:50%;
       border:1px solid var(--gray-aaa);
       padding:0.5em;
-    }  
-    
+    }      
     .공지{
       margin:2em 0 1.5em;
       border-radius:0.3em;
@@ -448,7 +446,6 @@
     .main-nav>li>a.active{
       border-bottom-color:var(--gray-eee);
     }
-
     .sub-nav{
       position:absolute;
       left:50%;
@@ -468,13 +465,39 @@
     }
     .sub-nav a:hover{
       text-decoration:underline;
-    }
-    
-
-
+    }   
     .main-nav li:nth-child(3) .sub-nav,
     .main-nav li:nth-child(6) .sub-nav{
       grid-template-columns: auto auto;
+    }
+    .sec{
+      padding:50px 0;
+      position:relative;
+      z-index:2;
+    }
+    .sec .sec-tit{
+      margin-bottom:2em;
+      font-size:var(--main-tit);      
+    }
+    .ticketing,.curation{
+      color:var(--gray-fff);
+    }
+    .benefit,.mega-info{
+      background:var(--gray-fff);
+      color:var(--main-color);
+    }
+    
+    .ticketing .container{
+      padding-top:50px;
+    }
+    .ticketing-nav{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      margin-bottom:1.5em;
+      text-align:center;      
+    }
+    .ticketing-nav li{
+      
     }
 
 
@@ -527,6 +550,9 @@
       }
       .dnb{
         display:block;
+      }
+      .ticketing .container{
+        padding-top:0;
       }
     }
   </style>
@@ -745,6 +771,34 @@
         </div>
       </div>
     </header>
+    <section class="sec sec01 ticketing">
+      <div class="container">
+        <h2 class="sec-tit">영화예매</h2>
+        <nav>
+          <ul class="ticketing-nav">
+            <li class="active">박스오피스</li>
+            <li>상영예정작</li>
+            <li>클레식소사이어티</li>
+            <li>필름소사이어티</li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="sec sec02 benefit">
+      <div class="container">
+        <h2 class="sec-tit">혜택</h2>        
+      </div>
+    </section>
+    <section class="sec sec03 curation">
+      <div class="container">
+        <h2 class="sec-tit">큐레이션</h2>
+      </div>
+    </section>
+    <section class="sec sec04 mega-info">
+      <div class="container">
+        <h2 class="sec-tit">메가박스 안내</h2>
+      </div>
+    </section>
   </section>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.cookie.min.js"></script>
