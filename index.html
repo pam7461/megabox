@@ -1010,10 +1010,10 @@
         <h2 class="sec-tit">영화예매</h2>
         <nav>
           <ul class="ticketing-nav">
-            <li select-num="0" class="active">박스오피스</li>
-            <li select-num="1">상영예정작</li>
-            <li select-num="2">클<span>레식</span>소<span>사이어디</span></li>
-            <li select-num="3">필<span>름</span>소<span>사이어디</span></li>
+            <li select-movie="boxoffice" class="active">박스오피스</li>
+            <li select-movie="exp">상영예정작</li>
+            <li select-movie="clasic">클<span>레식</span>소<span>사이어디</span></li>
+            <li select-movie="film">필<span>름</span>소<span>사이어디</span></li>
           </ul>
         </nav>
         <article class="art movie">
@@ -1481,7 +1481,20 @@
 
     $('.ticketing-nav li').click(function(){
       $('.ticketing-nav li').removeClass('active');
-      $(this).addClass('active');      
+      $(this).addClass('active');
+      let sJson = './ajax/' + $(this).attr('select-movie') + '.json';
+      $.getJSON(sJson,function(data){
+        $.each(data,function(idx,row){
+          $('.movie-name').eq(idx).text(row.movieName);
+          $('.movie-num').eq(idx).text(row.movieNum);
+          $('.movie-img img').eq(idx).attr('src',row.movieSrc);
+          $('.movie-img img').eq(idx).attr('alt',row.movieAlt);
+          $('.movie-best').eq(idx).text(row.movieBest);
+          $('.movie-txt').eq(idx).text(row.movieTxt);
+          $('.movie-review span:last-child').eq(idx).text(row.movieReview);
+        })
+      });
+
     })
 
     const movieSwiper = new Swiper('.movie-swiper',{
@@ -1506,15 +1519,17 @@
       }
     });
     
+    function fnJson(data){
 
+    }
 
  // JSON연습
  // $.getJSON(url,callback);
-    $.getJSON('./ajax/boxoffice.json',function(data){
-      $.each(data,function(index,row){
-        console.log(`${index} : ${row.name}, ${row.age}, ${row.address}`);
-      })            
-    })
+    // $.getJSON('./ajax/boxoffice.json',function(data){
+    //   $.each(data,function(index,row){
+    //     console.log(row.movieName);
+    //   })            
+    // })
   </script>
 </body>
 </html>
