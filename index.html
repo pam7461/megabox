@@ -499,7 +499,7 @@
       display:grid;
       grid-template-columns:repeat(4,1fr);
       max-width:800px;
-      margin:0 auto 1.5em;
+      margin:0 auto 4em;
       text-align:center;      
     }
     .ticketing-nav li{
@@ -519,7 +519,6 @@
     .ticketing-nav span{
       display:none;
     }
-
     .ticketing .art .grid-container{
       display:grid;
       grid-template-columns:1fr 2fr;
@@ -610,8 +609,26 @@
       font-size:2em;
       color:var(--sub-color01);
     }
+    .movie-bottom-nav{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      padding:2em 0;
+      background:#111;
+      text-align:center;
+      font-size:1.1em;
+    }
+    .movie-bottom-nav li{
+      border-right:1px solid #999;
+      padding:0.5em 0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-
+    .movie-bottom-nav li:last-child{
+      border-right:none;
+    }
+    
 
     @media (min-width:640px){
       .ticketing-nav li{
@@ -2102,6 +2119,22 @@
             </div>            
           </div>
         </article>
+        <nav>
+          <ul class="movie-bottom-nav">
+            <li>
+              <input type="search" placeholder="영화명을 입력해주세요">
+            </li>
+            <li>
+              <a href="#"><span>상영시간표</span></a>
+            </li>
+            <li>
+              <a href="#"><span>박스오피스</span></a>
+            </li>
+            <li>
+              <a href="#"><span>빠른예매</span></a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </section>
     <section class="sec sec02 benefit">
