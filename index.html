@@ -612,7 +612,7 @@
     .movie-bottom-nav{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      padding:2em 0;
+      padding:1em 0;
       background:#111;
       text-align:center;
       font-size:1.1em;
@@ -624,7 +624,42 @@
       justify-content:center;
       align-items:center;
     }
+    .movie-bottom-nav a::before,
+    .movie-bottom-nav li:first-child::before{
+      content:'';
+      display:inline-block;
+      width:24px;
+      height:24px;
+      background:no-repeat center;
+      background-size:contain;
+      background-image:url('./images/ico-search-white.png');
+    }
+    .movie-bottom-nav li:nth-child(2) a::before{
+      background-image:url('./images/ico-schedule-main.png');
+    }
+    .movie-bottom-nav li:nth-child(3) a::before{
+      background-image:url('./images/ico-boxoffice-main.png');
+    }
+    .movie-bottom-nav li:nth-child(4) a::before{
+      background-image:url('./images/ico-quick-reserve-main.png');
+    }
 
+
+    .movie-bottom-nav a span,
+    .movie-bottom-nav input{
+      display:none;
+    }
+    .movie-bottom-nav input{
+      width:60%;
+      border-radius:0;
+      border-bottom:1px solid #999;
+      outline:none;
+      background:transparent;
+      color:#fff;
+    }
+    .movie-bottom-nav input::placeholder{
+      color:#999;
+    }
     .movie-bottom-nav li:last-child{
       border-right:none;
     }
@@ -639,6 +674,22 @@
       }
     }
 
+    @media (min-width:760px){
+      
+      .movie-bottom-nav a{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+      }
+      .movie-bottom-nav li:first-child::before,
+      .movie-bottom-nav a::before{
+        margin-right:1em;
+      }
+      .movie-bottom-nav a span,
+      .movie-bottom-nav input{
+        display:inline;
+      }
+    }
 
 
     @media (min-width:1280px){
