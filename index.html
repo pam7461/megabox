@@ -486,6 +486,9 @@
       background:var(--gray-fff);
       color:var(--main-color);
     }
+    .ticketing{
+      margin-bottom:100px;
+    }
     .ticketing .art{
       display:none;
     }
@@ -612,6 +615,7 @@
     .movie-bottom-nav{
       display:grid;
       grid-template-columns:repeat(4,1fr);
+      margin-bottom:100px;
       padding:1em 0;
       background:#111;
       text-align:center;
@@ -663,7 +667,32 @@
     .movie-bottom-nav li:last-child{
       border-right:none;
     }
-    
+    .move-mouse{
+      position:relative;
+      animation:moving 1.5s linear infinite;      
+    }
+    .move-mouse::before,.move-mouse::after{
+      box-sizing:border-box;
+      content:'';
+      display:block;
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translateX(-50%);
+    }
+    .move-mouse::before{
+      width:18px;
+      height:26px;
+      border:2px solid #fff;
+      border-radius:9px;
+    }
+    .move-mouse::after{
+      top:5px;
+      width:2px;
+      height:7px;
+      border:1px solid #fff;
+      border-radius:1px;
+    }
 
     @media (min-width:640px){
       .ticketing-nav li{
@@ -742,6 +771,27 @@
       }
       .ticketing .container{
         padding-top:0;
+      }
+    }
+
+
+
+
+    @keyframes moving {
+      0%{
+        transform:translateY(0);
+      }
+      15%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+      85%{
+        transform:translateY(0);
+      }
+      100%{
+        transform:translateY(0);
       }
     }
   </style>
@@ -2186,6 +2236,7 @@
             </li>
           </ul>
         </nav>
+        <div class="move-mouse"></div>
       </div>
     </section>
     <section class="sec sec02 benefit">
