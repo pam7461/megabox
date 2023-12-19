@@ -1510,19 +1510,13 @@
           $('.movie-img img').eq(idx).attr('src',row.movieSrc);
           $('.movie-img img').eq(idx).attr('alt',row.movieAlt);
           $('.movie-best').eq(idx).text(row.movieBest);
-          $('.movie-txt').eq(idx).text(row.movieTxt);
+          $('.movie-txt').eq(idx).html(row.movieTxt);
           $('.movie-review span:last-child').eq(idx).text(row.movieReview);
         })
       });
     }
 
- // JSON연습
- // $.getJSON(url,callback);
-    // $.getJSON('./ajax/boxoffice.json',function(data){
-    //   $.each(data,function(index,row){
-    //     console.log(row.movieName);
-    //   })            
-    // })
+ 
   </script>
 </body>
 </html>
