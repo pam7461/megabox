@@ -1526,6 +1526,7 @@
         </div>       
       </div>
     </section>
+    
     <section class="sec sec03 curation">
       <div class="container">
         <h2 class="sec-tit">큐레이션</h2>
@@ -1756,15 +1757,15 @@
     })
 
     // 랜덤(0~3)
-    let idx = (Math.round(Math.random()*10) % 4);
-    let idx2 = Math.random();
-    idx2 = Math.round(idx2*10);
-    idx2 = idx2 % 4;    
-
-    $('.benefit-banner .img-box').removeClass('active');
-    $('.benefit-banner .img-box').eq(idx).addClass('active');
-    $('.benefit-banner .img-box').eq(idx+4).addClass('active');
-    $('.benefit-banner .img-box').eq(idx+8).addClass('active');
+    let randomBenefit = setInterval(function(){
+      let idx = (Math.round(Math.random()*10) % 4);
+      
+      $('.benefit-banner .img-box').removeClass('active');
+      $('.art03 .img-box').eq(idx).addClass('active');
+      $('.art04 .img-box').eq(idx).addClass('active');
+      $('.art05 .img-box').eq(idx).addClass('active');
+    },5000);
+      
   </script>
 </body>
 </html>
