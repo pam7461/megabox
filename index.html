@@ -771,7 +771,8 @@
     }
     .benefit-start-pause .benefit-start,
     .benefit-start-pause .benefit-pause{
-      display:none;
+      display:none;      
+      cursor:pointer;
     }
     .benefit-start-pause .benefit-start.active,
     .benefit-start-pause .benefit-pause.active{
@@ -801,6 +802,12 @@
     }
     .benefit-pagination.swiper-pagination-fraction{
       color:var(--sub-color01) !important;
+    }
+    .benefit-banner .img-box{
+      display:none;
+    }
+    .benefit-banner .img-box.active{
+      display:block;
     }
 
 
@@ -1498,14 +1505,23 @@
               </div>
             </div>            
           </article>
-          <article class="art art03">
-            <div class="img-box"><a href="#"><img src="./images/benefit-banner01-01.jpg" alt="베너1"></a></div>
+          <article class="art art03 benefit-banner">
+            <div class="img-box active"><a href="#"><img src="./images/benefit-banner01-01.jpg" alt="베너1"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner01-02.jpg" alt="베너1"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner01-03.jpg" alt="베너1"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner01-04.jpg" alt="베너1"></a></div>
           </article>
-          <article class="art art04">
+          <article class="art art04 benefit-banner">
             <div class="img-box"><a href="#"><img src="./images/benefit-banner02-01.jpg" alt="베너2"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner02-02.jpg" alt="베너2"></a></div>
+            <div class="img-box active"><a href="#"><img src="./images/benefit-banner02-03.jpg" alt="베너2"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner02-04.jpg" alt="베너2"></a></div>
           </article>
-          <article class="art art05">
+          <article class="art art05 benefit-banner">
             <div class="img-box"><a href="#"><img src="./images/benefit-banner03-01.jpg" alt="베너3"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner03-02.jpg" alt="베너3"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner03-03.png" alt="베너3"></a></div>
+            <div class="img-box active"><a href="#"><img src="./images/benefit-banner03-04.jpg" alt="베너3"></a></div>
           </article>
         </div>       
       </div>
@@ -1715,7 +1731,40 @@
       loop:true,
     });
  
-    
+    // 터치 잠금
+    benefitSwiper01.allowTouchMove=false;
+    benefitSwiper02.allowTouchMove=false;
+
+    // 베네핏 슬라이더 동기화
+    benefitSwiper01.controller.control = benefitSwiper02;
+    benefitSwiper02.controller.control = benefitSwiper01;
+
+    // 자동재생
+    benefitSwiper02.autoplay.start();
+
+    // 베네핏 슬라이더 멈춤이벤트
+    $('.benefit-pause').click(function(){
+      $(this).removeClass('active');
+      $('.benefit-start').addClass('active');
+      benefitSwiper02.autoplay.pause();
+    })
+    // 베네핏 슬라이더 재생이벤트
+    $('.benefit-start').click(function(){
+      $(this).removeClass('active');
+      $('.benefit-pause').addClass('active');
+      benefitSwiper02.autoplay.start();
+    })
+
+    // 랜덤(0~3)
+    let idx = (Math.round(Math.random()*10) % 4);
+    let idx2 = Math.random();
+    idx2 = Math.round(idx2*10);
+    idx2 = idx2 % 4;    
+
+    $('.benefit-banner .img-box').removeClass('active');
+    $('.benefit-banner .img-box').eq(idx).addClass('active');
+    $('.benefit-banner .img-box').eq(idx+4).addClass('active');
+    $('.benefit-banner .img-box').eq(idx+8).addClass('active');
   </script>
 </body>
 </html>
