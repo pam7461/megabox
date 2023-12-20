@@ -697,6 +697,9 @@
       grid-column:1/6;
       grid-row:1/2;
     }
+    .benefit-swiper01{      
+      padding-bottom:50px;
+    }
     .benefit .art02{
       grid-column:6/11;
       grid-row:1/2;
@@ -721,6 +724,85 @@
       height:100%;
       object-fit:cover;
     }
+    .benefit-controls{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      display: grid;
+      grid-template-columns:repeat(16,1fr);
+      gap:6px;
+      align-items:center;
+    }
+    .benefit-scrollbar{
+      position:static !important;
+      grid-column: 1/11;
+      height:2px !important;
+    }
+    .benefit-scrollbar .swiper-scrollbar-drag{
+      background:var(--sub-color01) !important;
+    }
+    .benefit-button-prev{
+      position:static !important;
+      grid-column: 12/13;
+      width:auto;
+      height:auto;
+      margin-top:0;
+      z-index:auto;
+      display:block;
+      color:var(--sub-color01);
+    }
+    .benefit-button-prev::after,.benefit-button-next::after{
+      font-weight:900;
+      font-size:1em;
+    }
+    .benefit-button-next{
+      position:static !important;
+      grid-column: 13/14;
+      width:auto;
+      height:auto;
+      margin-top:0;
+      z-index:auto;
+      display:block;
+      color:var(--sub-color01);
+    }
+    .benefit-start-pause{
+      grid-column: 14/15;
+    }
+    .benefit-start-pause .benefit-start,
+    .benefit-start-pause .benefit-pause{
+      display:none;
+    }
+    .benefit-start-pause .benefit-start.active,
+    .benefit-start-pause .benefit-pause.active{
+      display:block;
+    }
+    .benefit-start-pause span{
+      display:none;
+    }
+    .benefit-start-pause .benefit-start::before,
+    .benefit-start-pause .benefit-pause::before{
+      content:'';
+      display:block;
+      box-sizing:border-box;
+      width:10px;
+      height:10px;
+      border:5px solid var(--sub-color01);      
+    }
+    .benefit-start-pause .benefit-start::before{
+      margin-left:2.5px;
+      border-top-color:transparent;
+      border-right-color:transparent;
+      border-bottom-color:transparent;
+    }
+    .benefit-pagination{
+      position:static !important;
+      grid-column:15/17;
+    }
+    .benefit-pagination.swiper-pagination-fraction{
+      color:var(--sub-color01) !important;
+    }
+
 
 
 
@@ -1386,10 +1468,16 @@
                   <div class="img-box"><a href="#"><img src="./images/benefit04-01.jpg" alt="메가박스 오리지널 티켓04"></a></div>
                 </div>                
               </div>
-              <div class="swiper-pagination benefit-pagination"></div>
-              <div class="swiper-button-prev benefit-button-prev"></div>
-              <div class="swiper-button-next benefit-button-next"></div>
-              <div class="swiper-scrollbar benefit-scrollbar"></div>
+              <div class="benefit-controls">
+                <div class="swiper-scrollbar benefit-scrollbar"></div>
+                <div class="swiper-button-prev benefit-button-prev"></div>
+                <div class="swiper-button-next benefit-button-next"></div>
+                <div class="benefit-start-pause">
+                  <div class="benefit-start"><span>재생</span></div>
+                  <div class="benefit-pause active"><span>멈춤</span></div>
+                </div>
+                <div class="swiper-pagination benefit-pagination"></div>
+              </div>              
             </div>            
           </article>
           <article class="art art02">
@@ -1616,6 +1704,7 @@
       },
       pagination:{
         el:'.benefit-pagination',
+        type:'fraction',
       },
       scrollbar:{
         el:'.benefit-scrollbar',
@@ -1626,6 +1715,7 @@
       loop:true,
     });
  
+    
   </script>
 </body>
 </html>
