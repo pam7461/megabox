@@ -107,8 +107,7 @@
       z-index:1;
       /* background: repeating-linear-gradient(transparent,transparent 1px,var(--gray-000) 1px, var(--gray-000) 2px); */
       background:rgba(0,0,0,0.5);
-    }
-    
+    }    
     .main-ad{
       display:none;
       background:var(--gray-ddd);
@@ -645,8 +644,6 @@
     .movie-bottom-nav li:nth-child(4) a::before{
       background-image:url('./images/ico-quick-reserve-main.png');
     }
-
-
     .movie-bottom-nav a span,
     .movie-bottom-nav input{
       display:none;
@@ -691,6 +688,41 @@
       border:1px solid #fff;
       border-radius:1px;
     }
+    .benefit .grid-container{
+      display:grid;
+      grid-template-columns:repeat(10,1fr);
+      gap:20px;
+    }
+    .benefit .art01{
+      grid-column:1/6;
+      grid-row:1/2;
+    }
+    .benefit .art02{
+      grid-column:6/11;
+      grid-row:1/2;
+    }
+    .benefit .art03{
+      grid-column:1/8;
+      grid-row:2/3;
+    }
+    .benefit .art04{
+      grid-column:8/11;
+      grid-row:2/3;
+    }
+    .benefit .art05{
+      display:none;
+      grid-column:11/17;
+      grid-row:1/3;
+    }
+    .benefit .art .img-box{
+      height:100%;
+    }
+    .benefit .art img{
+      height:100%;
+      object-fit:cover;
+    }
+
+
 
     @media (min-width:640px){
       .ticketing-nav li{
@@ -718,6 +750,14 @@
       }
     }
 
+    @media (min-width:960px){
+      .benefit .grid-container{
+        grid-template-columns:repeat(16,1fr);
+      }
+      .benefit .art05{
+        display:block;        
+      }
+    }
 
     @media (min-width:1280px){
       .main-ad{
@@ -1328,7 +1368,58 @@
     </section>
     <section class="sec sec02 benefit">
       <div class="container">
-        <h2 class="sec-tit">혜택</h2>        
+        <h2 class="sec-tit">혜택</h2> 
+        <div class="grid-container">
+          <article class="art art01">
+            <div class="swiper benefit-swiper01">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit01-01.jpg" alt="메가박스 오리지널 티켓01"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit02-01.jpg" alt="메가박스 오리지널 티켓02"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit03-01.jpg" alt="메가박스 오리지널 티켓03"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit04-01.jpg" alt="메가박스 오리지널 티켓04"></a></div>
+                </div>                
+              </div>
+              <div class="swiper-pagination benefit-pagination"></div>
+              <div class="swiper-button-prev benefit-button-prev"></div>
+              <div class="swiper-button-next benefit-button-next"></div>
+              <div class="swiper-scrollbar benefit-scrollbar"></div>
+            </div>            
+          </article>
+          <article class="art art02">
+            <div class="swiper benefit-swiper02">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit01-02.jpg" alt="메가박스 오리지널 티켓05"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit02-02.jpg" alt="메가박스 오리지널 티켓06"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit03-02.jpg" alt="메가박스 오리지널 티켓07"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box"><a href="#"><img src="./images/benefit04-02.jpg" alt="메가박스 오리지널 티켓08"></a></div>
+                </div>                
+              </div>
+            </div>            
+          </article>
+          <article class="art art03">
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner01-01.jpg" alt="베너1"></a></div>
+          </article>
+          <article class="art art04">
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner02-01.jpg" alt="베너2"></a></div>
+          </article>
+          <article class="art art05">
+            <div class="img-box"><a href="#"><img src="./images/benefit-banner03-01.jpg" alt="베너3"></a></div>
+          </article>
+        </div>       
       </div>
     </section>
     <section class="sec sec03 curation">
@@ -1516,6 +1607,24 @@
       });
     }
 
+    const benefitSwiper01 = new Swiper('.benefit-swiper01',{
+      effect:'fade',
+      loop:true,
+      navigation:{
+        nextEl:'.benefit-button-next',
+        prevEl:'.benefit-button-prev',
+      },
+      pagination:{
+        el:'.benefit-pagination',
+      },
+      scrollbar:{
+        el:'.benefit-scrollbar',
+      }
+    });
+
+    const benefitSwiper02 = new Swiper('.benefit-swiper02',{
+      loop:true,
+    });
  
   </script>
 </body>
