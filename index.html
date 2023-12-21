@@ -851,14 +851,34 @@
     .curation{
       background:#252451;
     } 
+    .curation-grid-container{
+      display:grid;
+      grid-template-columns:1fr;
+      column-gap:4em;
+      row-gap:1em;
+    }
     .curation-poster{
       display:none;
+      grid-template-columns:1fr 1fr;
+      gap:0.5em;
+      position: relative;
+      padding:1em;
+    }
+    .curation-poster .img-box{
+      grid-column:1/3;
+    }
+    .curation-poster .badge{
+      position:absolute;
+      left:0;
+      top:0;
     }
     .curation-con{
       display:none;
     }
     .curation-nav{
-      
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:0.5em;
     }
     
 
@@ -907,8 +927,14 @@
       .movie-bottom-nav input{
         display:inline;
       }
+      .curation-grid-container{
+        grid-template-columns:1fr 1.5fr;        
+      }
       .curation-poster{
-        display:block;
+        display:grid;
+      }
+      .curation-nav{
+        grid-template-columns:repeat(4,1fr);
       }
     }
 
@@ -971,6 +997,12 @@
       }
       .ticketing .container{
         padding-top:0;
+      }
+      .curation-grid-container{
+        grid-template-columns:300px 1fr;        
+      }
+      .curation-poster{
+        grid-area:1/1/3/2;
       }
       .curation-con{
         display:block;
@@ -1628,9 +1660,19 @@
       <div class="container">
         <h2 class="sec-tit">큐레이션</h2>
         <div class="grid-container curation-grid-container">
-          <div class="curation-poster">포스터</div>
+          <div class="curation-poster">
+            <div class="img-box"><img src="./images/curation-list01.jpg" alt="curation"></div>
+            <button>상세정보</button>
+            <button>예매</button>
+            <div class="badge">megabox<br>clasic<br>society</div>
+          </div>
           <div class="curation-con">내용</div>
-          <div class="curation-nav">네비게이션</div>
+          <div class="curation-nav">
+            <div class="img-box"><a href="#"><img src="./images/curation-list01.jpg" alt="curation01"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/curation-list02.jpg" alt="curation02"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/curation-list03.jpg" alt="curation03"></a></div>
+            <div class="img-box"><a href="#"><img src="./images/curation-list04.jpg" alt="curation04"></a></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1869,10 +1911,14 @@
     },5000);
       
     // 큐레이션 
-    // $('.curation-nav li').click(function(){
-    //   let curationImg = $(this).children('img').attr('src');
-    //   $('.curation-poster img').attr('src',curationImg);      
-    // })
+    $('.curation-nav a').click(function(e){
+      let curationImg = $(this).children('img').attr('src');
+      console.log(curationImg);
+      $('.curation-poster img').attr('src',curationImg);
+      if($(window).width()>=760){
+        e.preventDefault();
+      }      
+    })
     
   </script>
 </body>
