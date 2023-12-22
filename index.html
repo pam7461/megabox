@@ -953,13 +953,51 @@
       object-position:center;
     }
     .info-link p{
-      /* display:none; */
       padding-top:1em;
       font-size:0.5em;
       text-align:center;
     }
+    .ad{
+      padding:0;
+      background:var(--gray-aaa);      
+    }
+    .footer{
+      position:relative;
+      z-index:2;
+      padding:50px 0 200px;
+      background:var(--gray-ddd);
+    }
+    .footer .d-li{
+      display:none;
+    }
+    .footer .container{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2em;
+    }
+    
+    .footer nav ul li{      
+      display:inline-block;
+      border-right:1px solid #999;
+      padding:0 1.5em;
+    }
+    .footer nav ul li:last-child{
+      border:none;
+    }
+    .footer-logo{
+      filter:grayscale(1) opacity(0.5);
+    }
+    address{
+      text-align:center;
+      line-height:1.4em;
+    }
+    .footer .footer-link ul{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:0.5em;
+    }
 
-
+    
     @media (min-width:500px){
       .benefit::before{
         height:340px;
@@ -996,6 +1034,9 @@
       .info-link img{
         width:50px;
         height:50px;
+      }
+      .info-link p{
+        font-size:0.7em;
       }
     }
 
@@ -1054,6 +1095,21 @@
       }
       .info-notice .container{
         gap:6em;
+      }
+      .info-link p{
+        font-size:1em;
+      }
+      .footer nav ul li{
+        padding:0 1em;
+      }
+      .footer .d-li{
+        display:inline-block;
+      }
+      .footer .container{
+        grid-template-columns:auto 1fr auto;
+      }
+      .footer nav{
+        grid-area:1/1/2/4;
       }
     }
 
@@ -1123,6 +1179,9 @@
       }
       .mega-info .img-box{
         border-radius:1.5em;
+      }
+      address{
+        text-align:left;        
       }
     }
 
@@ -1883,6 +1942,44 @@
         </div>
       </div>
     </section>
+    <section class="sec ad">
+      <div class="container">
+        <div class="img-box"><a href="#"><img src="./images/banner-bottom.jpg" alt=""></a></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="d-li"><a href="#">회사소개</a></li>
+            <li class="d-li"><a href="#">인재채용</a></li>
+            <li class="d-li"><a href="#">사회공헌</a></li>
+            <li class="d-li"><a href="#">제휴/광고/부대사업문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">위치기반서비스 이용약관</a></li>
+            <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+            <li class="d-li"><a href="#">윤리경영</a></li>
+            <li><a href="#">고객센터</a></li>
+          </ul> 
+        </nav>
+        <div class="footer-logo d-li">
+          <div class="img-box"><a href="./index.html"><img src="./images/logo.png" alt="logo"></a></div>
+        </div>
+        <address>
+          서울특별시 성동구 왕십리로 50, 6층 (성수동1가, 메가박스 스퀘어) ARS 1544-0070 대표이메일 m.dreamcenter@partner.megabox.co.kr<br>
+          대표자명 홍정인 · 개인정보보호책임자 강병철 · 사업자등록번호 211-86-59478 · 통신판매업신고번호 2023-서울성동-0177<br>
+          COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved
+        </address>
+        <div class="footer-link sns-link d-li">
+          <ul>
+            <li><a href="#"><img src="./images/ico-facebook.png" alt="facebook"></a></li>
+            <li><a href="#"><img src="./images/ico-googleplay.png" alt="googleplay"></a></li>
+            <li><a href="#"><img src="./images/ico-instagram.png" alt="instagram"></a></li>
+            <li><a href="#"><img src="./images/ico-twitter.png" alt="twitter"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </section>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.cookie.min.js"></script>
