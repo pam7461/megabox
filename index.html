@@ -1746,6 +1746,64 @@
     <section class="sec sec04 mega-info">
       <div class="container">
         <h2 class="sec-tit">메가박스 안내</h2>
+        <div class="info-special">
+          <div class="img-box"><a href="#"><img src="./images/megainfo01.png" alt="megainfo01"></a></div>
+          <div class="img-box"><a href="#"><img src="./images/megainfo02.png" alt="megainfo02"></a></div>
+          <div class="img-box"><a href="#"><img src="./images/megainfo03.png" alt="megainfo03"></a></div>
+          <div class="img-box"><a href="#"><img src="./images/megainfo04.png" alt="megainfo04"></a></div>
+          <div class="img-box"><a href="#"><img src="./images/megainfo05.png" alt="megainfo05"></a></div>
+          <div class="img-box"><a href="#"><img src="./images/megainfo06.png" alt="megainfo06"></a></div>
+        </div>
+      </div>
+      <div class="info-notice">
+        <div class="container">
+          <p>지점</p>
+          <p><a href="#">[상봉] [상봉]12월 17일 영화 상영 중단으로 인한 고객 안내</a></p>
+          <p>2023.12.18</p>
+          <p><a href="#">더보기 ></a></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="info-link">
+          <ul>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo01.png" alt="megainfo01"></div>
+                <p>고객센터</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo02.png" alt="megainfo02"></div>
+                <p>자주 묻는 질문</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo03.png" alt="megainfo03"></div>
+                <p>1:1 문의</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo04.png" alt="megainfo04"></div>
+                <p>단체/대관문의</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo05.png" alt="megainfo05"></div>
+                <p>분실물 문의/접수</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-box"><img src="./images/ico-megainfo06.png" alt="megainfo06"></div>
+                <p>더 부티크 프라이빗 대관예매</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </section>
@@ -1979,7 +2037,6 @@
     $('.curation-nav a').click(function(e){
       let curationImg = $(this).children('img').attr('src');
       let curationData = $(this).attr('curation-data');
-      // console.log(curationData);
       $('.curation-poster img').attr('src',curationImg);      
       $('#curation-con').load(`./ajax/curation_data.txt #${curationData}`);
       if($(window).width()>=760){
