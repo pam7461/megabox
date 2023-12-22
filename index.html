@@ -899,8 +899,62 @@
     .curation-con{
       display:none;
     }
-   
-    
+
+    .info-special{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1em;
+      margin-bottom:4em;
+    }
+    .info-special .img-box{
+      border-radius:50%;
+      overflow:hidden;
+      filter:grayscale(1);
+    }
+    .info-special .img-box:hover{
+      filter:grayscale(0);
+    }
+    .info-notice{
+      margin-bottom:4em;
+      border:1px solid #f0f0fa;
+      border-left:none;
+      border-right:none;
+      padding:1em 0;
+    }
+    .info-notice .container{
+      display:grid;
+      grid-template-columns:auto 1fr auto auto;
+      gap:2em;
+    }
+    .info-notice .container p:nth-child(2){
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .info-notice a:hover{
+      color:var(--sub-color01);
+      text-decoration:underline;
+    }
+    .info-link ul{
+      display:grid;
+      grid-template-columns: repeat(6,1fr);            
+    }
+    .info-link li{
+      display:grid;
+      justify-content:center;
+      align-items:center;
+    }
+    .info-link img{
+      display:block;
+      width:40px;
+      height:40px;
+      margin:0 auto;
+      object-fit:contain;
+      object-position:center;
+    }
+    .info-link p{
+      display:none;
+    }
 
 
     @media (min-width:500px){
@@ -929,6 +983,12 @@
       }
       .benefit-nav p{
         display:block;
+      }
+      .info-special{
+        grid-template-columns:repeat(6,1fr);        
+      }
+      .info-notice .container{
+        gap:3em;
       }
     }
 
@@ -981,6 +1041,9 @@
       }
       .benefit .art05{
         display:block;        
+      }
+      .info-notice .container{
+        gap:6em;
       }
     }
 
@@ -1044,8 +1107,12 @@
       }
       .curation-con h3{
         font-size:1.2em;
-      }.curation-con h4{
+      }
+      .curation-con h4{
         font-size:3em;
+      }
+      .mega-info .img-box{
+        border-radius:1.5em;
       }
     }
 
@@ -1768,37 +1835,37 @@
           <ul>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo01.png" alt="megainfo01"></div>
+                <div class="img-box" title="고객센터"><img src="./images/ico-megainfo01.png" alt="megainfo01"></div>
                 <p>고객센터</p>
               </a>
             </li>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo02.png" alt="megainfo02"></div>
+                <div class="img-box" title="자주 묻는 질문"><img src="./images/ico-megainfo02.png" alt="megainfo02"></div>
                 <p>자주 묻는 질문</p>
               </a>
             </li>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo03.png" alt="megainfo03"></div>
+                <div class="img-box" title="1:1 문의"><img src="./images/ico-megainfo03.png" alt="megainfo03"></div>
                 <p>1:1 문의</p>
               </a>
             </li>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo04.png" alt="megainfo04"></div>
+                <div class="img-box" title="단체/대관문의"><img src="./images/ico-megainfo04.png" alt="megainfo04"></div>
                 <p>단체/대관문의</p>
               </a>
             </li>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo05.png" alt="megainfo05"></div>
+                <div class="img-box" title="분실물 문의/접수"><img src="./images/ico-megainfo05.png" alt="megainfo05"></div>
                 <p>분실물 문의/접수</p>
               </a>
             </li>
             <li>
               <a href="#">
-                <div class="img-box"><img src="./images/ico-megainfo06.png" alt="megainfo06"></div>
+                <div class="img-box" title="더 부티크 프라이빗 대관예매"><img src="./images/ico-megainfo06.png" alt="megainfo06"></div>
                 <p>더 부티크 프라이빗 대관예매</p>
               </a>
             </li>
