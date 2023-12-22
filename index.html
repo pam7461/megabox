@@ -1706,7 +1706,7 @@
             <button>예매</button>
             <div class="badge">megabox<br>clasic<br>society</div>
           </div>
-          <div class="curation-con">
+          <div class="curation-con" id="curation-con">
             <h3>#클래식소사이어티</h3>
             <h4>[Live] 2024 빈 필하모닉 신년음악회</h4>
             <hr>
@@ -1726,16 +1726,16 @@
             <div class="swiper curation-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="img-box"><a href="#"><img src="./images/curation-list01.jpg" alt="curation01"></a></div>
+                  <div class="img-box"><a href="#" curation-data="bin"><img src="./images/curation-list01.jpg" alt="curation01"></a></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img-box"><a href="#"><img src="./images/curation-list02.jpg" alt="curation02"></a></div>
+                  <div class="img-box"><a href="#" curation-data="car"><img src="./images/curation-list02.jpg" alt="curation02"></a></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img-box"><a href="#"><img src="./images/curation-list03.jpg" alt="curation03"></a></div>
+                  <div class="img-box"><a href="#" curation-data="love"><img src="./images/curation-list03.jpg" alt="curation03"></a></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img-box"><a href="#"><img src="./images/curation-list04.jpg" alt="curation04"></a></div>
+                  <div class="img-box"><a href="#" curation-data="nut"><img src="./images/curation-list04.jpg" alt="curation04"></a></div>
                 </div>
               </div>
             </div>
@@ -1978,8 +1978,10 @@
     // 큐레이션 
     $('.curation-nav a').click(function(e){
       let curationImg = $(this).children('img').attr('src');
-      console.log(curationImg);
-      $('.curation-poster img').attr('src',curationImg);
+      let curationData = $(this).attr('curation-data');
+      // console.log(curationData);
+      $('.curation-poster img').attr('src',curationImg);      
+      $('#curation-con').load(`./ajax/curation_data.txt #${curationData}`);
       if($(window).width()>=760){
         e.preventDefault();
       }      
