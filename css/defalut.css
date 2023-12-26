@@ -500,3 +500,114 @@
     .main-nav li:nth-child(6) .sub-nav{
       grid-template-columns: auto auto;
     }
+
+    .footer{
+      position:relative;
+      z-index:2;
+      margin-bottom:90px;
+      padding:50px 0;
+      background:var(--gray-ddd);
+    }
+    .footer .d-li{
+      display:none;
+    }
+    .footer .container{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2em;
+    }
+    
+    .footer nav ul li{      
+      display:inline-block;
+      border-right:1px solid #999;
+      padding:0 1.5em;
+    }
+    .footer nav ul li:last-child{
+      border:none;
+    }
+    .footer-logo{
+      filter:grayscale(1) opacity(0.5);
+    }
+    address{
+      text-align:center;
+      line-height:1.4em;
+    }
+    .footer .footer-link ul{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:0.5em;
+    }
+
+    @media (min-width:960px){
+      .footer nav ul li{
+        padding:0 1em;
+      }
+      .footer .d-li{
+        display:inline-block;
+      }
+      .footer .container{
+        grid-template-columns:auto 1fr auto;
+      }
+      .footer nav{
+        grid-area:1/1/2/4;
+      }
+    }
+
+    @media (min-width:1280px){
+      .main-ad{
+        display:block;
+      }
+      .header{
+        position:relative;
+        left:auto;
+        right:auto;
+        top:auto;
+        border-bottom:1px solid var(--gray-555);
+        padding-top:1.2em;
+        padding-bottom:1.2em;
+        background:var(--gray-111);
+      }
+      h1 a{        
+        background:url('../images/logo-white.png') no-repeat center;        
+        width:140px;
+        height:47px;
+      }
+      .mnb{
+        display:none;
+      }
+      .mbnb{
+        display:none;
+      }
+      .login-form .container{
+        grid-template-columns:1fr 1fr;
+        left:50%;
+        right:auto;
+        top:50%;
+        bottom:auto;
+        transform:translate(-50%,-50%);
+        width:840px;
+        padding-top:6em;
+        padding-bottom:2em;
+      }
+      .login-form h2{
+        background:var(--sub-color01);
+        text-align:left;
+        color:var(--gray-fff);
+        font-size:1.4em;
+      }
+      .btn-login-close{
+        background:transparent;
+      }
+      .btn-login-close::before,.btn-login-close::after{
+        background:var(--gray-fff);
+      }
+      .dnb{
+        display:block;
+      }
+      .footer{
+        margin-bottom:0;
+      }
+      address{
+        text-align:left;        
+      }
+    }
