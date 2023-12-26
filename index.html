@@ -374,6 +374,48 @@
       width:375px;
       margin:0 auto;
     }
+    .mbnb{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:10000;
+      padding:20px;
+      background:#fff;
+      box-shadow:0 -2px 5px #f0f0f0;
+    }
+    .mbnb ul{
+      display:flex;      
+      justify-content:space-around;
+    }
+    .mbnb li{
+      width:36px;
+      font-size:0.8em;
+      text-align:center;
+    }
+    .mbnb a{
+      display:block;
+      width:100%;
+      padding-top:36px;
+      background-repeat:no-repeat;
+      background-position:center top;
+      background-size:contain;
+    }
+    .mbnb li:nth-child(1) a{
+      background-image:url('./images/m-images/bnb-home-on.png');
+    }
+    .mbnb li:nth-child(2) a{
+      background-image:url('./images/m-images/bnb-store-new.png');
+    }
+    .mbnb li:nth-child(3) a{
+      background-image:url('./images/m-images/bnb-reserve_new.png');
+    }
+    .mbnb li:nth-child(4) a{
+      background-image:url('./images/m-images/bnb-event_new.png');
+    }
+    .mbnb li:nth-child(5) a{
+      background-image:url('./images/m-images/bnb-mymega_new.png');
+    }
     .dnb{
       display:none;
       font-weight:100;
@@ -961,10 +1003,14 @@
       padding:0;
       background:var(--gray-aaa);      
     }
+    .ad .container{
+      padding:0;
+    }
     .footer{
       position:relative;
       z-index:2;
-      padding:50px 0 200px;
+      margin-bottom:90px;
+      padding:50px 0;
       background:var(--gray-ddd);
     }
     .footer .d-li{
@@ -1135,6 +1181,9 @@
       .mnb{
         display:none;
       }
+      .mbnb{
+        display:none;
+      }
       .login-form .container{
         grid-template-columns:1fr 1fr;
         left:50%;
@@ -1179,6 +1228,9 @@
       }
       .mega-info .img-box{
         border-radius:1.5em;
+      }
+      .footer{
+        margin-bottom:0;
       }
       address{
         text-align:left;        
@@ -1315,6 +1367,15 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row mbnb">
+          <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">스토어</a></li>
+            <li><a href="#">예매</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">MY</a></li>
+          </ul>
         </div>
         <div class="row dnb">
           <div class="h-top dnb-item">
