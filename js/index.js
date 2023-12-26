@@ -5,6 +5,7 @@ $('.ticketing-nav li').click(function(){
   $('.ticketing-nav li').removeClass('active');
   $(this).addClass('active');
   let sJson = '../ajax/' + $(this).attr('select-movie') + '.json';
+  // let sJson = 'https://pam7461.github.io/megabox/ajax/' + $(this).attr('select-movie') + '.json';
   fnJson(sJson);
 })
 
@@ -31,6 +32,7 @@ const movieSwiper = new Swiper('.movie-swiper',{
 });
 
 fnJson('../ajax/boxoffice.json');
+// fnJson('https://pam7461.github.io/megabox/ajax/boxoffice.json');
 
 
 
