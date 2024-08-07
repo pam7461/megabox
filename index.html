@@ -17,6 +17,7 @@
     <script src="./js/swiper-bundle.min.js"></script>
     <title>MEET PLAY SHARE, 메가박스</title>
     <style>
+        /* 기본스타일 데스크탑 우선 */
         @font-face {
             font-family:'Noto Sans KR';
             src: url(./fonts/NotoSansKR.ttf);
@@ -53,13 +54,110 @@
             --white:#fff;
             font-family:'NanumBarunGothic','Noto Sans KR',sans-serif;
             font-weight:500;
+            line-height:1.2;
+            color:var(--black);
+        }
+        .wrap{
+            overflow:hidden;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+        }
+        .ad01 li{display:none;}
+        .ad01 li.active{display:block;}
+        .ad01 li:nth-child(1){background:#42534d;}
+        .ad01 li:nth-child(2){background:#001c20;}
+        .ad01 li:nth-child(3){background:#1678f7;}
+        .ad01 li:nth-child(4){background:#eeeeee;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width:1099px){
+            .ad01{display:none;}
+        }
+
+
+
+
+
+
+
+
+        @media (max-width:767px){
+
         }
     </style>
     <script>
-
+        // window.onload = function(){
+        //     document.querySelector('body').style.background = 'red';
+        // }
+        $(function(){
+            // ad01닫기 이벤트
+            $('.btn-ad01-close').click(function(){                
+                $('.ad01').hide();
+            });
+        })
     </script>
 </head>
 <body>
-    
+    <section class="wrap">
+        <section class="sec sec00 ad ad01">            
+            <ul>
+                <li>
+                    <div class="container">
+                        <a href="#"><img src="./images/ad01-01.jpg" alt="룩북"></a>
+                    </div>
+                </li>                
+                <li>
+                    <div class="container">
+                        <a href="#"><img src="./images/ad01-03.jpg" alt="본 아이덴티티"></a>
+                    </div>
+                </li>
+                <li class="active">
+                    <div class="container">
+                        <a href="#"><img src="./images/ad01-04.jpg" alt="프리큐어 올스타즈"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="container">
+                        <a href="#"><img src="./images/ad01-05.jpg" alt="현대해상 다이렉트"></a>
+                    </div>
+                </li>
+            </ul>  
+            <button class="btn-ad01-close">닫기</button>
+        </section>
+        <header class="header">
+            <div class="container"></div>
+        </header>
+        <section class="sec sec01 box-office">
+            <div class="container"></div>
+        </section>
+        <section class="sec sec02 benefit">
+            <div class="container"></div>
+        </section>
+        <section class="sec sec03 curation">
+            <div class="container"></div>
+        </section>
+        <section class="sec sec04 megabox-info">
+            <div class="container"></div>
+        </section>
+        <section class="sec sec05 ad ad02">
+            <div class="container"></div>
+        </section>
+        <footer class="footer">
+            <div class="container"></div>
+        </footer>
+    </section>
 </body>
 </html>
