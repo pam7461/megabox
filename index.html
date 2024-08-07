@@ -99,6 +99,94 @@
             transform:translate(-50%,-50%) rotate(-45deg);
         }
 
+        /* HEADER */
+        .header{            
+            padding:20px 0;
+            background:black;
+            color:var(--white);
+            position:relative;
+        }
+        .header .container{
+            height:72px;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-between;
+            align-content:space-between;
+        }
+        h1{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+        .header ul{
+            display:flex;
+            flex-flow:row nowrap;
+        }
+        .q-nav01{
+            order:1;
+            width:50%;
+            font-weight:100;
+            font-size:0.8em;
+        }
+        .q-nav01 li{
+            margin-right:1.5em;
+        }
+        .q-nav02{
+            order:2;
+            width:50%;
+            font-weight:100;
+            font-size:0.8em;
+        }
+        .q-nav02 ul{
+            justify-content:flex-end;
+        }
+        .q-nav02 li{
+            margin-left:1.5em;
+        }
+        .q-nav03{
+            order:3;
+            width:10%;
+        }
+        .q-nav03 li{
+            margin-right:1.5em;
+        }
+        .q-nav03 a{
+            display:block;
+            width:24px;
+            height:24px;  
+            background:url(./images/ico-search.png) no-repeat center;
+            background-size:contain;
+            text-indent:-99999px;          
+        }
+        .q-nav04{
+            order:5;
+            width:10%;
+        }
+        .q-nav04 ul{
+            justify-content:flex-end;
+        }
+        .q-nav04 li{
+            margin-left:1.5em;
+        }
+        .q-nav04 a{
+            display:block;
+            width:24px;
+            height:24px;  
+            background:url(./images/ico-schedule.png) no-repeat center;
+            background-size:contain;
+            text-indent:-99999px;          
+        }
+        .dt-nav{
+            order:4;
+            width:80%;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .header .sub-nav{display:none;}
+
+
 
 
 
@@ -257,8 +345,7 @@
                             </ul>
                         </li>
                     </ul>
-                </nav>
-                <nav class="m-nav"></nav>
+                </nav>                
             </div>
         </header>
         <section class="sec sec01 box-office">
