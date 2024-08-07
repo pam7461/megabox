@@ -146,6 +146,13 @@
             $('.btn-ad01-close').click(function(){                
                 $('.ad01').hide();
             });
+
+            // 링크 타이틀 달기            
+            $('a').each(function(idx){
+                let dtListsHtml = $('a').eq(idx).html();
+                $('a').eq(idx).attr('title',`${dtListsHtml} 가기`);
+            });
+            
         })
     </script>
 </head>
@@ -177,7 +184,82 @@
             <button class="btn-ad01-close">닫기</button>
         </section>
         <header class="header">
-            <div class="container"></div>
+            <div class="container">
+                <h1><a href="./index.html" title="메가박스 메인으로 가기">MEGABOX</a></h1>
+                <div class="q-nav q-nav01">
+                    <ul>
+                        <li><a href="#" title="VIP 라운지로 가기">VIP LOUNGE</a></li>
+                        <li><a href="#" title="멤버십으로 가기">멤버십</a></li>
+                        <li><a href="#" title="고객센터로 가기">고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="q-nav q-nav02">
+                    <ul>
+                        <li><a href="#" title="로그인 가기">로그인</a></li>
+                        <li><a href="#" title="회원가입 가기">회원가입</a></li>
+                        <li><a href="#" title="빠른예매 가기">빠른예매</a></li>
+                    </ul>
+                </div>
+                <div class="q-nav q-nav03">
+                    <ul>
+                        <li><a href="#" title="사이트맵 가기">사이트맵</a></li>
+                        <li><a href="#" title="검색 가기">검색</a></li>                        
+                    </ul>
+                </div>
+                <div class="q-nav q-nav04">
+                    <ul>
+                        <li><a href="#" title="상영시간표 가기">상영시간표</a></li>
+                        <li><a href="#" title="나의 메가박스 가기">나의 메가박스</a></li>                        
+                    </ul>
+                </div>
+                <nav class="dt-nav">
+                    <ul class="main-nav">
+                        <li>
+                            <a href="#">영화</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">전체영화</a></li>
+                                <li><a href="#">무비포스트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">예매</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">빠른예매</a></li>
+                                <li><a href="#">상영시간표</a></li>
+                                <li><a href="#">더 부티크 프라이빗 예매</a></li>                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">극장</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">전체극장</a></li>
+                                <li><a href="#">특별관</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="main-nav">
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">진행중 이벤트</a></li>
+                                <li><a href="#">지난 이벤트</a></li>
+                                <li><a href="#">당첨자 발표</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">스토어</a>                            
+                        </li>
+                        <li>
+                            <a href="#">혜택</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">메가박스 멤버십</a></li>
+                                <li><a href="#">제휴/할인</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="m-nav"></nav>
+            </div>
         </header>
         <section class="sec sec01 box-office">
             <div class="container"></div>
