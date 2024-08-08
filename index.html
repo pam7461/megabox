@@ -295,9 +295,76 @@
             grid-template-columns:1fr 1fr;
             gap:3em;
         }
+        .login form{
+            display:grid;
+            gap:1em;
+            font-weight:200;
+            font-size:14px;            
+        }
+        .login form input[type="text"],
+        .login form input[type="password"]{
+            border:1px solid rgba(0,0,0,0.3);
+            padding:1em;
+        }
+        .login form input[type="text"]:hover,
+        .login form input[type="password"]:hover{
+            border-color:var(--black);
+        }
+        .login form label{
+            margin-bottom:1em;
+        }
+        .login form label input{
+            margin-right:3px;
+        }
+        .login form input[type="submit"]{
+            border:none;
+            padding:1em;
+            background:rgba(0,0,0,0.1);            
+        }
+        .login-list{
+            display:grid;
+            grid-template-columns:auto auto auto;
+            gap:36px;
+            justify-content:center;
+            margin-bottom:1em;
+            position:relative;
+        }
+        .login-list::before,.login-list::after{
+            content:'';
+            display:block;
+            width:1px;
+            height:16px;
+            background:#666;
+            position:absolute;
+            left:calc(50% - 52px);
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+        .login-list::after{
+            left:calc(50% + 31px);
+        }
+        .login-api{
+            display:grid;
+            grid-template-columns:repeat(3,40px);
+            grid-template-rows:40px;
+            gap:50px;
+            justify-content:center;
+        }
 
-
-
+        .login-api a{
+            display:block;
+            width:40px;
+            height:40px;
+            background:url(./images/ico-naver.png) no-repeat center;
+            background-size:contain;
+            text-indent:-99999px;
+        }
+        .login-api a.kakao{
+            background-image:url(./images/ico-kakao.png);
+        }
+        .login-api a.payco{
+            background-image:url(./images/ico-payco.png);
+        }
 
 
 
@@ -492,9 +559,9 @@
                                 <li><a href="#" title="비회원 예매확인 선택">비회원 예매확인</a></li>
                             </ul>
                             <ul class="login-api">
-                                <li><a href="#" title="네이버 로그인 선택">네이버 로그인</a></li>
-                                <li><a href="#" title="카카오톡 로그인 선택">카카오톡 로그인</a></li>
-                                <li><a href="#" title="페이코 로그인 선택">페이코 로그인</a></li>
+                                <li><a class="naver" href="#" title="네이버 로그인 선택">네이버 로그인</a></li>
+                                <li><a class="kakao" href="#" title="카카오톡 로그인 선택">카카오톡 로그인</a></li>
+                                <li><a class="payco" href="#" title="페이코 로그인 선택">페이코 로그인</a></li>
                             </ul>
                         </form>
                     </div>
@@ -503,7 +570,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside>       
         <aside class="aside aside02 popup"></aside>
         <section class="sec sec01 box-office">
             <div class="container"></div>
