@@ -264,6 +264,38 @@
             text-decoration:underline;
         }
 
+        .modal{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:999999;
+            background:rgba(0,0,0,1);
+        }
+        .login .container{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            width:850px;
+            background:var(--white);
+        }
+        .login-header{
+            padding:1em;
+            background:var(--main-color);
+            color:var(--white);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .login-body{
+            padding:1em;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3em;
+        }
+
 
 
 
@@ -441,6 +473,38 @@
                 </nav>                
             </div>
         </header>
+        <aside class="aside aside01 modal login">
+            <div class="container">
+                <div class="login-header">
+                    <h2>로그인</h2>
+                    <button class="btn-login-close">닫기</button>
+                </div>
+                <div class="login-body">
+                    <div class="login-form">
+                        <form action="#">
+                            <input type="text" name="loginId" id="login-id" placeholder="로그인">
+                            <input type="password" name="loginPass" id="login-pass" placeholder="비밀번호">
+                            <label><input type="checkbox" name="saveId" id="save-id">아이디 저장</label>
+                            <input type="submit" value="로그인">
+                            <ul class="login-list">
+                                <li><a href="#" title="ID/PW 찾기 선택">ID/PW 찾기</a></li>
+                                <li><a href="#" title="회원가입 선택">회원가입</a></li>
+                                <li><a href="#" title="비회원 예매확인 선택">비회원 예매확인</a></li>
+                            </ul>
+                            <ul class="login-api">
+                                <li><a href="#" title="네이버 로그인 선택">네이버 로그인</a></li>
+                                <li><a href="#" title="카카오톡 로그인 선택">카카오톡 로그인</a></li>
+                                <li><a href="#" title="페이코 로그인 선택">페이코 로그인</a></li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div class="login-ad">
+                        <a href="#"><img src="./images/ad02-01.jpg" alt="ad02"></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <aside class="aside aside02 popup"></aside>
         <section class="sec sec01 box-office">
             <div class="container"></div>
         </section>
