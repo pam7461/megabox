@@ -116,6 +116,7 @@
             display:grid;
             justify-content:center;
             align-items:center;
+            z-index:1000;
         }
         h1 a{
             display:block;
@@ -145,11 +146,56 @@
         .q-nav02 ul{
             justify-content:end;
         }
-        .q-nav03{
+        .q-nav-bottom{
             grid-area:2/1/3/2;
+        }
+        .q-nav-bottom ul{
+            display:grid;
+            grid-template-columns:24px 18px;
+            gap:19px;
+            justify-content:start;
+        }
+        .q-nav03 li:nth-child(1) a{
+            display:grid;
+            align-content:space-around;
+            height:18px;
+            text-indent:-99999px;            
+        }
+        .q-nav03 li:nth-child(1) a span{
+            width:24px;
+            height:2px;
+            background:var(--white);
+        }
+        .q-nav03 li:nth-child(1) a::before,
+        .q-nav03 li:nth-child(1) a::after{
+            content:'';
+            display:block;
+            width:24px;
+            height:2px;
+            background:var(--white);
+        }
+        .q-nav03 li:nth-child(2) a{
+            display:block;
+            height:18px;
+            background:url(./images/ico-search.png) no-repeat center;            
+            text-indent:-999999px;
         }
         .q-nav04{
             grid-area:2/12/3/-1;
+        }
+        .q-nav04 ul{
+            justify-content:end;
+        }
+        .q-nav04 a{
+            display:block;
+            height:18px;
+            background:url(./images/ico-schedule.png) no-repeat center;
+            background-size:134%;
+            text-indent:-99999px;
+        }
+        .q-nav04 li:nth-child(2) a{
+            background-image:url(./images/ico-mymega.png);
+            background-size:contain;
         }
         .dt-nav{
             grid-area:2/2/3/12;
@@ -256,13 +302,13 @@
                         <li><a href="#" title="빠른예매 가기">빠른예매</a></li>
                     </ul>
                 </div>
-                <div class="q-nav q-nav03">
+                <div class="q-nav q-nav03 q-nav-bottom">
                     <ul>
-                        <li><a href="#" title="사이트맵 가기">사이트맵</a></li>
+                        <li><a href="#" title="사이트맵 가기"><span>사이트맵</span></a></li>
                         <li><a href="#" title="검색 가기">검색</a></li>                        
                     </ul>
                 </div>
-                <div class="q-nav q-nav04">
+                <div class="q-nav q-nav04 q-nav-bottom">
                     <ul>
                         <li><a href="#" title="상영시간표 가기">상영시간표</a></li>
                         <li><a href="#" title="나의 메가박스 가기">나의 메가박스</a></li>                        
