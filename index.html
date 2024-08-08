@@ -100,8 +100,9 @@
         }
 
         /* HEADER */
-        .header{            
-            padding:20px 0;
+        .header{  
+            border-bottom:1px solid rgba(255,255,255,0.5);
+            padding:20px 0 14px;
             background:black;
             color:var(--white);
         }
@@ -199,7 +200,23 @@
         }
         .dt-nav{
             grid-area:2/2/3/12;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:202px;
         }
+        .main-nav{
+            display:grid;
+            grid-template-columns:auto auto auto;
+            justify-content:space-evenly;
+        } 
+        .main-nav>li::after{
+            content:'';
+            display:block;
+            height:3px;
+            background:var(--white);
+            transform:translateY(14px);
+        }
+        .sub-nav{display:none;}
 
 
 
