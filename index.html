@@ -105,12 +105,26 @@
             padding:20px 0 14px;
             background:black;
             color:var(--white);
+            position:relative;
+        }
+        .header::after{
+            content:'';
+            display:block;
+            position:absolute;
+            left:0;
+            right:0;
+            top:100%;
+            z-index:10;
+            height:40px;
+            background:var(--black);
         }
         .header .container{
             display:grid;
             grid-template-columns:repeat(12,1fr);
             column-gap:16px;
             row-gap:22px;
+            position:relative;
+            z-index:11;
         }
         h1{
             grid-area:1/6/3/8;
@@ -209,14 +223,31 @@
             grid-template-columns:auto auto auto;
             justify-content:space-evenly;
         } 
+        .main-nav>li{
+            position:relative;
+        }
         .main-nav>li::after{
             content:'';
             display:block;
             height:3px;
             background:var(--white);
             transform:translateY(14px);
+            opacity:0;
         }
-        .sub-nav{display:none;}
+        .non-after::after{
+            display:none !important;
+        }
+        .sub-nav{
+            position:absolute;
+            left:50%;
+            top:50px;
+            transform:translate(-50%,0);
+            width:300px;
+            display:flex;
+            justify-content:center;
+            font-weight:300;
+            font-size:0.9em;
+        }
 
 
 
@@ -365,7 +396,7 @@
                                 <li><a href="#">당첨자 발표</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="non-after">
                             <a href="#">스토어</a>                            
                         </li>
                         <li>
