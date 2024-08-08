@@ -413,6 +413,9 @@
             background:var(--white);
             position:relative;
         }
+        .swiper-container{
+            margin-bottom:1.5em;
+        }
         .swiper-slide{
             border-radius:10px;
             overflow:hidden;
@@ -443,6 +446,61 @@
         }
         .btn-popup-close::after{
             transform:translate(-50%,-50%) rotate(-45deg);
+        }
+        .popup-bottom{
+            display:flex;
+            justify-content:space-between;
+        }
+        .swiper-controle{
+            display:flex;
+            align-items:center;
+        }
+        .btn-start-stop{
+            margin-right:4px;
+        }
+        .btn-start{
+            width:6px;
+            height:8px;
+            font-size:0;
+            cursor:pointer;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .btn-start::before{
+            box-sizing:border-box;
+            content:'';
+            display:block;
+            width:8px;
+            height:8px;
+            border:4px solid var(--main-color);
+            border-top-color:transparent;
+            border-right-color:transparent;
+            border-bottom-color:transparent;
+        }
+        .btn-stop{
+            display:none;
+            width:6px;
+            height:8px;
+            font-size:0;
+            cursor:pointer;
+            /* display:flex; */
+            justify-content:space-between;
+        }
+        .btn-stop::before,.btn-stop::after{
+            content:'';
+            display:block;
+            width:2px;
+            height:8px;
+            background:var(--main-color);
+        }
+
+        .swiper-pagination{
+            position:static;
+            text-align:left;
+        }
+        .swiper-pagination-bullet-active{
+            background:var(--main-color);
         }
 
 
@@ -706,7 +764,13 @@
                     </div>                    
                 </div>
                 <div class="popup-bottom">
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-controle">
+                        <div class="btn-start-stop">
+                            <div class="btn-start">시작</div>
+                            <div class="btn-stop">멈춤</div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                     <label><input type="checkbox"> 하루동안 보지 않기</label>
                 </div>
                 <button class="btn-popup-close">닫기</button>
