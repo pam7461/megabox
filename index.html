@@ -271,7 +271,11 @@
             top:0;
             bottom:0;
             z-index:999999;
-            background:rgba(0,0,0,1);
+            background:rgba(0,0,0,0.3);
+            display:none;
+        }
+        .login.active{
+            display:block;
         }
         .login .container{
             position:absolute;
@@ -429,6 +433,7 @@
             // 랜덤 광고
             $('.ad01 li').eq(fnRandom(4)).show();
             $('.ad02 li').eq(fnRandom(4)).show();
+            $('.login-ad li').eq(fnRandom(4)).show();
 
             // 광고닫기
             $('.btn-ad01-close').click(function(){                
@@ -442,21 +447,43 @@
             });
 
 
+            // 서브네비게이션 호출
             $('.main-nav>li').mouseenter(function(){
                 $('.header').addClass('active');                
                 $('.main-nav>li').removeClass('active');                
-                $(this).addClass('active');
-                
+                $(this).addClass('active');                
             });
 
+            // 서브네비게이션 닫기
             $('.header').mouseleave(function(){
                 $('.main-nav>li').removeClass('active');
                 $(this).removeClass('active');
             });
 
 
+            // 로그인 호출
+            // let btnOpen = document.querySelector('#btn-login-open');
+            // btnOpen.onclick = function(e){
+            //     let loginWindow = document.querySelector('.login');
+            //     loginWindow.classList.add('active');
+            //     e.preventDefault();
+            // }
+
+            $('#btn-login-open').click(function(e){
+                $('.login').show();
+                e.preventDefault();
+            });
            
-            
+            // 로그인 닫기
+            // let btnClose = document.querySelector('#btn-login-close');
+            // btnClose.onclick = function(){
+            //     let loginWindow = document.querySelector('.login');
+            //     loginWindow.classList.remove('active');
+            // }
+
+            $('#btn-login-close').click(function(){
+                $('.login').hide();
+            });
         })
     </script>
 </head>
@@ -499,7 +526,7 @@
                 </div>
                 <div class="q-nav q-nav02 q-nav-top">
                     <ul>
-                        <li><a href="#" title="로그인 가기">로그인</a></li>
+                        <li><a href="#" title="로그인 가기" id="btn-login-open">로그인</a></li>
                         <li><a href="#" title="회원가입 가기">회원가입</a></li>
                         <li><a href="#" title="빠른예매 가기">빠른예매</a></li>
                     </ul>
@@ -568,7 +595,7 @@
             <div class="container">
                 <div class="login-header">
                     <h2>로그인</h2>
-                    <button class="btn-login-close">닫기</button>
+                    <button class="btn-login-close" id="btn-login-close">닫기</button>
                 </div>
                 <div class="login-body">
                     <div class="login-form">
@@ -589,13 +616,20 @@
                             </ul>
                         </form>
                     </div>
-                    <div class="login-ad">
-                        <a href="#"><img src="./images/ad02-01.jpg" alt="ad02"></a>
+                    <div class="login-ad ad">
+                        <ul>
+                            <li><a href="#"><img src="./images/ad02-01.jpg" alt="ad02"></a></li>
+                            <li><a href="#"><img src="./images/ad02-02.jpg" alt="ad02"></a></li>
+                            <li><a href="#"><img src="./images/ad02-03.jpg" alt="ad02"></a></li>
+                            <li><a href="#"><img src="./images/ad02-04.jpg" alt="ad02"></a></li>
+                        </ul>                        
                     </div>
                 </div>
             </div>
         </aside>       
-        <aside class="aside aside02 popup"></aside>
+        <aside class="aside aside02 popup">
+
+        </aside>
         <section class="sec sec01 box-office">
             <div class="container"></div>
         </section>
