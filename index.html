@@ -289,6 +289,26 @@
             justify-content:space-between;
             align-items:center;
         }
+        .btn-login-close{
+            width:20px;
+            height:20px;
+            border:none;
+            background:transparent;            
+            font-size:0;
+            cursor:pointer;
+        }
+        .btn-login-close::before,
+        .btn-login-close::after{
+            content:'';
+            display:block;
+            width:20px;
+            height:1px;
+            background:var(--white);
+            transform:rotate(45deg);
+        }
+        .btn-login-close::after{
+            transform:rotate(-45deg);
+        }
         .login-body{
             padding:1em;
             display:grid;
@@ -364,6 +384,10 @@
         }
         .login-api a.payco{
             background-image:url(./images/ico-payco.png);
+        }
+        .login-ad{
+            height:385px;
+            overflow:hidden;
         }
 
 
