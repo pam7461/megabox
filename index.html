@@ -17,6 +17,7 @@
     <script src="./js/swiper-bundle.min.js"></script>
     <title>MEET PLAY SHARE, 메가박스</title>
     <style>
+        body{background:black;}
         /* 기본스타일 데스크탑 우선 */
         @font-face {
             font-family:'Noto Sans KR';
@@ -300,6 +301,7 @@
             background:transparent;            
             font-size:0;
             cursor:pointer;
+            position:relative;
         }
         .btn-login-close::before,
         .btn-login-close::after{
@@ -308,10 +310,13 @@
             width:20px;
             height:1px;
             background:var(--white);
-            transform:rotate(45deg);
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%) rotate(45deg);
         }
         .btn-login-close::after{
-            transform:rotate(-45deg);
+            transform:translate(-50%,-50%) rotate(-45deg);
         }
         .login-body{
             padding:1em;
@@ -394,6 +399,52 @@
             overflow:hidden;
         }
 
+        .popup{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            z-index:100;
+        }
+        .popup .container{
+            width:360px;
+            border-radius:10px;
+            padding:20px;
+            background:var(--white);
+            position:relative;
+        }
+        .swiper-slide{
+            border-radius:10px;
+            overflow:hidden;
+        }
+        .btn-popup-close{
+            width:30px;
+            height:30px;
+            border:none;
+            border-radius:15px;
+            background:#999;
+            font-size:0;
+            cursor:pointer;
+            position:absolute;
+            right:-10px;
+            top:-10px;
+        }
+        .btn-popup-close::before,
+        .btn-popup-close::after{
+            content:'';
+            display:block;
+            width:20px;
+            height:1px;
+            background:var(--white);
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%) rotate(45deg);
+        }
+        .btn-popup-close::after{
+            transform:translate(-50%,-50%) rotate(-45deg);
+        }
+
 
 
 
@@ -421,8 +472,7 @@
             .ad02{display:none;}
         }
     </style>
-    <script>
-        
+    <script>        
         $(function(){
             // 난수 발생 함수
             function fnRandom(num){
@@ -440,7 +490,7 @@
                 $('.ad01').hide();
             });
 
-            // 링크 타이틀 달기            
+            // 링크 타이틀 닫기            
             $('a').each(function(idx){
                 let dtListsHtml = $('a').eq(idx).html();
                 $('a').eq(idx).attr('title',`${dtListsHtml} 가기`);
@@ -484,6 +534,23 @@
             $('#btn-login-close').click(function(){
                 $('.login').hide();
             });
+
+
+            // popup swiper JS
+            let popupSwiper = new Swiper('.swiper-container',{
+                autoplay:{
+                    delay:5000
+                },
+                effect:'fade',
+                pagination:{
+                    el:'.swiper-pagination',
+                    clickable:true,
+                },
+            });
+
+            $('.btn-popup-close').click(function(){
+                $('.popup').hide();
+            })
         })
     </script>
 </head>
@@ -636,9 +703,13 @@
                         <div class="swiper-slide"><a href="#"><img src="./images/pop03.jpg" alt="pop03"></a></div>
                         <div class="swiper-slide"><a href="#"><img src="./images/pop04.jpg" alt="pop04"></a></div>
                         <div class="swiper-slide"><a href="#"><img src="./images/pop05.jpg" alt="pop05"></a></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
+                    </div>                    
                 </div>
+                <div class="popup-bottom">
+                    <div class="swiper-pagination"></div>
+                    <label><input type="checkbox"> 하루동안 보지 않기</label>
+                </div>
+                <button class="btn-popup-close">닫기</button>
             </div>
         </aside>
         <section class="sec sec01 box-office">
