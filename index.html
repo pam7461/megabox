@@ -463,9 +463,12 @@
             height:8px;
             font-size:0;
             cursor:pointer;
-            display:flex;
+            display:none;
             justify-content:center;
             align-items:center;
+        }
+        .btn-start.active{
+            display:flex;
         }
         .btn-start::before{
             box-sizing:border-box;
@@ -483,9 +486,11 @@
             width:6px;
             height:8px;
             font-size:0;
-            cursor:pointer;
-            /* display:flex; */
+            cursor:pointer;            
             justify-content:space-between;
+        }
+        .btn-stop.active{
+            display:flex;
         }
         .btn-stop::before,.btn-stop::after{
             content:'';
@@ -606,8 +611,24 @@
                 },
             });
 
+
+            // popup 닫기
             $('.btn-popup-close').click(function(){
                 $('.popup').hide();
+            });
+
+            // popup 슬라이더 멈춤
+            $('.btn-stop').click(function(){
+                $(this).removeClass('active');
+                $('.btn-start').addClass('active');
+                popupSwiper.autoplay.stop();
+            })
+
+            // popup 슬라이더 재생
+            $('.btn-start').click(function(){
+                $(this).removeClass('active');
+                $('.btn-stop').addClass('active');
+                popupSwiper.autoplay.start();
             })
         })
     </script>
@@ -767,7 +788,7 @@
                     <div class="swiper-controle">
                         <div class="btn-start-stop">
                             <div class="btn-start">시작</div>
-                            <div class="btn-stop">멈춤</div>
+                            <div class="btn-stop active">멈춤</div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
