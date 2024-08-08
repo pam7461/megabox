@@ -115,8 +115,11 @@
             right:0;
             top:100%;
             z-index:10;
-            height:40px;
+            height:0;
             background:var(--black);
+        }
+        .header.active::after{
+            height:40px;
         }
         .header .container{
             display:grid;
@@ -234,6 +237,9 @@
             transform:translateY(14px);
             opacity:0;
         }
+        .main-nav>li.active::after{
+            opacity:1;
+        }
         .non-after::after{
             display:none !important;
         }
@@ -242,11 +248,20 @@
             left:50%;
             top:50px;
             transform:translate(-50%,0);
-            width:300px;
-            display:flex;
+            width:500px;
+            display:none;
             justify-content:center;
             font-weight:300;
             font-size:0.9em;
+        }
+        .main-nav>li.active .sub-nav{
+            display:flex;
+        }
+        .sub-nav li{
+            margin:0 1em;
+        }
+        .sub-nav a:hover{
+            text-decoration:underline;
         }
 
 
@@ -302,6 +317,22 @@
                 let dtListsHtml = $('a').eq(idx).html();
                 $('a').eq(idx).attr('title',`${dtListsHtml} 가기`);
             });
+
+
+            $('.main-nav>li').mouseenter(function(){
+                $('.header').addClass('active');                
+                $('.main-nav>li').removeClass('active');                
+                $(this).addClass('active');
+                
+            });
+
+            $('.header').mouseleave(function(){
+                $('.main-nav>li').removeClass('active');
+                $(this).removeClass('active');
+            });
+
+
+           
             
         })
     </script>
