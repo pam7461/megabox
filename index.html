@@ -802,6 +802,20 @@
                 e.preventDefault();
             });
 
+            //SEARCH
+            $('.search-tit li').click(function(e){
+                e.preventDefault();
+                $('.search-tit li').removeClass('active');
+                $(this).addClass('active');
+                $('.tab').removeClass('active');
+                let thisText = $(this).text();                
+                if(thisText = '예매율 순'){
+                    $('.booking').addClass('active');
+                }else{
+                    $('.gallery').addClass('active');
+                }
+            })
+
 
         })
     </script>
