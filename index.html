@@ -414,8 +414,62 @@
         }
         .m-nav{
             display:none;
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:999999;
+            background:var(--sub-color06);
+        }
+        .m-nav-top{
+            padding:16px;
+            display:grid;
+            grid-template-columns:auto auto;
+            row-gap:36px;
+            justify-content:space-between;
+        }
+        .m-nav-top h2{
+            font-weight:700;
+            font-size:1.3em;
+        }
+        .btn-m-nav-close{
+            display:grid;    
+            justify-content:end;
+        }
+        .btn-m-nav-close button{
+            width:24px;
+            height:24px;
+            border:none;
+            background:transparent;
+            font-size:0;
+            position:relative;
+        }
+        .btn-m-nav-close button::before,
+        .btn-m-nav-close button::after{
+            content:'';
+            display:block;
+            width:24px;
+            height:1px;
+            background:var(--white);
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%) rotate(-45deg);
+        }
+        .btn-m-nav-close button::after{
+            transform:translate(-50%,-50%) rotate(45deg);
         }
         
+        .m-nav-top ul{
+            display:grid;
+            grid-template-columns:auto auto;
+            column-gap:24px;
+            justify-content:start;
+        }
+        .m-nav-top ul+a{
+
+        }
 
 
 
@@ -669,16 +723,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
         @media (max-width:1099px){
             .container{
                 padding:0 16px;
@@ -726,7 +770,7 @@
                 display:block;
             }
             .m-nav{
-                display:none;
+                display:block;
             }
         }
 
@@ -906,6 +950,27 @@
             // console.log(document.cookie);
             
 
+
+            // 모바일 이벤트
+            // TICKET
+            $('.m-ticket').click(function(){
+                let confirmMsg = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
+                if(confirmMsg){
+                    $('.login').show();
+                }
+            })
+
+
+            // M-NAV 닫기
+            $('.btn-m-nav-close button').click(function(){
+                $('.m-nav').hide();
+            })
+
+            $('#m-login-show').click(function(e){
+                e.preventDefault();
+                $('.m-nav').hide();
+                $('.login').show();
+            })
         })
     </script>
 </head>
@@ -1013,7 +1078,21 @@
                 </nav>  
                 <div class="m-ticket">티켓</div>
                 <div class="m-btn-nav">내비게이션 버튼</div>
-                <nav class="m-nav">모바일내비</nav>
+                <div class="m-nav">
+                    <div class="m-nav-top">
+                        <h2>로그인 해주세요:)</h2>
+                        <div class="btn-m-nav-close">
+                            <button>닫기</button>
+                        </div>
+                        <ul>
+                            <li id="m-login-show"><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                        <a href="#">비회원 예매확인</a>
+                    </div>
+                    <div class="m-nav-quick"></div>
+                    <div class="m-nav-ad"></div>
+                </div>
             </div>
             <article class="art site-map">
                 <div class="container">
