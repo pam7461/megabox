@@ -265,7 +265,8 @@
             text-decoration:underline;
         }
         .header .art{
-            padding:24px 0;
+            display:none;
+            padding:48px 0;
             position:absolute;
             left:0;
             right:0;
@@ -273,7 +274,8 @@
             z-index:12;
             background:var(--sub-color01);
         }
-        .header .art h2{
+        
+        .header .site-map h2{
             margin-bottom:50px;
             font-size:1.5em;
         }
@@ -286,8 +288,49 @@
         .main-sitemap>li:nth-child(6){
             grid-area:1/6/3/-1;
         }
+        .main-sitemap h3{
+            margin-bottom:1em;
+            border-top:1px solid #999;
+            border-bottom:1px solid #999;
+            padding:0.5em 0 0.45em;
+            font-size:1.1em;
+            text-align:center;
+        }
+        .sub-sitemap li{
+            margin-bottom:0.8em;
+            font-weight:200;
+            font-size:0.9em;
+            text-align:center;
+        }
+        .sub-sitemap li:hover{
+            text-decoration:underline;
+        }
+        .header .search{
+            display:block;
+            background:var(--main-color);
+        }
+        .search-tit{
+            margin-bottom:36px;
+            display:grid;
+            grid-template-columns:auto auto;
+            gap:2em;
+            justify-content:start;
+        }
+        .search-tit li{
+            border-bottom:2px solid transparent;
+        }
+        .search-tit li:hover,.search-tit li.active{
+            border-bottom-color:var(--white);
+        }
 
-
+        .tab{
+            display:none;
+            grid-template-columns:150px 150px 1fr;
+            gap:48px;
+        }
+        .tab.active{
+            display:grid;
+        }
 
 
         /* LOGIN POPUP */
@@ -869,7 +912,52 @@
                 </div>
             </article>
             <article class="art search">
-
+                <div class="container">
+                    <ul class="search-tit">
+                        <li class="active"><a href="#">예매율 순</a></li>
+                        <li><a href="#">메가박스 관객순</a></li>
+                    </ul>
+                    <div class="tab booking active">
+                        <ul class="movie-poster">
+                            <li><img src="./images/boxoffice01.jpg" alt="리볼버"></li>
+                            <li><img src="./images/boxoffice02.jpg" alt="파일럿"></li>
+                            <li><img src="./images/boxoffice03.jpg" alt="사랑의 하츄픽"></li>
+                            <li><img src="./images/boxoffice04.jpg" alt="빅토리"></li>
+                            <li><img src="./images/boxoffice05.jpg" alt="행복의 나라"></li>
+                        </ul>
+                        <ul class="movie-list">
+                            <li><a href="#">리볼버</a></li>
+                            <li><a href="#">파일럿</a></li>
+                            <li><a href="#">사랑의 하츄픽</a></li>
+                            <li><a href="#">빅토리</a></li>
+                            <li><a href="#">행복의 나라</a></li>
+                        </ul>
+                        <div class="movie-form">
+                            <input type="text">
+                            <input type="submit" value="전송">
+                        </div>
+                    </div>
+                    <div class="tab gallery">
+                        <ul class="movie-poster">
+                            <li><img src="./images/film01.jpg" alt="퍼팩트 데이즈"></li>
+                            <li><img src="./images/film02.jpg" alt="존 오브 인터레스트"></li>
+                            <li><img src="./images/film03.jpg" alt="디베르 티멘토"></li>
+                            <li><img src="./images/film04.jpg" alt="수카바티"></li>
+                            <li><img src="./images/film05.jpg" alt="큐이"></li>
+                        </ul>
+                        <ul class="movie-list">
+                            <li><a href="#">퍼팩트 데이즈</a></li>
+                            <li><a href="#">존 오브 인터레스트</a></li>
+                            <li><a href="#">디베르 티멘토</a></li>
+                            <li><a href="#">수카바티</a></li>
+                            <li><a href="#">큐이</a></li>
+                        </ul>
+                        <div class="movie-form">
+                            <input type="text">
+                            <input type="submit" value="전송">
+                        </div>
+                    </div>
+                </div>
             </article>
             <article class="art my-megabox">
 
