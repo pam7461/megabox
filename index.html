@@ -273,8 +273,7 @@
             top:100%;
             z-index:12;
             background:var(--sub-color01);
-        }
-        
+        }        
         .header .site-map h2{
             margin-bottom:50px;
             font-size:1.5em;
@@ -778,6 +777,22 @@
                 $('.btn-stop').addClass('active');
                 popupSwiper.autoplay.start();
             })
+        
+            
+            $('#btn-sitemap').click(function(){
+                $('.header .art').not('.site-map').hide();
+                $('.site-map').toggle();
+            });
+
+            $('#btn-search').click(function(){
+                $('.header .art').not('.search').hide();
+                $('.search').toggle();
+            });
+
+            $('#btn-my-megabox').click(function(){
+                $('.header .art').not('.my-megabox').hide();
+                $('.my-megabox').toggle();
+            });
         })
     </script>
 </head>
@@ -827,14 +842,14 @@
                 </div>
                 <div class="q-nav q-nav03 q-nav-bottom">
                     <ul>
-                        <li><a href="#" title="사이트맵 가기"><span>사이트맵</span></a></li>
-                        <li><a href="#" title="검색 가기">검색</a></li>                        
+                        <li id="btn-sitemap"><a href="#" title="사이트맵 가기"><span>사이트맵</span></a></li>
+                        <li id="btn-search"><a href="#" title="검색 가기">검색</a></li>                        
                     </ul>
                 </div>
                 <div class="q-nav q-nav04 q-nav-bottom">
                     <ul>
                         <li><a href="#" title="상영시간표 가기">상영시간표</a></li>
-                        <li><a href="#" title="나의 메가박스 가기">나의 메가박스</a></li>                        
+                        <li id="btn-my-megabox"><a href="#" title="나의 메가박스 가기">나의 메가박스</a></li>                        
                     </ul>
                 </div>
                 <nav class="dt-nav">
