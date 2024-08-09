@@ -808,13 +808,20 @@
                 $('.search-tit li').removeClass('active');
                 $(this).addClass('active');
                 $('.tab').removeClass('active');
-                let thisText = $(this).text();                
-                if(thisText = '예매율 순'){
+                let thisText = $(this).text();
+                if(thisText == '예매율 순'){
                     $('.booking').addClass('active');
                 }else{
                     $('.gallery').addClass('active');
                 }
             })
+
+            $('.movie-list li').mouseenter(function(){
+                let acIdx = $(this).index();
+                $('.tab.active .movie-poster li').removeClass('active');
+                $('.tab.active .movie-poster li').eq(acIdx).addClass('active');
+            })
+
 
 
         })
@@ -1056,7 +1063,7 @@
                     </div>
                     <div class="tab gallery">
                         <ul class="movie-poster">
-                            <li><img src="./images/film01.jpg" alt="퍼팩트 데이즈"></li>
+                            <li class="active"><img src="./images/film01.jpg" alt="퍼팩트 데이즈"></li>
                             <li><img src="./images/film02.jpg" alt="존 오브 인터레스트"></li>
                             <li><img src="./images/film03.jpg" alt="디베르 티멘토"></li>
                             <li><img src="./images/film04.jpg" alt="수카바티"></li>
