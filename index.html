@@ -306,7 +306,6 @@
             text-decoration:underline;
         }
         .header .search{
-            display:block;
             background:var(--main-color);
         }
         .search-tit{
@@ -322,7 +321,6 @@
         .search-tit li:hover,.search-tit li.active{
             border-bottom-color:var(--white);
         }
-
         .tab{
             display:none;
             grid-template-columns:150px 150px 1fr;
@@ -331,6 +329,61 @@
         .tab.active{
             display:grid;
         }
+        .tab .movie-poster li{
+            display:none;
+        }
+        .tab .movie-poster li.active{
+            display:block;
+        }
+        .tab .movie-list li{
+            margin:0.8em 0;
+            font-weight:300;            
+        }
+        .tab .movie-list li span{
+            font-size:1.5em;
+            font-style:italic;
+        }
+        .tab .movie-list li a{
+            position:relative;
+            left:6px;
+            top:-3px;
+        }
+        .tab .movie-list li a:hover{
+            text-decoration:underline;
+        }
+        .tab .movie-form{
+            display:grid;
+            justify-content:center;
+            align-items:center;
+        } 
+        .tab .movie-form input[type="text"]{
+            width:400px;
+            border:none;
+            border-bottom:2px solid var(--white);
+            padding:1em 0.5em;
+            background:transparent;
+            outline:none;
+            font-size:1.1em;
+            color:var(--white);
+        }
+        .tab .movie-form input[type="text"]::placeholder{
+            color:var(--white);
+        }
+        .tab .movie-form input[type="submit"]{
+            width:20px;
+            height:20px;
+            border:none;
+            background:url(./images/ico-search.png) no-repeat center;
+            background-size:contain;
+            text-indent:-999999px;
+            position:relative;
+            left:-40px;
+            cursor:pointer;
+        }
+        
+
+
+
 
 
         /* LOGIN POPUP */
@@ -919,22 +972,24 @@
                     </ul>
                     <div class="tab booking active">
                         <ul class="movie-poster">
-                            <li><img src="./images/boxoffice01.jpg" alt="리볼버"></li>
+                            <li class="active"><img src="./images/boxoffice01.jpg" alt="리볼버"></li>
                             <li><img src="./images/boxoffice02.jpg" alt="파일럿"></li>
                             <li><img src="./images/boxoffice03.jpg" alt="사랑의 하츄픽"></li>
                             <li><img src="./images/boxoffice04.jpg" alt="빅토리"></li>
                             <li><img src="./images/boxoffice05.jpg" alt="행복의 나라"></li>
                         </ul>
                         <ul class="movie-list">
-                            <li><a href="#">리볼버</a></li>
-                            <li><a href="#">파일럿</a></li>
-                            <li><a href="#">사랑의 하츄픽</a></li>
-                            <li><a href="#">빅토리</a></li>
-                            <li><a href="#">행복의 나라</a></li>
+                            <li><span>1</span> <a href="#">리볼버</a></li>
+                            <li><span>2</span> <a href="#">파일럿</a></li>
+                            <li><span>3</span> <a href="#">사랑의 하츄픽</a></li>
+                            <li><span>4</span> <a href="#">빅토리</a></li>
+                            <li><span>5</span> <a href="#">행복의 나라</a></li>
                         </ul>
                         <div class="movie-form">
-                            <input type="text">
-                            <input type="submit" value="전송">
+                            <form action="#">
+                                <input type="text" placeholder="영화를 입력하세요">
+                                <input type="submit" value="전송">
+                            </form>
                         </div>
                     </div>
                     <div class="tab gallery">
@@ -946,15 +1001,17 @@
                             <li><img src="./images/film05.jpg" alt="큐이"></li>
                         </ul>
                         <ul class="movie-list">
-                            <li><a href="#">퍼팩트 데이즈</a></li>
-                            <li><a href="#">존 오브 인터레스트</a></li>
-                            <li><a href="#">디베르 티멘토</a></li>
-                            <li><a href="#">수카바티</a></li>
-                            <li><a href="#">큐이</a></li>
+                            <li><span>1</span> <a href="#">퍼팩트 데이즈</a></li>
+                            <li><span>2</span> <a href="#">존 오브 인터레스트</a></li>
+                            <li><span>3</span> <a href="#">디베르 티멘토</a></li>
+                            <li><span>4</span> <a href="#">수카바티</a></li>
+                            <li><span>5</span> <a href="#">큐이</a></li>
                         </ul>
                         <div class="movie-form">
-                            <input type="text">
-                            <input type="submit" value="전송">
+                            <form action="#">
+                                <input type="text" placeholder="영화를 입력하세요">
+                                <input type="submit" value="전송">
+                            </form>
                         </div>
                     </div>
                 </div>
