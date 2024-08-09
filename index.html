@@ -546,6 +546,7 @@
 
         /* POPUP */
         .popup{
+            display:none;
             position:absolute;
             left:50%;
             top:50%;
@@ -684,6 +685,13 @@
     </style>
     <script>        
         $(function(){
+            if(document.cookie == 'TMP=true'){
+                $('.popup').hide();
+            }else{
+                $('.popup').show();
+            }
+
+
             // 난수 발생 함수
             function fnRandom(num){
                 let idx = Math.floor(Math.random() * 100 % num);
@@ -761,6 +769,10 @@
 
             // popup 닫기
             $('.btn-popup-close').click(function(){
+                let chk = $('#chk-noshow').is(':checked');
+                if(chk){
+                    document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
+                }
                 $('.popup').hide();
             });
 
@@ -822,7 +834,12 @@
                 $('.tab.active .movie-poster li').eq(acIdx).addClass('active');
             })
 
+            //쿠키생성
+            // document.cookie = `userId=pam7461;path=/;max-age=10`;
 
+            // 쿠키조회
+            // console.log(document.cookie);
+            
 
         })
     </script>
@@ -1148,7 +1165,7 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                    <label><input type="checkbox"> 하루동안 보지 않기</label>
+                    <label><input id="chk-noshow" type="checkbox"> 하루동안 보지 않기</label>
                 </div>
                 <button class="btn-popup-close">닫기</button>
             </div>
