@@ -800,6 +800,12 @@
         .box-office{
             color:var(--white);
         }
+        .box-office-swiper{
+            margin-bottom:48px;
+        }
+        .box-office .swiper-slide{
+            border-radius:0;
+        }
         .poster-container{
             display:grid;
             grid-template-columns:1fr 2fr;
@@ -854,6 +860,37 @@
             font-size:16px;
             color:var(--white);
         }
+        .hit,.ticketing{
+            border-radius:6px;
+            padding:10px 0 8px;
+            text-align:center;
+        }
+        .hit{
+            border:1px solid var(--white);
+            padding:10px 0 8px 24px;
+            background:#001c20;            
+            font-weight:300;
+            font-size:0.8em;            
+            position:relative;
+        }
+        .hit::before{
+            content:'';
+            display:block;
+            width:18px;
+            height:18px;
+            background:url(./images/ico-heart-toggle.png) no-repeat left center;
+            background-size:36px;
+            position:absolute;
+            left:16px;
+            top:50%;
+            transform:translate(0,-50%);
+        }
+        .ticketing{
+            background:var(--sub-color01);
+            font-size:0.9em;
+        }
+
+
 
 
 
