@@ -59,14 +59,22 @@
             color:var(--black);
         }
         .wrap{
-            /* overflow:hidden; */
+            overflow:hidden;
         }
         .container{
             max-width:1100px;
             margin:0 auto;
         }
+        /* SEC */
+        .sec{
+            padding:48px 0 96px;
+        }
+        .sec h2{
+            margin-bottom:1em;
+            font-size:2em;
+        }
         /* 광고섹션 */
-        .ad01{position:relative;}
+        .ad{position:relative;padding:0;}
         .ad li{display:none;}        
         .ad li:nth-child(1){background:#42534d;}
         .ad li:nth-child(2){background:#001c20;}
@@ -787,14 +795,7 @@
             background:var(--main-color);
         }
 
-        /* SEC */
-        .sec{
-            padding:48px 0 96px;
-        }
-        .sec h2{
-            margin-bottom:1em;
-            font-size:2em;
-        }
+        
 
         /* BOX OFFICE */
         .box-office{
@@ -889,7 +890,63 @@
             background:var(--sub-color01);
             font-size:0.9em;
         }
+        .box-office-nav{
+            padding:18px 0;
+            background:rgba(0,0,0,0.5);
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            text-align:center;
+        }
+        .box-office-nav li{
 
+        }
+        .box-office-nav li::after{
+
+        }
+        .box-office-nav li:nth-child(4)::after{
+
+        }
+
+        .box-office-nav form{
+            position:relative;
+        }
+        .box-office-nav form input[type="text"]{
+            border:none;
+            border-bottom:1px solid var(--white);
+            padding:10px;
+            background:transparent;
+            color:var(--white);
+        }
+        .box-office-nav form input[type="text"]:focus{
+            outline:none;
+        }
+        .box-office-nav form input[type="submit"]{
+            position:absolute;
+            left:80%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            width:24px;
+            height:24px;
+            border:none;
+            background:transparent url(./images/ico-search.png) no-repeat center;
+            background-size:24px;
+            text-indent:-99999px;
+        }
+        .box-office-nav a{
+            display:inline-block;
+            height:36px;
+            padding-left:36px;
+            background:url(./images/ico-schedule-main.png) no-repeat left center;
+            background-size:24px;
+            line-height:38px;
+        }
+        .box-office-nav li:nth-child(3) a{
+            background-image:url(./images/ico-boxoffice-main.png);
+        }
+        .box-office-nav li:nth-child(4) a{
+            background-image:url(./images/ico-quick-reserve-main.png);
+            background-size:28px;
+        }
 
 
 
