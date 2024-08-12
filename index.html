@@ -788,6 +788,11 @@
         }
 
 
+
+
+
+
+
         @media (max-width:1099px){
             .container{
                 padding:0 16px;
@@ -1038,6 +1043,17 @@
                 $('.m-nav').hide();
                 $('.login').show();
             })
+
+            // BOX OFFICE SWIPER JS
+            let boxOfficeSwiper = new Swiper('.box-office-swiper',{
+                slidesPerView:2.4,
+                spaceBetween:24,
+                autoplay: {
+                    delay: 3000,
+                },
+                loop:true,
+            });
+
         })
     </script>
 </head>
@@ -1445,7 +1461,194 @@
             </div>
         </aside>
         <section class="sec sec01 box-office">
-            <div class="container"></div>
+            <div class="container">
+                <h2>박스오피스</h2>
+                <!-- SWIPER CONTAINER -->
+                <div class="swiper box-office-swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide swiper-slide01">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice01.jpg" alt="리볼버"></div>
+                                <div class="poster-num">1</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide02">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice02.jpg" alt="리볼버"></div>
+                                <div class="poster-num">2</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide03">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice03.jpg" alt="리볼버"></div>
+                                <div class="poster-num">3</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide04">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice04.jpg" alt="리볼버"></div>
+                                <div class="poster-num">4</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide05">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice05.jpg" alt="리볼버"></div>
+                                <div class="poster-num">5</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide06">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice06.jpg" alt="리볼버"></div>
+                                <div class="poster-num">6</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide07">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice07.jpg" alt="리볼버"></div>
+                                <div class="poster-num">7</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide08">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice08.jpg" alt="리볼버"></div>
+                                <div class="poster-num">8</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide09">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice09.jpg" alt="리볼버"></div>
+                                <div class="poster-num">9</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                        <li class="swiper-slide swiper-slide10">
+                            <div class="poster-box">
+                                <div class="img-box"><img src="./images/boxoffice10.jpg" alt="리볼버"></div>
+                                <div class="poster-num">10</div>
+                                <div class="poster-over-txt">
+                                    <p>“약속한 돈을 받는데 무슨 각오가 필요해”
+                                        꿈에 그리던 새 아파트 입주를 기다리던 경찰 수영은 뜻하지 않은 비리에 엮이면서
+                                        모든 죄를 뒤집어쓰면 큰 보상을 해준다는 제안을 받고 이를 받아들인다.                                        
+                                        2년 후 수영의 출소일, 교도소 앞 그녀를 찾아온 사람은 생전 처음 보는 윤선 뿐
+                                        수영은 일이 잘못되었다고 직감한다.                                        
+                                        잃어버린 모든 것을 되찾기 위해 보상을 약속한 앤디를 찾아 나선 수영은
+                                        그 뒤에 있는 더 크고 위험한 세력을 마주하게 되는데…</p>
+                                    <span>7.3</span>
+                                </div>
+                            </div>
+                            <div class="hit">543</div>
+                            <div class="ticketing"><a href="#">예매</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section class="sec sec02 benefit">
             <div class="container"></div>
