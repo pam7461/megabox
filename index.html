@@ -71,6 +71,7 @@
         }
         .sec h2{
             margin-bottom:1em;
+            font-weight:300;
             font-size:2em;
         }
         /* 광고섹션 */
@@ -985,6 +986,68 @@
             100%{transform:translateY(0)}
         }
 
+        /* BENEFIT */
+        .benefit{
+            color:var(--white);
+            position:relative;
+        }
+        .benefit::before{
+            content:'';
+            display:block;
+            position:absolute;
+            left:0;
+            right:0;
+            top:60%;
+            bottom:0;
+            z-index:1;
+            background:var(--main-color);
+        }
+        .benefit .container{
+            position:relative;
+            z-index:2;
+        }
+        .benefit h2{
+            color:var(--sub-color06);
+        }
+        .benefit-wrap{
+            display:grid;
+            grid-template-columns:2fr 1fr;
+            column-gap: 30px;
+            row-gap: 60px;
+        }
+
+        .benefit-ad .img-box{
+            display:none;
+        }
+
+
+        .benefit-nav{
+            grid-column:1/-1;
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            justify-content:space-around;
+            text-align:center;
+        }
+        .benefit-nav a{
+            display:block;
+            padding-top:60px;
+            background:url(./images/ico-vip.png) no-repeat center top;
+
+        }
+        .benefit-nav li:nth-child(2) a{
+            background-image:url(./images/ico-membership.png);
+        }
+        .benefit-nav li:nth-child(3) a{
+            background-image:url(./images/ico-card.png);
+        }
+        .benefit-nav li:nth-child(4) a{
+            background-image:url(./images/ico-event.png);
+        }
+        .benefit-nav li:nth-child(5) a{
+            background-image:url(./images/ico-store.png);
+        }
+
+
 
 
 
@@ -1060,6 +1123,18 @@
                 left:calc(50% - 18px);
                 transform:translate(-50%,-50%);
             }
+            .box-office-nav form input[type="text"]{
+                display:none;
+            }
+            .box-office-nav form input[type="submit"]{
+                left:50%;
+                transform: translate(-50%, 25%);
+            }
+            .box-office-nav form input[type="text"]::placeholder,
+            .box-office-nav a{
+                text-indent:-9999px;
+                background-position:center;
+            }
             /* 광고2 */
             .ad02{display:none;}
         }
@@ -1083,6 +1158,7 @@
             $('.ad01 li').eq(fnRandom(4)).show();
             $('.ad02 li').eq(fnRandom(4)).show();
             $('.login-ad li').eq(fnRandom(4)).show();
+            $('.benefit-ad .img-box').eq(fnRandom(5)).show();
 
             // 광고닫기
             $('.btn-ad01-close').click(function(){                
@@ -1904,6 +1980,23 @@
         <section class="sec sec02 benefit">
             <div class="container">
                 <h2>혜택</h2>
+                <div class="benefit-wrap">
+                    <div class="benefit-bannver"></div>
+                    <div class="benefit-ad">
+                        <div class="img-box active"><a href="#"><img src="./images/ad02-01.jpg" alt="룩북"></a></div>
+                        <div class="img-box"><a href="#"><img src="./images/ad02-02.jpg" alt="우마무스메"></a></div>
+                        <div class="img-box"><a href="#"><img src="./images/ad02-03.jpg" alt="본 아이덴티티"></a></div>
+                        <div class="img-box"><a href="#"><img src="./images/ad02-04.jpg" alt="프리큐어"></a></div>
+                        <div class="img-box"><a href="#"><img src="./images/ad02-05.jpg" alt="현대해상"></a></div>
+                    </div>
+                    <ul class="benefit-nav">
+                        <li><a href="#">VIP LOUNGE</a></li>
+                        <li><a href="#">멤버십</a></li>
+                        <li><a href="#">할인카드안내</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">스토어</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="sec sec03 curation">
