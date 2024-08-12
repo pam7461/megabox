@@ -16,8 +16,7 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <title>MEET PLAY SHARE, 메가박스</title>
-    <style>
-        body{background:black;}
+    <style>        
         /* 기본스타일 데스크탑 우선 */
         @font-face {
             font-family:'Noto Sans KR';
@@ -60,6 +59,7 @@
         }
         .wrap{
             overflow:hidden;
+
         }
         .container{
             max-width:1100px;
@@ -800,7 +800,25 @@
         /* BOX OFFICE */
         .box-office{
             color:var(--white);
+            position:relative;            
         }
+        .box-office:before{
+            content:'';
+            display:block;
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:1;
+            background:url(./images/boxoffice09.jpg) no-repeat center;
+            background-size:cover;
+            filter:brightness(8%) grayscale(1);
+        }   
+        .box-office .container{
+            position:relative;
+            z-index:2;
+        }     
         .box-office-swiper{
             margin-bottom:48px;
         }
@@ -892,7 +910,7 @@
         }
         .box-office-nav{
             padding:18px 0;
-            margin-bottom:100px;
+            margin-bottom:20px;
             background:rgba(0,0,0,0.5);
             display:grid;
             grid-template-columns:repeat(4,1fr);
@@ -915,7 +933,6 @@
         .box-office-nav li:nth-child(4)::after{
             display:none;
         }
-
         .box-office-nav form{
             position:relative;
         }
@@ -955,6 +972,17 @@
         .box-office-nav li:nth-child(4) a{
             background-image:url(./images/ico-quick-reserve-main.png);
             background-size:28px;
+        }
+        .move-icon{
+            width:16px;
+            margin:0 auto;
+            animation: move-y 2s ease 0s infinite;
+        }
+        @keyframes move-y {
+            0%{transform:translateY(0)}
+            45%{transform:translateY(50px)}
+            55%{transform:translateY(50px)}
+            100%{transform:translateY(0)}
         }
 
 
