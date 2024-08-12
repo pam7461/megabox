@@ -1053,6 +1053,13 @@
             .login-ad {
                 display:none;
             }
+            .hit, .ticketing{
+                grid-column:1/-1;
+            }
+            .hit::before{
+                left:calc(50% - 18px);
+                transform:translate(-50%,-50%);
+            }
             /* 광고2 */
             .ad02{display:none;}
         }
@@ -1246,9 +1253,9 @@
             let boxOfficeSwiper = new Swiper('.box-office-swiper',{
                 slidesPerView:2.4,
                 spaceBetween:24,
-                autoplay: {
-                    delay: 3000,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                // },
                 loop:true,
                 breakpoints:{
                     620:{
