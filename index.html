@@ -892,19 +892,28 @@
         }
         .box-office-nav{
             padding:18px 0;
+            margin-bottom:100px;
             background:rgba(0,0,0,0.5);
             display:grid;
             grid-template-columns:repeat(4,1fr);
             text-align:center;
         }
         .box-office-nav li{
-
+            position:relative;
         }
         .box-office-nav li::after{
-
+            content:'';
+            display:block;
+            width:1px;
+            height:24px;
+            background:var(--white);
+            position:absolute;
+            right:0;
+            top:50%;
+            transform:translate(0,-50%);
         }
         .box-office-nav li:nth-child(4)::after{
-
+            display:none;
         }
 
         .box-office-nav form{
