@@ -1011,9 +1011,29 @@
         }
         .benefit-wrap{
             display:grid;
-            grid-template-columns:2fr 1fr;
+            grid-template-columns:63% 37%;;
             column-gap: 30px;
             row-gap: 60px;
+        }
+        .benefit-banner{
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-between;
+            align-content:space-between;
+        }
+        .benefit-banner .swiper{
+            width:50%;
+        }
+        .benefit-banner .banner01{
+            width:calc(67.5% - 15px);
+        }
+        .benefit-banner .banner02{
+            width:calc(32.5% - 15px);
+        }
+
+        .benefit .banner01 .img-box,
+        .benefit .banner02 .img-box{
+            display:none;
         }
 
         .benefit-ad .img-box{
@@ -1135,6 +1155,8 @@
                 text-indent:-9999px;
                 background-position:center;
             }
+            .benefit-ad{display:none;}
+            .benefit-nav{text-indent:-99999px;}
             /* 광고2 */
             .ad02{display:none;}
         }
@@ -1159,6 +1181,8 @@
             $('.ad02 li').eq(fnRandom(4)).show();
             $('.login-ad li').eq(fnRandom(4)).show();
             $('.benefit-ad .img-box').eq(fnRandom(5)).show();
+            $('.benefit .banner01 .img-box').eq(fnRandom(5)).show();
+            $('.benefit .banner02 .img-box').eq(fnRandom(5)).show();
 
             // 광고닫기
             $('.btn-ad01-close').click(function(){                
@@ -1347,6 +1371,37 @@
                         slidesPerView:4.5,
                     },
                 },
+            });
+
+
+            // BENEFIT SWIPER01
+            let benefitSwiper01 = new Swiper('.benefit-swiper01',{
+                allowTouchMove:false,
+                autoplay: {
+                    delay: 3000,
+                },
+                 // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+            let benefitSwiper02 = new Swiper('.benefit-swiper02',{
+                allowTouchMove:false,
+                autoplay: {
+                    delay: 3000,
+                },
+                effect: "cube",
             });
 
         })
@@ -1981,7 +2036,55 @@
             <div class="container">
                 <h2>혜택</h2>
                 <div class="benefit-wrap">
-                    <div class="benefit-bannver"></div>
+                    <div class="benefit-banner">
+                        <div class="swiper benefit-swiper01">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-left01.jpg" alt="리볼버"></a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-left02.jpg" alt="슈퍼베드4"></a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-left03.jpg" alt="VR 콘서트"></a>
+                                </li>
+                            </ul>
+                            <div class="benefit-swiper-controls">
+                                <div class="swiper-scrollbar"></div>                            
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-start-stop">멈춤</div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="swiper benefit-swiper02">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-right01.jpg" alt="리볼버"></a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-right02.jpg" alt="슈퍼베드4"></a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#"><img src="./images/slide-right03.jpg" alt="VR 콘서트"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="banner01">
+                            <div class="img-box"><a href="#"><img src="./images/banner01-01.jpg" alt="lg유플러스"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner01-02.jpg" alt="네이버페이"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner01-03.jpg" alt="카카오뱅크"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner01-04.jpg" alt="토스페이"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner01-05.jpg" alt="톡학생증"></a></div>
+                        </div>
+                        <div class="banner02">
+                            <div class="img-box"><a href="#"><img src="./images/banner02-01.jpg" alt="lg유플러스"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner02-02.jpg" alt="톡학생증"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner02-03.jpg" alt="네이버페이"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner02-04.jpg" alt="토스페이"></a></div>
+                            <div class="img-box"><a href="#"><img src="./images/banner02-05.jpg" alt="카카오뱅크"></a></div>
+                        </div>
+                    </div>
                     <div class="benefit-ad">
                         <div class="img-box active"><a href="#"><img src="./images/ad02-01.jpg" alt="룩북"></a></div>
                         <div class="img-box"><a href="#"><img src="./images/ad02-02.jpg" alt="우마무스메"></a></div>
