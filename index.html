@@ -466,9 +466,24 @@
             grid-template-columns:auto auto;
             column-gap:24px;
             justify-content:start;
+            font-weight:300;
+            font-size:0.8em;
+            color:var(--sub-color02);
+            position:relative;
+        }
+        .m-nav-top ul::before{
+            content:'';
+            display:block;
+            width:1px;
+            height:10px;
+            background:var(--white);
+            position:absolute;
+            left: 31%;
+            top: 9%;
         }
         .m-nav-top ul+a{
-
+            font-weight:300;
+            font-size:0.9em;
         }
 
 
