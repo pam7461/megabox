@@ -1011,9 +1011,9 @@
         }
         .benefit-wrap{
             display:grid;
-            grid-template-columns:63% 37%;;
-            column-gap: 30px;
-            row-gap: 60px;
+            grid-template-columns:calc(63% - 15px) calc(37% - 15px);
+            column-gap:30px;
+            row-gap:60px;
         }
         .benefit-banner{
             display:flex;
@@ -1024,9 +1024,58 @@
         .benefit-banner .swiper{
             width:50%;
         }
+        .benefit-swiper-controls{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:2;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .benefit-swiper-controls .swiper-scrollbar.swiper-scrollbar-horizontal,
+        .benefit-swiper-controls .swiper-button-next,
+        .benefit-swiper-controls .swiper-button-prev{
+            position:static;
+        }
+        .benefit-swiper-controls .swiper-scrollbar.swiper-scrollbar-horizontal{
+            margin-right:8px;
+        }
+        .benefit-swiper-controls .swiper-button-next,
+        .benefit-swiper-controls .swiper-button-prev{
+            width:16px;
+            height:16px;
+            margin-top:0;
+            margin-right:8px;
+            color:var(--black);
+        }
+        .benefit-swiper-controls .swiper-button-next::after,
+        .benefit-swiper-controls .swiper-button-prev::after{
+            font-size:16px;
+        }
+        .swiper-start-stop{
+            font-size:0;
+            margin-right:8px;
+        }
+        .swiper-start-stop::before{
+            content:'';
+            display:block;
+            width:16px;
+            height:16px;
+            background:var(--black);
+        }
+        .benefit-banner .swiper-pagination{
+            width:50px;
+        }
+        .benefit-banner  .swiper-pagination-fraction{
+            color:var(--black);
+        }
+
         .benefit-banner .banner01{
             width:calc(67.5% - 15px);
         }
+        
         .benefit-banner .banner02{
             width:calc(32.5% - 15px);
         }
@@ -1154,6 +1203,9 @@
             .box-office-nav a{
                 text-indent:-9999px;
                 background-position:center;
+            }
+            .benefit-banner{
+                grid-column:1/-1;
             }
             .benefit-ad{display:none;}
             .benefit-nav{text-indent:-99999px;}
@@ -1377,12 +1429,13 @@
             // BENEFIT SWIPER01
             let benefitSwiper01 = new Swiper('.benefit-swiper01',{
                 allowTouchMove:false,
-                autoplay: {
-                    delay: 3000,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                // },
                  // If we need pagination
                 pagination: {
                     el: '.swiper-pagination',
+                    type: "fraction",
                 },
 
                 // Navigation arrows
@@ -1398,9 +1451,9 @@
             });
             let benefitSwiper02 = new Swiper('.benefit-swiper02',{
                 allowTouchMove:false,
-                autoplay: {
-                    delay: 3000,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                // },
                 effect: "cube",
             });
 
