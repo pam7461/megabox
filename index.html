@@ -1429,9 +1429,9 @@
             // BENEFIT SWIPER01
             let benefitSwiper01 = new Swiper('.benefit-swiper01',{
                 allowTouchMove:false,
-                // autoplay: {
-                //     delay: 3000,
-                // },
+                autoplay: {
+                    delay: 3000,
+                },
                  // If we need pagination
                 pagination: {
                     el: '.swiper-pagination',
@@ -1451,11 +1451,15 @@
             });
             let benefitSwiper02 = new Swiper('.benefit-swiper02',{
                 allowTouchMove:false,
-                // autoplay: {
-                //     delay: 3000,
-                // },
+                autoplay: {
+                    delay: 3000,
+                },
                 effect: "cube",
             });
+
+            
+            benefitSwiper01.controller.control = benefitSwiper02;
+            benefitSwiper02.controller.control = benefitSwiper01;
 
         })
     </script>
