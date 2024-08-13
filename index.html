@@ -1282,6 +1282,7 @@
             grid-template-columns:auto 1fr auto auto;
             gap:48px;            
             padding:20px 0 18px;
+            margin-bottom:48px;
             position:relative;
         }
         .info-notice::before,.info-notice::after{
@@ -1340,7 +1341,37 @@
             right: 4px;
             top: 3px;
         }
-
+        .info-nav{
+            width:100%;
+        }
+        .info-nav tr{
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+            text-align:center;
+        }
+        .info-nav a{
+            display:block;
+            padding-top:56px;
+            background:url(./images/ico-customer.png) no-repeat center top;
+        }
+        .info-nav td:nth-child(2) a{
+            background-image:url(./images/ico-faq.png);
+        }
+        .info-nav td:nth-child(3) a{
+            background-image:url(./images/ico-qna.png);
+        }
+        .info-nav td:nth-child(4) a{
+            background-image:url(./images/ico-group.png);
+        }
+        .info-nav td:nth-child(5) a{
+            background-image:url(./images/ico-lost.png);
+        }
+        .info-nav td:nth-child(6) a{
+            background-image:url(./images/ico-boutique.png);
+        }
+        .info-nav a:hover{
+            text-decoration:underline;
+        }
 
 
 
@@ -1408,7 +1439,10 @@
             }
             .m-btn-nav{
                 display:block;
-            }            
+            }  
+            .info-nav{
+                font-size:0.9em;
+            }          
         }
 
         @media (max-width:767px){
@@ -1453,7 +1487,13 @@
                 justify-content:space-evenly;
                 row-gap:46px;
             }
+            .info-notice{
+                margin-bottom:0;
+            }
             .info-notice li:nth-child(3) span{
+                display:none;
+            }
+            .info-nav{
                 display:none;
             }
         }
@@ -2550,6 +2590,16 @@
                     <li><span>2024.</span>08.13</li>
                     <li><a href="#">더보기</a></li>
                 </ul>
+                <table class="info-nav">
+                    <tr>
+                        <td><a href="#">고객센터</a></td>
+                        <td><a href="#">자주 묻는 질문</a></td>
+                        <td><a href="#">1:1 문의</a></td>
+                        <td><a href="#">단체/대관문의</a></td>
+                        <td><a href="#">분실물 문의/접수</a></td>
+                        <td><a href="#">더 부티크 프라이빗<br>대관예매</a></td>
+                    </tr>
+                </table>
             </div>
         </section>
         <section class="sec sec05 ad ad02">
