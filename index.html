@@ -62,8 +62,9 @@
 
         }
         .container{
-            max-width:1100px;
+            max-width:1132px;
             margin:0 auto;
+            padding:0 16px;
         }
         /* SEC */
         .sec{
@@ -1195,6 +1196,9 @@
             border-bottom:1px solid var(--white);
             padding-bottom:24px;
             font-size:2.4em;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
         }
         .curation-list p{
             padding:20px 0;
@@ -1393,15 +1397,33 @@
         .footer-nav li{
             margin-right:2em;
         }
+        .cinema-search a{
+            display:block;
+            border:1px solid #999;
+            border-radius:20px;
+            padding:6px 12px 5px 24px;
+            background:url(./images/ico-search.png) no-repeat 5px center;
+            background-size:14px;
+            font-weight:300;
+            font-size:0.8em;
+            transform:translateY(-5px);
+        }
+        .address{
+            font-weight:300;
+            font-size:0.8em;
+            line-height:1.5;
+        }
+        .footer-sns{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:6px;
+        }
         
        
 
 
 
-        @media (max-width:1099px){
-            .container{
-                padding:0 16px;
-            }
+        @media (max-width:1099px){            
             .login .container{
                 padding:0;
                 width:640px;
@@ -1428,6 +1450,25 @@
                 right:auto;
                 left:50%;
                 transform:translate(-50%,0);
+            }
+            .footer-nav{
+                width:auto;
+                justify-content:center;
+                order:2;
+            }           
+            .footer-logo{
+                order:1;
+                margin-bottom:24px;
+            } 
+            .address{
+                order:3;
+                width:100%;
+                text-align:center;
+            }
+            .footer-nav li.t-hidden,
+            .cinema-search,
+            .footer-sns{
+                display:none;
             }
         }
 
@@ -1519,6 +1560,16 @@
             .info-nav{
                 display:none;
             }
+            .footer-nav{
+                width:100%;
+                flex-flow:row wrap;
+            }
+            .footer-nav li{
+                margin-bottom:1em;
+            }
+            .footer-logo{
+                display:none;
+            }
         }
 
         @media (max-width:620px){
@@ -1608,7 +1659,7 @@
             //     e.preventDefault();
             // }
 
-            $('#btn-login-open').click(function(e){
+            $('#btn-login-open,.my-megabox button').click(function(e){
                 $('.login').show();
                 e.preventDefault();
             });
@@ -2653,9 +2704,9 @@
             <div class="container">
                 <ul class="footer-nav">
                     <li><a href="#">회사소개</a></li>
-                    <li><a href="#">인재체용</a></li>
-                    <li><a href="#">사회공헌</a></li>
-                    <li><a href="#">제휴/광고/부대사업문의</a></li>
+                    <li class="t-hidden"><a href="#">인재체용</a></li>
+                    <li class="t-hidden"><a href="#">사회공헌</a></li>
+                    <li class="t-hidden"><a href="#">제휴/광고/부대사업문의</a></li>
                     <li><a href="#">이용약관</a></li>
                     <li><a href="#">위치기반서비스 이용약관</a></li>
                     <li><a href="#"><strong>개인정보처리방침</strong></a></li>
