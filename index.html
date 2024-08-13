@@ -1223,10 +1223,15 @@
             top:0px;
             border-bottom-left-radius:22px;
             border-bottom-right-radius:22px;
-            padding:12px 16px 16px 16px;
-            background:var(--sub-color01);
+            padding:12px 16px 16px 16px;            
             font-weight:700;
             font-size:1.2em;
+        }
+        .curation-list-poster p.c{
+            background:var(--sub-color05);
+        }
+        .curation-list-poster p.f{
+            background:var(--sub-color02);
         }
         .curation-list-poster+a{
             display:block;
@@ -1592,28 +1597,35 @@
             })
 
             // CURATION AJAX
-            $.ajax({
-                url:'./json/curation01.json',
-                dataType:'json',
-                success:function(data){
-                    $('.curation-list h3').html(`#${data.tit}소사이어티`);
-                    $('.curation-list h4').html(`${data.sTit}`);
-                    $('#p1').html(`${data.p1}`);
-                    $('#p2').html(`${data.p2}`);
-                    if(data.tit == '필름'){
-                        $('.curation-poster p').html(`MEGABOX<br>FILM<br>SOCIETY`);
-                    }else{
-                        $('.curation-poster p').html(`MEGABOX<br>CLASSIC<br>SOCIETY`);
-                    }
-                    $('.curation-poster img').attr('src',`./images/${data.src}`);
-                    
-                    console.log(data);
-                },
-                error:function(){
-                    console.log('Error');
-                },
-            });
+            function fnCuration(num){
+                $.ajax({
+                    url:`./json/curation0${num}.json`,
+                    dataType:'json',
+                    success:function(data){
+                        $('.curation-list h3').html(`#${data.tit}소사이어티`);
+                        $('.curation-list h4').html(`${data.sTit}`);
+                        $('#p1').html(`${data.p1}`);
+                        $('#p2').html(`${data.p2}`);
+                        if(data.tit == '필름'){
+                            $('.curation-poster p').html(`MEGABOX<br>FILM<br>SOCIETY`);
+                        }else{
+                            $('.curation-poster p').html(`MEGABOX<br>CLASSIC<br>SOCIETY`);
+                        }
+                        $('.curation-poster img').attr('src',`./images/${data.src}`);                        
+                    },
+                    error:function(){
+                        console.log('Error');
+                    },
+                });
+            }
 
+
+
+            fnCuration(1);
+            $('.curation-list li').click(function(e){
+                e.preventDefault();
+                fnCuration($(this).index()+1);                
+            })
         })
     </script>
 </head>
@@ -2333,28 +2345,28 @@
                             <li>
                                 <div class="curation-list-poster">
                                     <a href="#"><img src="./images/classic01.jpg" alt="마탄의 사수"></a>
-                                    <p>C</p>
+                                    <p class="c">C</p>
                                 </div> 
                                 <a href="#">마탄의 사수</a>
                             </li>
                             <li>
                                 <div class="curation-list-poster">
                                     <a href="#"><img src="./images/film01.jpg" alt="퍼팩트 데이즈"></a>
-                                    <p>F</p>
+                                    <p class="f">F</p>
                                 </div> 
                                 <a href="#">퍼팩트 데이즈</a>
                             </li>
                             <li>
                                 <div class="curation-list-poster">
                                     <a href="#"><img src="./images/classic02.jpg" alt="그리스 신화의 비극"></a>
-                                    <p>C</p>
+                                    <p class="c">C</p>
                                 </div> 
                                 <a href="#">그리스 신화의 비극 : 서양문화에 영향을 준 신화들</a>
                             </li>
                             <li>
                                 <div class="curation-list-poster">
                                     <a href="#"><img src="./images/film02.jpg" alt="존 오브 인터레스트"></a>
-                                    <p>F</p>
+                                    <p class="f">F</p>
                                 </div> 
                                 <a href="#">존 오브 인터레스트</a>
                             </li>
