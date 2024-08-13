@@ -1123,6 +1123,110 @@
             background-image:url(./images/ico-store.png);
         }
 
+        /* CURATION */
+        .curation{
+            background:var(--sub-color06);
+            color:var(--white);
+        }
+        .curation-wrap{
+            display:grid;
+            grid-template-columns:1fr 2fr;
+            gap:36px;
+        }
+        .curation-selection{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:8px;
+            align-content:start;
+            padding-left:16px;
+            padding-top:16px;
+        }
+        .curation-poster{
+            grid-column:1/-1;
+            position:relative;
+        }
+        .curation-poster a{
+            display:block;
+            border-radius:16px;
+            overflow:hidden;
+        }
+        .curation-poster p{
+            position:absolute;
+            left:-16px;
+            top:-16px;
+            width:120px;
+            padding:12px;
+            background:var(--sub-color05);
+            font-weight:900;
+        }
+        .curation-poster p::after{
+            box-sizing:border-box;
+            content:'';
+            display:block;
+            width:100%;
+            height:50px;
+            border-top:25px solid var(--sub-color05);
+            border-right:60px solid transparent;
+            border-bottom:25px solid transparent;
+            border-left:60px solid var(--sub-color05);
+            position:absolute;
+            left:0;
+            top:100%;
+        }
+        .curation-selection>a{
+            border:1px solid var(--white);
+            border-radius:4px;
+            padding:12px;
+            font-size:1.2em;
+            text-align:center;
+        }
+        .curation-selection>a[title="예매 가기"]{
+            border:none;
+            background:var(--sub-color01);
+        }
+        .curation-list{
+            padding-top:16px;
+        }
+        .curation-list h3{
+            margin-bottom:6px;
+            font-size:1.2em;
+        }
+        .curation-list h4{
+            border-bottom:1px solid var(--white);
+            padding-bottom:24px;
+            font-size:2.4em;
+        }
+        .curation-list p{
+            padding:20px 0;
+            font-weight:300;
+            font-size:0.9em;
+            line-height:1.5;
+        }
+        .curation-list ul{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:16px;
+        }
+        .curation-list-poster{
+            position:relative;
+            padding-top:16px;
+        }
+        .curation-list-poster a{
+            display:block;
+            border-radius:6px;
+            overflow:hidden;
+        }
+        .curation-list-poster p{
+            position:absolute;
+            left:10px;
+            top:0px;
+            border-bottom-left-radius:22px;
+            border-bottom-right-radius:22px;
+            padding:12px 16px 16px 16px;
+            background:var(--sub-color01);
+            font-weight:700;
+            font-size:1.2em;
+        }
 
 
 
@@ -2188,8 +2292,8 @@
                         <a href="#">예매</a>
                     </div>
                     <div class="curation-list">
-                        <h2>#필름소사이어티</h2>
-                        <h3>퍼펙트 데이즈</h3>
+                        <h3>#필름소사이어티</h3>
+                        <h4>퍼펙트 데이즈</h4>
                         <p>도쿄 시부야의 공공시설 청소부 ‘히라야마’는 매일 반복되지만 충만한 일상을 살아간다.</p>
                         <p>오늘도 그는 카세트 테이프로 올드 팝을 듣고,<br>필름 카메라로 나무 사이에 비치는 햇살을 찍고,<br>자전거를 타고 단골 식당에 가서 술 한잔을 마시고,<br>헌책방에서 산 소설을 읽으며 하루를 마무리한다.</p>
                         <ul>
