@@ -25,7 +25,7 @@ $(function(){
         $('.ad01').hide();
     });
 
-    // 링크 타이틀 닫기            
+    // 링크 타이틀 달기            
     $('a').each(function(idx){
         let dtListsHtml = $('a').eq(idx).html();
         $('a').eq(idx).attr('title',`${dtListsHtml} 가기`);
