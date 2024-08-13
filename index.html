@@ -1248,11 +1248,13 @@
             display:grid;
             grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
             gap:24px;
+            margin-bottom:46px;
         }
         .info-list li{
             border-radius:16px;
             overflow:hidden;           
             position:relative;
+            box-shadow:6px 6px 12px rgba(0,0,0,0.2);
         }
         .info-list li.new::after{
             content:'NEW';
@@ -1275,8 +1277,69 @@
             filter:grayscale(0);
             opacity:1;
         }
+        .info-notice{
+            display:grid;
+            grid-template-columns:auto 1fr auto auto;
+            gap:48px;            
+            padding:20px 0 18px;
+            position:relative;
+        }
+        .info-notice::before,.info-notice::after{
+            content:'';
+            display:block;
+            height:1px;
+            background:var(--black);
+            position:absolute;
+            left:-2000px;
+            right:-2000px;
+            top:0;
+            opacity:0.5;
+        }
+        .info-notice::after{
+            top:100%;
+        }
+        .info-notice a:hover{
+            text-decoration:underline;
+        }        
+        .info-notice li{
+            position:relative;
+        }
+        .info-notice li:nth-child(2){
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .info-notice li:nth-child(2) span{
+            color:var(--main-color);
+        }
 
-
+        .info-notice li:nth-child(1)::after,
+        .info-notice li:nth-child(3)::after{
+            content:'';
+            display:block;
+            width:1px;
+            height:12px;
+            background:var(--black);
+            opacity:0.3;
+            position:absolute;
+            right: -23px;
+            top: 3px;
+        }
+        .info-notice li:nth-child(4){
+            padding-right:20px;
+        }
+        .info-notice li:nth-child(4)::after{
+            content: '';
+            display: block;
+            width: 9px;
+            height: 9px;
+            border-top: 2px solid var(--black);
+            border-right: 2px solid var(--black);
+            transform: rotate(45deg);
+            position: absolute;
+            right: 4px;
+            top: 3px;
+        }
 
 
 
@@ -1303,6 +1366,14 @@
             }
             .benefit-swiper01 .swiper-pagination{
                 display:none;
+            }
+            .info-list li{
+                border-radius:50%;
+            }
+            .info-list li.new::after{
+                right:auto;
+                left:50%;
+                transform:translate(-50%,0);
             }
         }
 
@@ -1376,6 +1447,15 @@
             .benefit-nav{text-indent:-99999px;}
             /* 광고2 */
             .ad02{display:none;}
+            .info-list{
+                grid-template-columns:160px 160px 160px;
+                column-gap:auto;
+                justify-content:space-evenly;
+                row-gap:46px;
+            }
+            .info-notice li:nth-child(3) span{
+                display:none;
+            }
         }
 
         @media (max-width:620px){
@@ -1386,6 +1466,24 @@
             .curation-list ul li:nth-child(2),
             .curation-list ul li:nth-child(4){
                 grid-column:3/-1;
+            }
+            .info-list{
+                grid-template-columns:140px 140px;                
+            }
+            .info-notice{
+                grid-template-columns:1fr auto auto;
+            }
+            .info-notice li:nth-child(1){
+                display:none;
+            }
+        }
+
+        @media (max-width:500px){
+            .info-notice{
+                grid-template-columns:1fr auto;
+            }
+            .info-notice li:nth-child(4){
+                display:none;
             }
         }
 
@@ -2445,6 +2543,12 @@
                     <li class="new">
                         <a href="#"><img src="./images/megainfo-mx4d2.jpg" alt="mx4d2"></a>
                     </li>
+                </ul>
+                <ul class="info-notice">
+                    <li>메가박스</li>
+                    <li><a href="#"><span>[공지]</span> [북앤라이프] 도서문화상품권 서비스 점검 안내 (8/28)</a></li>
+                    <li><span>2024.</span>08.13</li>
+                    <li><a href="#">더보기</a></li>
                 </ul>
             </div>
         </section>
