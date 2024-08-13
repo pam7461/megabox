@@ -1059,11 +1059,17 @@
             margin-right:8px;
         }
         .swiper-start-stop::before{
+            box-sizing:border-box;
             content:'';
             display:block;
             width:16px;
             height:16px;
-            background:var(--black);
+            border:8px solid var(--black); 
+        }
+        .swiper-start-stop.start::before{
+            border-top-color:transparent;          
+            border-right-color:transparent;
+            border-bottom-color:transparent;
         }
         .benefit-banner .swiper-pagination{
             width:50px;
@@ -1108,6 +1114,7 @@
         }
         .benefit-nav li:nth-child(3) a{
             background-image:url(./images/ico-card.png);
+            background-position-y:7px;
         }
         .benefit-nav li:nth-child(4) a{
             background-image:url(./images/ico-event.png);
@@ -1142,6 +1149,9 @@
             .ad01{display:none;}
             .ad02 .container{
                 padding:0;
+            }
+            .benefit-swiper01 .swiper-pagination{
+                display:none;
             }
         }
 
@@ -1451,15 +1461,21 @@
             });
             let benefitSwiper02 = new Swiper('.benefit-swiper02',{
                 allowTouchMove:false,
-                autoplay: {
-                    delay: 3000,
-                },
                 effect: "cube",
             });
 
             
             benefitSwiper01.controller.control = benefitSwiper02;
             benefitSwiper02.controller.control = benefitSwiper01;
+
+            $('.swiper-start-stop').click(function(){
+                $(this).toggleClass('start');
+                if($(this).hasClass('start')){
+                    benefitSwiper01.autoplay.stop();
+                }else{
+                    benefitSwiper01.autoplay.start();
+                }
+            })
 
         })
     </script>
