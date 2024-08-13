@@ -1591,6 +1591,29 @@
                 }
             })
 
+            // CURATION AJAX
+            $.ajax({
+                url:'./json/curation01.json',
+                dataType:'json',
+                success:function(data){
+                    $('.curation-list h3').html(`#${data.tit}소사이어티`);
+                    $('.curation-list h4').html(`${data.sTit}`);
+                    $('#p1').html(`${data.p1}`);
+                    $('#p2').html(`${data.p2}`);
+                    if(data.tit == '필름'){
+                        $('.curation-poster p').html(`MEGABOX<br>FILM<br>SOCIETY`);
+                    }else{
+                        $('.curation-poster p').html(`MEGABOX<br>CLASSIC<br>SOCIETY`);
+                    }
+                    $('.curation-poster img').attr('src',`./images/${data.src}`);
+                    
+                    console.log(data);
+                },
+                error:function(){
+                    console.log('Error');
+                },
+            });
+
         })
     </script>
 </head>
@@ -2295,17 +2318,17 @@
                 <div class="curation-wrap">
                     <div class="curation-selection">
                         <div class="curation-poster">
-                            <a href="#"><img src="./images/classic01.jpg" alt="마탄의 사수"></a>
-                            <p>MEGABOX<br>CLASSIC<br>SOCIETY</p>
+                            <a href="#"><img src="" alt="마탄의 사수"></a>
+                            <p></p>
                         </div>
                         <a href="#">상세정보</a>
                         <a href="#">예매</a>
                     </div>
                     <div class="curation-list">
-                        <h3>#클래식소사이어티</h3>
-                        <h4>마탄의 사수</h4>
-                        <p>도쿄 시부야의 공공시설 청소부 ‘히라야마’는 매일 반복되지만 충만한 일상을 살아간다.</p>
-                        <p>오늘도 그는 카세트 테이프로 올드 팝을 듣고,<br>필름 카메라로 나무 사이에 비치는 햇살을 찍고,<br>자전거를 타고 단골 식당에 가서 술 한잔을 마시고,<br>헌책방에서 산 소설을 읽으며 하루를 마무리한다.</p>
+                        <h3></h3>
+                        <h4></h4>
+                        <p id="p1"></p>
+                        <p id="p2"></p>
                         <ul>
                             <li>
                                 <div class="curation-list-poster">
