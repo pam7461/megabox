@@ -1204,11 +1204,12 @@
         }
         .curation-list ul{
             display:grid;
-            grid-template-columns:repeat(4,1fr);
+            grid-template-columns:repeat(4,calc(25% - 12px));
             gap:16px;
         }
         .curation-list-poster{
             position:relative;
+            margin-bottom:10px;
             padding-top:16px;
         }
         .curation-list-poster a{
@@ -1226,6 +1227,15 @@
             background:var(--sub-color01);
             font-weight:700;
             font-size:1.2em;
+        }
+        .curation-list-poster+a{
+            display:block;
+            font-weight:300;
+            font-size:0.9em;
+            text-align:center;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
         }
 
 
@@ -2286,14 +2296,14 @@
                     <div class="curation-selection">
                         <div class="curation-poster">
                             <a href="#"><img src="./images/classic01.jpg" alt="마탄의 사수"></a>
-                            <p>MEGABOX<br>FILE<br>SOCIETY</p>
+                            <p>MEGABOX<br>CLASSIC<br>SOCIETY</p>
                         </div>
                         <a href="#">상세정보</a>
                         <a href="#">예매</a>
                     </div>
                     <div class="curation-list">
-                        <h3>#필름소사이어티</h3>
-                        <h4>퍼펙트 데이즈</h4>
+                        <h3>#클래식소사이어티</h3>
+                        <h4>마탄의 사수</h4>
                         <p>도쿄 시부야의 공공시설 청소부 ‘히라야마’는 매일 반복되지만 충만한 일상을 살아간다.</p>
                         <p>오늘도 그는 카세트 테이프로 올드 팝을 듣고,<br>필름 카메라로 나무 사이에 비치는 햇살을 찍고,<br>자전거를 타고 단골 식당에 가서 술 한잔을 마시고,<br>헌책방에서 산 소설을 읽으며 하루를 마무리한다.</p>
                         <ul>
@@ -2306,24 +2316,24 @@
                             </li>
                             <li>
                                 <div class="curation-list-poster">
-                                    <a href="#"><img src="./images/classic02.jpg" alt="그리스 신화와 비극"></a>
+                                    <a href="#"><img src="./images/film01.jpg" alt="퍼팩트 데이즈"></a>
                                     <p>F</p>
                                 </div> 
-                                <a href="#">그리스 신화와 비극</a>
+                                <a href="#">퍼팩트 데이즈</a>
                             </li>
                             <li>
                                 <div class="curation-list-poster">
-                                    <a href="#"><img src="./images/classic03.jpg" alt="라보엠"></a>
+                                    <a href="#"><img src="./images/classic02.jpg" alt="그리스 신화의 비극"></a>
                                     <p>C</p>
                                 </div> 
-                                <a href="#">라보엠</a>
+                                <a href="#">그리스 신화의 비극 : 서양문화에 영향을 준 신화들</a>
                             </li>
                             <li>
                                 <div class="curation-list-poster">
-                                    <a href="#"><img src="./images/classic04.jpg" alt="찰즈부르크 페스티벌"></a>
+                                    <a href="#"><img src="./images/film02.jpg" alt="존 오브 인터레스트"></a>
                                     <p>F</p>
                                 </div> 
-                                <a href="#">찰즈부르크 페스티벌</a>
+                                <a href="#">존 오브 인터레스트</a>
                             </li>
                         </ul>
                     </div>
