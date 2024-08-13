@@ -1243,6 +1243,38 @@
             text-overflow:ellipsis;
         }
 
+        /* MEGABOX INFO */
+        .info-list{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+            gap:24px;
+        }
+        .info-list li{
+            border-radius:16px;
+            overflow:hidden;           
+            position:relative;
+        }
+        .info-list li.new::after{
+            content:'NEW';
+            display:block;
+            border-radius:4px;
+            padding:4px 8px 2px;
+            background:var(--sub-color01);
+            font-size:0.8em;
+            color:var(--white);
+            position:absolute;
+            right:8px;
+            top:8px;
+        }
+        .info-list li img{
+            filter:grayscale(1);
+            opacity:0.5;
+            transition:all 0.3s;
+        }
+        .info-list li:hover img{
+            filter:grayscale(0);
+            opacity:1;
+        }
 
 
 
@@ -1307,7 +1339,6 @@
                 display:block;
             }            
         }
-
 
         @media (max-width:767px){
             .login .container {     
@@ -2395,6 +2426,26 @@
         <section class="sec sec04 megabox-info">
             <div class="container">
                 <h2>메가박스 안내</h2>
+                <ul class="info-list">
+                    <li>
+                        <a href="#"><img src="./images/megainfo-atmos.jpg" alt="atmos"></a>
+                    </li>
+                    <li class="new">
+                        <a href="#"><img src="./images/megainfo-boutique.jpg" alt="boutique"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/megainfo-comfort.jpg" alt="comfort"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/megainfo-dolby.jpg" alt="dolby"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/megainfo-kids.jpg" alt="kids"></a>
+                    </li>
+                    <li class="new">
+                        <a href="#"><img src="./images/megainfo-mx4d2.jpg" alt="mx4d2"></a>
+                    </li>
+                </ul>
             </div>
         </section>
         <section class="sec sec05 ad ad02">
