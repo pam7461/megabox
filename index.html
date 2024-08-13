@@ -17,8 +17,81 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <!-- jQuery Script -->
-     <script src="./js/script.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
     <title>MEET PLAY SHARE, 메가박스</title>    
+    <script>
+        window.onload=function(){ 
+            // 보이기 함수           
+            function fnShow(element,displayValue){
+                element.style.display = displayValue;
+            }
+            // 감추기 함수
+            function fnHide(element){
+                element.style.display = 'none';
+            }
+            // 난수 발생 함수
+            function fnRandom(divNum){
+                let idx = Math.floor(Math.random() * 100 % divNum);
+                return idx;
+            }
+            function fnAddClass(element,className){
+                element.classList.add(className);                
+            }
+            function fnRemoveClass(element,className){
+                element.classList.remove(className);
+            }
+
+
+
+
+            // 문서가 시작할대 쿠키에 따른 팝업 이벤트
+            let popup = document.querySelector('.popup');
+            if(document.cookie == 'TMP=true'){                
+                fnHide(popup);
+            }else{
+                fnShow(popup,'block');
+            }
+
+            // 랜덤 광고
+            let NodeList01 = document.querySelectorAll('.ad01 li');
+            let NodeList02 = document.querySelectorAll('.ad02 li');
+            let NodeList03 = document.querySelectorAll('.login-ad li');
+            let NodeList04 = document.querySelectorAll('.benefit-ad .img-box');
+            let NodeList05 = document.querySelectorAll('.benefit .banner01 .img-box');
+            let NodeList06 = document.querySelectorAll('.benefit .banner02 .img-box');
+            fnShow(NodeList01[fnRandom(4)],'block');
+            fnShow(NodeList02[fnRandom(4)],'block');
+            fnShow(NodeList03[fnRandom(4)],'block');
+            fnShow(NodeList04[fnRandom(5)],'block');
+            fnShow(NodeList05[fnRandom(5)],'block');
+            fnShow(NodeList06[fnRandom(5)],'block');
+            
+            // 광고닫기
+            let ad01Close = document.querySelector('.btn-ad01-close');            
+            ad01Close.onclick=function(){
+                let ad01 = document.querySelector('.ad01');            
+                fnHide(ad01);
+            }
+
+            // 링크에 타이틀 넣기
+            let allA = document.querySelectorAll('a');
+            for(let idx=0;idx<=allA.length-1;idx++){
+                let inTxt = allA[idx].innerText;
+                allA[idx].title = `${inTxt} 가기`;
+            }
+            
+            // 서브네비게이션 호출
+            let NodeList07 = document.querySelectorAll('.main-nav>li');
+            for(let idx=0;idx<=NodeList07.length-1;idx++){
+                NodeList07[idx].mouseenter = function(){
+                    let header = document.querySelector('.header');
+                    fnAddClass(header,'active');
+                    fnRemoveClass(NodeList07[idx],'active');
+                    fnAddClass(this,'active');
+                }
+            }            
+        }    
+    </script>
 </head>
 <body>
     <section class="wrap">
