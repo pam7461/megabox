@@ -180,19 +180,29 @@
           
 
             //SEARCH
-            $('.search-tit li').click(function(e){
-                e.preventDefault();
-                $('.search-tit li').removeClass('active');
-                $(this).addClass('active');
-                $('.tab').removeClass('active');
-                let thisText = $(this).text();
-                if(thisText == '예매율 순'){
-                    $('.booking').addClass('active');
-                }else{
-                    $('.gallery').addClass('active');
+            let searchTit = document.querySelectorAll('.search-tit li');
+            for(let idx=0;idx<=searchTit.length-1;idx++){
+                searchTit[idx].onclick = function(e){
+                    e.preventDefault();
+                    for(let idx2=0;idx2<=searchTit.length-1;idx2++){
+                        fnRemoveClass(searchTit[idx2],'active');
+                    }
+                    fnAddClass(this,'active');
+                    let tab = document.querySelectorAll('.tab');
+                    for(let idx3=0;idx3<=searchTit.length-1;idx3++){
+                        fnRemoveClass(tab[idx3],'active');
+                    }
+                    let thisText = this.innerText;
+                    if(thisText == '예매율 순'){
+                        fnAddClass(tab[0],'active');
+                    }else{
+                        fnAddClass(tab[1],'active');
+                    }
                 }
-            })
+            }
+            
 
+            
             $('.movie-list li').mouseenter(function(){
                 let acIdx = $(this).index();
                 $('.tab.active .movie-poster li').removeClass('active');
