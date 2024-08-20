@@ -164,7 +164,7 @@ $(function(){
     $('.m-ticket').click(function(){
         let confirmMsg = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
         if(confirmMsg){
-            $('.login').show();
+            $('.login').addClass('active');
         }
     })
 
