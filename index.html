@@ -43,6 +43,63 @@
                 element.classList.remove(className);
             }
 
+            // BOX OFFICE SWIPER JS
+            let boxOfficeSwiper = new Swiper('.box-office-swiper',{
+                slidesPerView:2.4,
+                spaceBetween:24,
+                // autoplay: {
+                //     delay: 3000,
+                // },
+                loop:true,
+                breakpoints:{
+                    620:{
+                        slidesPerView:2.8,
+                    },
+                    860:{
+                        slidesPerView:3.2,
+                    },
+                    990:{
+                        slidesPerView:3.8,
+                    },
+                    1100:{
+                        slidesPerView:4.5,
+                    },
+                },
+            });
+
+
+            // BENEFIT SWIPER01
+            let benefitSwiper01 = new Swiper('.benefit-swiper01',{
+                allowTouchMove:false,
+                autoplay: {
+                    delay: 3000,
+                },
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: "fraction",
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+            let benefitSwiper02 = new Swiper('.benefit-swiper02',{
+                allowTouchMove:false,
+                effect: "cube",
+            });
+
+            
+            benefitSwiper01.controller.control = benefitSwiper02;
+            benefitSwiper02.controller.control = benefitSwiper01;
+
 
 
 
@@ -179,7 +236,7 @@
             }
           
 
-            //SEARCH
+            //SEARCH TAB
             let searchTit = document.querySelectorAll('.search-tit li');
             for(let idx=0;idx<=searchTit.length-1;idx++){
                 searchTit[idx].onclick = function(e){
@@ -202,11 +259,46 @@
             }
             
 
+            // SEARCH MOVIE POSTER
+            let movieList = document.querySelectorAll('.movie-list li');
+            for(let idx=0;idx<=movieList.length-1;idx++){
+                movieList[idx].onmouseenter = function(){
+                    let acIdx = idx % 5;
+                    let acMoviePoster = document.querySelectorAll('.tab.active .movie-poster li');
+                    for(let idx2=0;idx2<=acMoviePoster.length-1;idx2++){
+                        fnRemoveClass(acMoviePoster[idx2],'active');
+                    }
+                    fnAddClass(acMoviePoster[acIdx],'active');
+                }
+            }
             
-            $('.movie-list li').mouseenter(function(){
-                let acIdx = $(this).index();
-                $('.tab.active .movie-poster li').removeClass('active');
-                $('.tab.active .movie-poster li').eq(acIdx).addClass('active');
+
+            // 모바일 이벤트
+            // TICKET
+            let mTicket = document.querySelector('.m-ticket');
+            mTicket.onclick = function(){
+                let confirmMsg = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
+                if(confirmMsg){
+                    fnShow(document.querySelector('.login'),'block')
+                }
+            }
+            
+
+
+            // M-NAV 열기
+            $('.m-btn-nav').click(function(){
+                $('.m-nav').show();
+            })
+
+            // M-NAV 닫기
+            $('.btn-m-nav-close button').click(function(){
+                $('.m-nav').hide();
+            })
+
+            $('#m-login-show').click(function(e){
+                e.preventDefault();
+                $('.m-nav').hide();
+                $('.login').show();
             })
             
             
