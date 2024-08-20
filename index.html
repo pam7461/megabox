@@ -133,15 +133,29 @@
             // popup 닫기
             let btnPopupClose = document.querySelector('.btn-popup-close');
             btnPopupClose.onclick=function(){
-                let chkNoshow = document.querySelector('#chk-noshow');
-                console.log(chkNoshow);
-                // let chk = $('#chk-noshow').is(':checked');
-                // if(chk){
-                //     document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
-                // }
+                let chkNoshow = document.querySelector('#chk-noshow');               
+                if(chkNoshow.checked){
+                    document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
+                }
                 let popup = document.querySelector('.popup');
                 fnHide(popup);
             }
+
+             // popup 슬라이더 멈춤
+            let btnStop = document.querySelector('.btn-stop'); 
+            let btnStart = document.querySelector('.btn-start');
+            btnStop.onclick = function(){
+                fnRemoveClass(this,'active');                
+                fnAddClass(btnStart,'active');
+                popupSwiper.autoplay.stop();
+            }
+            // popup 슬라이더 재생
+            btnStart.onclick = function(){
+                fnRemoveClass(this,'active');                
+                fnAddClass(btnStop,'active');
+                popupSwiper.autoplay.start();
+            }
+            
             
             
         }    
