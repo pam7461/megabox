@@ -117,6 +117,32 @@
                 let loginWindow = document.querySelector('.login');
                 fnRemoveClass(loginWindow,'active');
             }
+
+            // popup swiper JS
+            let popupSwiper = new Swiper('.swiper-container',{
+                autoplay:{
+                    delay:5000
+                },
+                effect:'fade',
+                pagination:{
+                    el:'.swiper-pagination',
+                    clickable:true,
+                },
+            });
+
+            // popup 닫기
+            let btnPopupClose = document.querySelector('.btn-popup-close');
+            btnPopupClose.onclick=function(){
+                let chkNoshow = document.querySelector('#chk-noshow');
+                console.log(chkNoshow);
+                // let chk = $('#chk-noshow').is(':checked');
+                // if(chk){
+                //     document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
+                // }
+                let popup = document.querySelector('.popup');
+                fnHide(popup);
+            }
+            
             
         }    
     </script>
