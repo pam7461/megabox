@@ -21,6 +21,31 @@
     <title>MEET PLAY SHARE, 메가박스</title>    
     <script>
         window.onload=function(){ 
+
+            // CURATION AJAX
+            function fnCuration(num){
+                $.ajax({
+                    url:`./json/curation0${num}.json`,
+                    dataType:'json',
+                    success:function(data){
+                        $('.curation-list h3').html(`#${data.tit}소사이어티`);
+                        $('.curation-list h4').html(`${data.sTit}`);
+                        $('#p1').html(`${data.p1}`);
+                        $('#p2').html(`${data.p2}`);
+                        if(data.tit == '필름'){
+                            $('.curation-poster p').html(`MEGABOX<br>FILM<br>SOCIETY`);
+                        }else{
+                            $('.curation-poster p').html(`MEGABOX<br>CLASSIC<br>SOCIETY`);
+                        }
+                        $('.curation-poster img').attr('src',`./images/${data.src}`);                        
+                    },
+                    error:function(){
+                        console.log('Error');
+                    },
+                });
+            }
+            fnCuration(1);
+
             // 보이기 함수           
             function fnShow(element,displayValue){
                 element.style.display = displayValue;
@@ -308,6 +333,7 @@
                 fnHide(document.querySelector('.m-nav'));
             }
 
+            // LOGIN SHOW
             let mLoginShow = document.querySelector('#m-login-show');
             mLoginShow.onclick = function(e){
                 e.preventDefault();
@@ -315,7 +341,17 @@
                 fnAddClass(document.querySelector('.login'),'active');
             }
             
+            
 
+            // CURATION LIST 
+            let curationList = document.querySelectorAll('.curation-list li');
+            for(let idx=0;idx<=curationList.length-1;idx++){
+                curationList[idx].onclick = function(e){
+                    e.preventDefault();
+                    fnCuration(idx + 1);
+                }
+            }
+            
 
             
             
