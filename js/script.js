@@ -182,7 +182,7 @@ $(function(){
     $('#m-login-show').click(function(e){
         e.preventDefault();
         $('.m-nav').hide();
-        $('.login').show();
+        $('.login').addClass('active');
     })
 
     // BOX OFFICE SWIPER JS
@@ -237,7 +237,6 @@ $(function(){
         allowTouchMove:false,
         effect: "cube",
     });
-
     
     benefitSwiper01.controller.control = benefitSwiper02;
     benefitSwiper02.controller.control = benefitSwiper01;

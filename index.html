@@ -95,10 +95,21 @@
                 allowTouchMove:false,
                 effect: "cube",
             });
-
             
             benefitSwiper01.controller.control = benefitSwiper02;
             benefitSwiper02.controller.control = benefitSwiper01;
+
+
+            // BENEFIT START STOP
+            let swiperStartStop = document.querySelector('.swiper-start-stop');
+            swiperStartStop.onclick = function(){
+                this.classList.toggle('start');
+                if(this.classList.contains('start')){
+                    benefitSwiper01.autoplay.stop();
+                }else{
+                    benefitSwiper01.autoplay.start();
+                }
+            }
 
 
 
@@ -286,20 +297,26 @@
 
 
             // M-NAV 열기
-            $('.m-btn-nav').click(function(){
-                $('.m-nav').show();
-            })
+            let mBtnNav = document.querySelector('.m-btn-nav');
+            mBtnNav.onclick = function(){
+                fnShow(document.querySelector('.m-nav'),'block');
+            }           
 
             // M-NAV 닫기
-            $('.btn-m-nav-close button').click(function(){
-                $('.m-nav').hide();
-            })
+            let mBtnNavClose = document.querySelector('.btn-m-nav-close button');
+            mBtnNavClose.onclick = function(){
+                fnHide(document.querySelector('.m-nav'));
+            }
 
-            $('#m-login-show').click(function(e){
+            let mLoginShow = document.querySelector('#m-login-show');
+            mLoginShow.onclick = function(e){
                 e.preventDefault();
-                $('.m-nav').hide();
-                $('.login').show();
-            })
+                fnHide(document.querySelector('.m-nav'));
+                fnAddClass(document.querySelector('.login'),'active');
+            }
+            
+
+
             
             
         }    
