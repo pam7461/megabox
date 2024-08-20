@@ -18,10 +18,10 @@
     <script src="./js/swiper-bundle.min.js"></script>
     <!-- jQuery Script -->
     <!-- <script src="./js/script.js"></script> -->
+     
     <title>MEET PLAY SHARE, 메가박스</title>    
     <script>
         window.onload=function(){ 
-
             // CURATION AJAX
             let fnCuration = (num)=>{
                 $.ajax({
@@ -146,11 +146,10 @@
             let curationList = document.querySelectorAll('.curation-list li');
 
             // EVENT
-
             // BENEFIT START STOP            
-            swiperStartStop.onclick = ()=>{
-                this.classList.toggle('start');
-                if(this.classList.contains('start')){
+            swiperStartStop.onclick = (e)=>{
+                e.target.classList.toggle('start');
+                if(e.target.classList.contains('start')){
                     benefitSwiper01.autoplay.stop();
                 }else{
                     benefitSwiper01.autoplay.start();
@@ -175,38 +174,35 @@
             
             // 광고닫기
                         
-            ad01Close.onclick = ()=>{
-                let ad01 = document.querySelector('.ad01');            
-                fnHide(ad01);
+            ad01Close.onclick = ()=>{                           
+                fnHide(document.querySelector('.ad01'));
             }
 
             // 링크에 타이틀 넣기
             
             for(let idx=0;idx<=allA.length-1;idx++){
-                let inTxt = allA[idx].innerText;
-                allA[idx].title = `${inTxt} 가기`;
+                allA[idx].title = `${allA[idx].innerText} 가기`;
             }
             
             // 서브네비게이션 호출
             
             for(let idx=0;idx<=mainNav.length-1;idx++){
-                mainNav[idx].onmouseenter = function(){
+                mainNav[idx].onmouseenter = (e)=>{
                     let header = document.querySelector('.header');
                     fnAddClass(header,'active');
-                    for(let idx2=0;idx2<=mainNav.length-1;idx2++){
-                        fnRemoveClass(mainNav[idx2],'active');
+                    for(let idx=0;idx<=mainNav.length-1;idx++){
+                        fnRemoveClass(mainNav[idx],'active');
                     }
-                    fnAddClass(this,'active');
+                    fnAddClass(e.target,'active');
                 }
             }
             
-            // 서브네비게이션 닫기
-            
-            header.onmouseleave = ()=>{
+            // 서브네비게이션 닫기            
+            header.onmouseleave = (e)=>{
                 for(let idx2=0;idx2<=mainNav.length-1;idx2++){
                     fnRemoveClass(mainNav[idx2],'active');
                 }
-                fnRemoveClass(this,'active');
+                fnRemoveClass(e.target,'active');
             };
 
             // 로그인 호출
@@ -248,14 +244,14 @@
 
              // popup 슬라이더 멈춤
             
-            btnStop.onclick = ()=>{
-                fnRemoveClass(this,'active');                
+            btnStop.onclick = (e)=>{
+                fnRemoveClass(e.target,'active');                
                 fnAddClass(btnStart,'active');
                 popupSwiper.autoplay.stop();
             }
             // popup 슬라이더 재생
-            btnStart.onclick = ()=>{
-                fnRemoveClass(this,'active');                
+            btnStart.onclick = (e)=>{
+                fnRemoveClass(e.target,'active');                
                 fnAddClass(btnStop,'active');
                 popupSwiper.autoplay.start();
             }
@@ -265,17 +261,16 @@
             for(let idx=0;idx<=btnQnav.length-1;idx++){
                 btnQnav[idx].onclick = function(e){
                     let thisDataRole = this.getAttribute('data-role');
-                    let headerArt = document.querySelectorAll('.header .art');
-                    console.log(headerArt[0].style.display);
-                    for(let idx2=0;idx2<=headerArt.length-1;idx2++){
-                        if(headerArt[idx2].classList.contains(thisDataRole)){
-                            if(headerArt[idx2].style.display == 'none' || headerArt[idx2].style.display == ''){
-                                fnShow(headerArt[idx2],'block');
+                    let headerArt = document.querySelectorAll('.header .art');                    
+                    for(let idx=0;idx<=headerArt.length-1;idx++){
+                        if(headerArt[idx].classList.contains(thisDataRole)){
+                            if(headerArt[idx].style.display == 'none' || headerArt[idx].style.display == ''){
+                                fnShow(headerArt[idx],'block');
                             }else{
-                                fnHide(headerArt[idx2]);
+                                fnHide(headerArt[idx]);
                             }
                         }else{
-                            fnHide(headerArt[idx2]);
+                            fnHide(headerArt[idx]);
                         }
                     }
                     e.preventDefault();
@@ -288,15 +283,15 @@
             for(let idx=0;idx<=searchTit.length-1;idx++){
                 searchTit[idx].onclick = function(e){
                     e.preventDefault();
-                    for(let idx2=0;idx2<=searchTit.length-1;idx2++){
-                        fnRemoveClass(searchTit[idx2],'active');
+                    for(let idx=0;idx<=searchTit.length-1;idx++){
+                        fnRemoveClass(searchTit[idx],'active');
                     }
-                    fnAddClass(this,'active');
+                    fnAddClass(e.target,'active');
                     let tab = document.querySelectorAll('.tab');
-                    for(let idx3=0;idx3<=searchTit.length-1;idx3++){
-                        fnRemoveClass(tab[idx3],'active');
+                    for(let idx=0;idx<=searchTit.length-1;idx++){
+                        fnRemoveClass(tab[idx],'active');
                     }
-                    let thisText = this.innerText;
+                    let thisText = e.target.innerText;
                     if(thisText == '예매율 순'){
                         fnAddClass(tab[0],'active');
                     }else{
@@ -312,8 +307,8 @@
                 movieList[idx].onmouseenter = function(){
                     let acIdx = idx % 5;
                     let acMoviePoster = document.querySelectorAll('.tab.active .movie-poster li');
-                    for(let idx2=0;idx2<=acMoviePoster.length-1;idx2++){
-                        fnRemoveClass(acMoviePoster[idx2],'active');
+                    for(let idx=0;idx<=acMoviePoster.length-1;idx++){
+                        fnRemoveClass(acMoviePoster[idx],'active');
                     }
                     fnAddClass(acMoviePoster[acIdx],'active');
                 }
