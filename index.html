@@ -23,7 +23,7 @@
         window.onload=function(){ 
 
             // CURATION AJAX
-            function fnCuration(num){
+            let fnCuration = (num)=>{
                 $.ajax({
                     url:`./json/curation0${num}.json`,
                     dataType:'json',
@@ -45,29 +45,27 @@
                 });
             }
             fnCuration(1);
-
             // 보이기 함수           
-            function fnShow(element,displayValue){
+            let fnShow = (element,displayValue)=>{
                 element.style.display = displayValue;
             }
             // 감추기 함수
-            function fnHide(element){
+            let fnHide = (element)=>{
                 element.style.display = 'none';
             }
             // 난수 발생 함수
-            function fnRandom(divNum){
+            let fnRandom = (divNum)=>{
                 let idx = Math.floor(Math.random() * 100 % divNum);
                 return idx;
             }
             // 클래스 추가
-            function fnAddClass(element,className){
+            let fnAddClass = (element,className)=>{
                 element.classList.add(className);                
             }
             // 클래스 제거
-            function fnRemoveClass(element,className){
+            let fnRemoveClass = (element,className)=>{
                 element.classList.remove(className);
             }
-
             // BOX OFFICE SWIPER JS
             let boxOfficeSwiper = new Swiper('.box-office-swiper',{
                 slidesPerView:2.4,
@@ -91,8 +89,6 @@
                     },
                 },
             });
-
-
             // BENEFIT SWIPER01
             let benefitSwiper01 = new Swiper('.benefit-swiper01',{
                 allowTouchMove:false,
@@ -120,14 +116,39 @@
                 allowTouchMove:false,
                 effect: "cube",
             });
-            
             benefitSwiper01.controller.control = benefitSwiper02;
             benefitSwiper02.controller.control = benefitSwiper01;
 
-
-            // BENEFIT START STOP
             let swiperStartStop = document.querySelector('.swiper-start-stop');
-            swiperStartStop.onclick = function(){
+            let popup = document.querySelector('.popup');
+            let NodeList01 = document.querySelectorAll('.ad01 li');
+            let NodeList02 = document.querySelectorAll('.ad02 li');
+            let NodeList03 = document.querySelectorAll('.login-ad li');
+            let NodeList04 = document.querySelectorAll('.benefit-ad .img-box');
+            let NodeList05 = document.querySelectorAll('.benefit .banner01 .img-box');
+            let NodeList06 = document.querySelectorAll('.benefit .banner02 .img-box');
+            let ad01Close = document.querySelector('.btn-ad01-close');
+            let allA = document.querySelectorAll('a');
+            let mainNav = document.querySelectorAll('.main-nav>li');
+            let header = document.querySelector('.header');
+            let btnOpen = document.querySelector('#btn-login-open');
+            let btnClose = document.querySelector('#btn-login-close');
+            let btnPopupClose = document.querySelector('.btn-popup-close');
+            let btnStop = document.querySelector('.btn-stop'); 
+            let btnStart = document.querySelector('.btn-start');
+            let btnQnav = document.querySelectorAll('.btn-qnav');
+            let searchTit = document.querySelectorAll('.search-tit li');
+            let movieList = document.querySelectorAll('.movie-list li');
+            let mTicket = document.querySelector('.m-ticket');
+            let mBtnNav = document.querySelector('.m-btn-nav');
+            let mBtnNavClose = document.querySelector('.btn-m-nav-close button');
+            let mLoginShow = document.querySelector('#m-login-show');
+            let curationList = document.querySelectorAll('.curation-list li');
+
+            // EVENT
+
+            // BENEFIT START STOP            
+            swiperStartStop.onclick = ()=>{
                 this.classList.toggle('start');
                 if(this.classList.contains('start')){
                     benefitSwiper01.autoplay.stop();
@@ -137,23 +158,14 @@
             }
 
 
-
-
-            // 문서가 시작할대 쿠키에 따른 팝업 이벤트
-            let popup = document.querySelector('.popup');
+            // 문서가 시작할대 쿠키에 따른 팝업 이벤트            
             if(document.cookie == 'TMP=true'){                
                 fnHide(popup);
             }else{
                 fnShow(popup,'block');
             }
 
-            // 랜덤 광고
-            let NodeList01 = document.querySelectorAll('.ad01 li');
-            let NodeList02 = document.querySelectorAll('.ad02 li');
-            let NodeList03 = document.querySelectorAll('.login-ad li');
-            let NodeList04 = document.querySelectorAll('.benefit-ad .img-box');
-            let NodeList05 = document.querySelectorAll('.benefit .banner01 .img-box');
-            let NodeList06 = document.querySelectorAll('.benefit .banner02 .img-box');
+            // 랜덤 광고            
             fnShow(NodeList01[fnRandom(4)],'block');
             fnShow(NodeList02[fnRandom(4)],'block');
             fnShow(NodeList03[fnRandom(4)],'block');
@@ -162,21 +174,21 @@
             fnShow(NodeList06[fnRandom(5)],'block');
             
             // 광고닫기
-            let ad01Close = document.querySelector('.btn-ad01-close');            
-            ad01Close.onclick=function(){
+                        
+            ad01Close.onclick = ()=>{
                 let ad01 = document.querySelector('.ad01');            
                 fnHide(ad01);
             }
 
             // 링크에 타이틀 넣기
-            let allA = document.querySelectorAll('a');
+            
             for(let idx=0;idx<=allA.length-1;idx++){
                 let inTxt = allA[idx].innerText;
                 allA[idx].title = `${inTxt} 가기`;
             }
             
             // 서브네비게이션 호출
-            let mainNav = document.querySelectorAll('.main-nav>li');
+            
             for(let idx=0;idx<=mainNav.length-1;idx++){
                 mainNav[idx].onmouseenter = function(){
                     let header = document.querySelector('.header');
@@ -189,8 +201,8 @@
             }
             
             // 서브네비게이션 닫기
-            let header = document.querySelector('.header');
-            header.onmouseleave = function(){
+            
+            header.onmouseleave = ()=>{
                 for(let idx2=0;idx2<=mainNav.length-1;idx2++){
                     fnRemoveClass(mainNav[idx2],'active');
                 }
@@ -198,15 +210,15 @@
             };
 
             // 로그인 호출
-            let btnOpen = document.querySelector('#btn-login-open');
-            btnOpen.onclick = function(e){
+            
+            btnOpen.onclick = (e)=>{
                 let loginWindow = document.querySelector('.login');
                 fnAddClass(loginWindow,'active');                
                 e.preventDefault();
             }
             // 로그인 닫기
-            let btnClose = document.querySelector('#btn-login-close');
-            btnClose.onclick = function(){
+            
+            btnClose.onclick = ()=>{
                 let loginWindow = document.querySelector('.login');
                 fnRemoveClass(loginWindow,'active');
             }
@@ -224,8 +236,8 @@
             });
 
             // popup 닫기
-            let btnPopupClose = document.querySelector('.btn-popup-close');
-            btnPopupClose.onclick=function(){
+            
+            btnPopupClose.onclick = ()=>{
                 let chkNoshow = document.querySelector('#chk-noshow');               
                 if(chkNoshow.checked){
                     document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
@@ -235,22 +247,21 @@
             }
 
              // popup 슬라이더 멈춤
-            let btnStop = document.querySelector('.btn-stop'); 
-            let btnStart = document.querySelector('.btn-start');
-            btnStop.onclick = function(){
+            
+            btnStop.onclick = ()=>{
                 fnRemoveClass(this,'active');                
                 fnAddClass(btnStart,'active');
                 popupSwiper.autoplay.stop();
             }
             // popup 슬라이더 재생
-            btnStart.onclick = function(){
+            btnStart.onclick = ()=>{
                 fnRemoveClass(this,'active');                
                 fnAddClass(btnStop,'active');
                 popupSwiper.autoplay.start();
             }
             
             // QNAV
-            let btnQnav = document.querySelectorAll('.btn-qnav');
+            
             for(let idx=0;idx<=btnQnav.length-1;idx++){
                 btnQnav[idx].onclick = function(e){
                     let thisDataRole = this.getAttribute('data-role');
@@ -273,7 +284,7 @@
           
 
             //SEARCH TAB
-            let searchTit = document.querySelectorAll('.search-tit li');
+            
             for(let idx=0;idx<=searchTit.length-1;idx++){
                 searchTit[idx].onclick = function(e){
                     e.preventDefault();
@@ -296,7 +307,7 @@
             
 
             // SEARCH MOVIE POSTER
-            let movieList = document.querySelectorAll('.movie-list li');
+            
             for(let idx=0;idx<=movieList.length-1;idx++){
                 movieList[idx].onmouseenter = function(){
                     let acIdx = idx % 5;
@@ -311,8 +322,8 @@
 
             // 모바일 이벤트
             // TICKET
-            let mTicket = document.querySelector('.m-ticket');
-            mTicket.onclick = function(){
+            
+            mTicket.onclick = ()=>{
                 let confirmMsg = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
                 if(confirmMsg){
                     fnAddClass(document.querySelector('.login'),'active');
@@ -322,20 +333,20 @@
 
 
             // M-NAV 열기
-            let mBtnNav = document.querySelector('.m-btn-nav');
-            mBtnNav.onclick = function(){
+            
+            mBtnNav.onclick = ()=>{
                 fnShow(document.querySelector('.m-nav'),'block');
             }           
 
             // M-NAV 닫기
-            let mBtnNavClose = document.querySelector('.btn-m-nav-close button');
-            mBtnNavClose.onclick = function(){
+            
+            mBtnNavClose.onclick = ()=>{
                 fnHide(document.querySelector('.m-nav'));
             }
 
             // LOGIN SHOW
-            let mLoginShow = document.querySelector('#m-login-show');
-            mLoginShow.onclick = function(e){
+            
+            mLoginShow.onclick = (e)=>{
                 e.preventDefault();
                 fnHide(document.querySelector('.m-nav'));
                 fnAddClass(document.querySelector('.login'),'active');
@@ -344,7 +355,7 @@
             
 
             // CURATION LIST 
-            let curationList = document.querySelectorAll('.curation-list li');
+            
             for(let idx=0;idx<=curationList.length-1;idx++){
                 curationList[idx].onclick = function(e){
                     e.preventDefault();
