@@ -103,6 +103,20 @@
                 }
                 fnRemoveClass(this,'active');
             };
+
+            // 로그인 호출
+            let btnOpen = document.querySelector('#btn-login-open');
+            btnOpen.onclick = function(e){
+                let loginWindow = document.querySelector('.login');
+                fnAddClass(loginWindow,'active');                
+                e.preventDefault();
+            }
+            // 로그인 닫기
+            let btnClose = document.querySelector('#btn-login-close');
+            btnClose.onclick = function(){
+                let loginWindow = document.querySelector('.login');
+                fnRemoveClass(loginWindow,'active');
+            }
             
         }    
     </script>
