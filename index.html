@@ -34,9 +34,11 @@
                 let idx = Math.floor(Math.random() * 100 % divNum);
                 return idx;
             }
+            // 클래스 추가
             function fnAddClass(element,className){
                 element.classList.add(className);                
             }
+            // 클래스 제거
             function fnRemoveClass(element,className){
                 element.classList.remove(className);
             }
@@ -81,15 +83,27 @@
             }
             
             // 서브네비게이션 호출
-            let NodeList07 = document.querySelectorAll('.main-nav>li');
-            for(let idx=0;idx<=NodeList07.length-1;idx++){
-                NodeList07[idx].mouseenter = function(){
+            let mainNav = document.querySelectorAll('.main-nav>li');
+            for(let idx=0;idx<=mainNav.length-1;idx++){
+                mainNav[idx].onmouseenter = function(){
                     let header = document.querySelector('.header');
                     fnAddClass(header,'active');
-                    fnRemoveClass(NodeList07[idx],'active');
+                    for(let idx2=0;idx2<=mainNav.length-1;idx2++){
+                        fnRemoveClass(mainNav[idx2],'active');
+                    }
                     fnAddClass(this,'active');
                 }
-            }            
+            }
+            
+            // 서브네비게이션 닫기
+            let header = document.querySelector('.header');
+            header.onmouseleave = function(){
+                for(let idx2=0;idx2<=mainNav.length-1;idx2++){
+                    fnRemoveClass(mainNav[idx2],'active');
+                }
+                fnRemoveClass(this,'active');
+            };
+            
         }    
     </script>
 </head>
