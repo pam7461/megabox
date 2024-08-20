@@ -156,6 +156,48 @@
                 popupSwiper.autoplay.start();
             }
             
+            // QNAV
+            let btnQnav = document.querySelectorAll('.btn-qnav');
+            for(let idx=0;idx<=btnQnav.length-1;idx++){
+                btnQnav[idx].onclick = function(e){
+                    let thisDataRole = this.getAttribute('data-role');
+                    let headerArt = document.querySelectorAll('.header .art');
+                    console.log(headerArt[0].style.display);
+                    for(let idx2=0;idx2<=headerArt.length-1;idx2++){
+                        if(headerArt[idx2].classList.contains(thisDataRole)){
+                            if(headerArt[idx2].style.display == 'none' || headerArt[idx2].style.display == ''){
+                                fnShow(headerArt[idx2],'block');
+                            }else{
+                                fnHide(headerArt[idx2]);
+                            }
+                        }else{
+                            fnHide(headerArt[idx2]);
+                        }
+                    }
+                    e.preventDefault();
+                }
+            }
+          
+
+            //SEARCH
+            $('.search-tit li').click(function(e){
+                e.preventDefault();
+                $('.search-tit li').removeClass('active');
+                $(this).addClass('active');
+                $('.tab').removeClass('active');
+                let thisText = $(this).text();
+                if(thisText == '예매율 순'){
+                    $('.booking').addClass('active');
+                }else{
+                    $('.gallery').addClass('active');
+                }
+            })
+
+            $('.movie-list li').mouseenter(function(){
+                let acIdx = $(this).index();
+                $('.tab.active .movie-poster li').removeClass('active');
+                $('.tab.active .movie-poster li').eq(acIdx).addClass('active');
+            })
             
             
         }    
