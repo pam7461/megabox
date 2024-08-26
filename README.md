@@ -21,11 +21,13 @@
 ![Adobe Photoshop]()  
 ![Adobe Illustrator]()  
 <br>
+
 - 사용 언어
 ![HTML5]()  
 ![CSS3]()  
 ![javaScript]()  
 ![jQuery]()  
 <br>
+
 - 플러그인
 ![swiper JS]()  
