@@ -20,14 +20,12 @@
 ![Visual Studio Code]()  
 ![Adobe Photoshop]()  
 ![Adobe Illustrator]()  
-
-
+  
 - 사용 언어
 ![HTML5]()  
 ![CSS3]()  
 ![javaScript]()  
 ![jQuery]()  
-
-
+  
 - 플러그인
 ![swiper JS]()  
