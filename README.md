@@ -4,8 +4,27 @@
 
 반응형으로 통합한 작업물입니다.  
 
-랜딩페이지만 제작되었으나 향후 AJAX를 확용하여  
+랜딩페이지만 제작되었으나 CURATION 섹션은 AJAX를 확용하여  
 
-서브페이지를 구현하려고 합니다.  
+비동기식 전송으로 구현하였다.
+
+팝업창은 Cookie를 이용하여 24시간 동안 나타나지 않게 제작되었다.
 
 <img src="https://pam7461.github.io/megabox/images/desktop.jpg" height="400">&nbsp;&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/mobile.jpg" height="400">
+<br><br>
+* * *
+<br>
+## 사용 툴 / 언어
+- 사용 툴
+[Visual Studio Code]()  
+[Adobe Photoshop]()  
+[Adobe Illustrator]()  
+<br>
+- 사용 언어
+[HTML5]()  
+[CSS3]()  
+[javaScript]()  
+[jQuery]()  
+<br>
+- 플러그인
+[swiper JS]()  
