@@ -14,17 +14,18 @@
 <br><br>
 * * *
 <br>
+
 ## 사용 툴 / 언어
-- 사용 툴
-[Visual Studio Code]()  
-[Adobe Photoshop]()  
-[Adobe Illustrator]()  
+- 사용 툴  
+![Visual Studio Code]()  
+![Adobe Photoshop]()  
+![Adobe Illustrator]()  
 <br>
 - 사용 언어
-[HTML5]()  
-[CSS3]()  
-[javaScript]()  
-[jQuery]()  
+![HTML5]()  
+![CSS3]()  
+![javaScript]()  
+![jQuery]()  
 <br>
 - 플러그인
-[swiper JS]()  
+![swiper JS]()  
