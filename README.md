@@ -56,3 +56,29 @@ CURATION 섹션에서 필요시 서버로부터 자료를 전송받아
 ```
 
 
+* * *  
+
+
+## Cookie  
+사용자가 방문한 MEGABOX 웹사이트의 Cookie를 저장하여  
+Cookie의 상태에 따라 설정된 시간동안 팝업에 표시 유무를 구현함.  
+```javascript
+    // popup 닫기    
+    btnPopupClose.onclick = ()=>{
+        let chkNoshow = document.querySelector('#chk-noshow');               
+        if(chkNoshow.checked){
+            document.cookie = `TMP=true;path=/;max-age=${24*60*60}`;
+        };
+        let popup = document.querySelector('.popup');
+        fnHide(popup);
+    };
+
+    // 문서가 시작할대 쿠키에 따른 팝업 이벤트            
+    if(document.cookie == 'TMP=true'){                
+        fnHide(popup);
+    }else{
+        fnShow(popup,'block');
+    };
+```
+
+
