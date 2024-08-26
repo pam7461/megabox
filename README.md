@@ -22,3 +22,37 @@
 - 사용 언어  
 <img src="https://pam7461.github.io/megabox/images/html5.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/css3.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/js.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/jquery.png" height="80">
 
+
+* * *  
+
+## AJAX, JSON  
+CURATION 섹션에서 필요시 서버로부터 자료를 전송받아
+
+섹션을 비동기방식으로 업데이드 할 수 있도록 구현하였다.  
+
+```javascript
+    // CURATION AJAX
+    function fnCuration(num){
+        $.ajax({
+            url:`./json/curation0${num}.json`,
+            dataType:'json',
+            success:function(data){
+                $('.curation-list h3').html(`#${data.tit}소사이어티`);
+                $('.curation-list h4').html(`${data.sTit}`);
+                $('#p1').html(`${data.p1}`);
+                $('#p2').html(`${data.p2}`);
+                if(data.tit == '필름'){
+                    $('.curation-poster p').html(`MEGABOX<br>FILM<br>SOCIETY`);
+                }else{
+                    $('.curation-poster p').html(`MEGABOX<br>CLASSIC<br>SOCIETY`);
+                }
+                $('.curation-poster img').attr('src',`./images/${data.src}`);                        
+            },
+            error:function(){
+                console.log('Error');
+            },
+        });
+    }
+```
+
+
