@@ -4,11 +4,11 @@
 
 반응형으로 통합한 작업물입니다.  
 
-랜딩페이지만 제작되었으나 CURATION 섹션은 AJAX를 확용하여  
+랜딩페이지만 제작되었으나 CURATION 섹션은 <u><strong>AJAX</strong></u>를 확용하여  
 
 비동기식 전송으로 구현하였다.
 
-팝업창은 Cookie를 이용하여 24시간 동안 나타나지 않게 제작되었다.
+팝업창은 <u><strong>Cookie</strong></u>를 이용하여 24시간 동안 나타나지 않게 제작되었다.
 
 <img src="https://pam7461.github.io/megabox/images/desktop.jpg" height="400">&nbsp;&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/mobile.jpg" height="400">
 <br><br>
