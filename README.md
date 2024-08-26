@@ -16,10 +16,10 @@
 * * *  
 
 ## 사용 툴 / 언어
-- 사용 툴  
-![Visual Studio Code](https://pam7461.github.io/megabox/images/vscode.jpg)
-![Adobe Photoshop](https://pam7461.github.io/megabox/images/photoshop.png)
-![Adobe Illustrator](https://pam7461.github.io/megabox/images/illustrator.png)  
+- 사용 툴
+<img src="https://pam7461.github.io/megabox/images/vscode.jpg" height="100">
+<img src="[https://pam7461.github.io/megabox/images/vscode.jpg](https://pam7461.github.io/megabox/images/photoshop.png)" height="100">
+<img src="[https://pam7461.github.io/megabox/images/vscode.jpg](https://pam7461.github.io/megabox/images/illustrator.png)" height="100">    
   
 - 사용 언어
 ![HTML5]()  
