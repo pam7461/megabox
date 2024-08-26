@@ -9,3 +9,4 @@
 서브페이지를 구현하려고 합니다.  
 
 ![메가박스 데스크탑](https://pam7461.github.io/megabox/images/desktop.jpg)
+![메가박스 데스크탑](https://pam7461.github.io/megabox/images/mobile.jpg)
