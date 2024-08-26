@@ -19,11 +19,6 @@
 - 사용 툴  
 <img src="https://pam7461.github.io/megabox/images/vscode.jpg" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/photoshop.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/illustrator.png" height="80">    
   
-- 사용 언어
-![HTML5]()  
-![CSS3]()  
-![javaScript]()  
-![jQuery]()  
-  
-- 플러그인
-![swiper JS]()  
+- 사용 언어  
+<img src="https://pam7461.github.io/megabox/images/html5.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/css3.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/js.png" height="80">&nbsp;&nbsp;<img src="https://pam7461.github.io/megabox/images/jquery.png" height="80">
+
