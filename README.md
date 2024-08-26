@@ -8,5 +8,5 @@
 
 서브페이지를 구현하려고 합니다.  
 
-<img src="https://pam7461.github.io/megabox/images/desktop.jpg" width="500">
+<img src="https://pam7461.github.io/megabox/images/desktop.jpg" width="400">
 <img src="https://pam7461.github.io/megabox/images/mobile.jpg" width="200">
