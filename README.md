@@ -10,3 +10,5 @@
 
 ![메가박스 데스크탑](https://pam7461.github.io/megabox/images/desktop.jpg)
 ![메가박스 데스크탑](https://pam7461.github.io/megabox/images/mobile.jpg)
+<img src="https://pam7461.github.io/megabox/images/desktop.jpg">
+<img src="https://pam7461.github.io/megabox/images/mobile.jpg">
